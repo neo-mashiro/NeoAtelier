@@ -1,0 +1,371 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Super One Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.enableExperiments": false,
+    "workbench.layoutControl.enabled": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.tree.indent": 22,
+    "workbench.editor.limit.value": 24,
+    "workbench.editor.wrapTabs": true,
+    "workbench.settings.openDefaultKeybindings": false,
+    "workbench.settings.openDefaultSettings": false,
+    "workbench.statusBar.visible": true,
+    "workbench.sideBar.location": "left",
+
+    // the default value of 0 is too small on a 4K display
+    "window.zoomLevel": 1,
+    "window.titleBarStyle": "custom",
+    "window.autoDetectHighContrast": false,
+    "window.menuBarVisibility": "compact",
+
+    "explorer.autoReveal": true,
+    "explorer.confirmDragAndDrop": true,
+    "explorer.confirmDelete": true,
+
+    "screencastMode.keyboardOverlayTimeout": 1600,
+    "easy-highlight.highlightColor": "#7688b74f",
+
+    "editor.fontSize": 12,
+    "editor.fontWeight": "normal",
+    "editor.fontFamily": "MonoLisa, 'Droid Sans Fallback', Monaco, Consolas",
+    "editor.detectIndentation": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.wordWrap": "on",
+    "editor.lineHeight": 24,
+    "editor.mouseWheelZoom": true,
+    "editor.padding.top": 8,
+    "editor.smoothScrolling": true,
+    "editor.wordWrapColumn": 120,
+    "editor.cursorWidth": 2,
+    "editor.minimap.renderCharacters": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.unicodeHighlight.includeComments": false,
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true,
+        "zh-hant": true,
+    },
+
+    "files.autoGuessEncoding": true,
+    "files.trimTrailingWhitespace": true,
+
+    // hide specific files/folders from sidebar/watch/search
+
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/build": true,
+    },
+
+    "files.watcherExclude": {
+        "**/__pycache__": true,
+        "**/build": true,
+        "**/.venv": true,
+        "**/.idea": true,
+    },
+
+    "search.exclude": {
+        "**/__pycache__": true,
+        "**/build": true,
+        "**/test": true,
+        "**/.venv": true,
+        "**/.idea": true,
+    },
+
+    // custom syntax highlighting for files with specific extensions
+
+    "files.associations": {
+        "*.sip": "cpp",
+        "*.grip": "usd"
+    },
+
+    // disable built-in color themes and icon themes
+
+    "settingsSync.ignoredExtensions": [
+        "vscode.theme-defaults",
+        "vscode.theme-abyss",
+        "vscode.theme-kimbie-dark",
+        "vscode.theme-monokai-dimmed",
+        "vscode.theme-monokai",
+        "vscode.theme-quietlight",
+        "vscode.theme-red",
+        "vscode.vscode-theme-seti",
+        "vscode.theme-solarized-dark",
+        "vscode.theme-solarized-light",
+        "vscode.theme-tomorrow-night-blue"
+    ],
+
+    // https://code.visualstudio.com/api/references/theme-color
+
+    "workbench.colorCustomizations": {
+        "activityBar.background":             "#1a1a1a",
+        "activityBar.activeBorder":           "#1d1d1d",
+        "activityBar.foreground":             "#00c378",
+        "activityBar.inactiveForeground":     "#8f8f8f",
+        "button.background":                  "#7700ff",
+        "dropdown.background":                "#000000",
+        "dropdown.foreground":                "#ffffff",
+        "dropdown.listBackground":            "#000000",
+        "list.activeSelectionBackground":     "#2a8effb4",
+        "list.activeSelectionForeground":     "#ffffff",
+        "list.activeSelectionIconForeground": "#ffffff",
+        "sideBarTitle.foreground":            "#ffffff",
+        "sideBarSectionHeader.foreground":    "#cfcfcf",
+        "tab.inactiveBackground":             "#242424",
+        "tab.activeBackground":               "#141414",
+        "tab.activeBorderTop":                "#8c00ff",
+        "statusBar.background":               "#2f2f2f",
+        "titleBar.activeBackground":          "#000000",
+        "titleBar.activeForeground":          "#c8c8c8",
+        "menubar.selectionForeground":        "#ffffff",
+        "menubar.selectionBackground":        "#6f00ff",
+        "menu.foreground":                    "#ffffff",
+        "menu.background":                    "#161616cc",
+        "menu.selectionForeground":           "#ffffff",
+        "menu.selectionBackground":           "#6f00ffc0",
+        "terminal.background":                "#000000",
+        "editor.selectionBackground":         "#6e6e6e5e",
+        "editorBracketHighlight.foreground1": "#ABB2BF",
+        "editorBracketHighlight.foreground2": "#ABB2BF",
+        "editorBracketHighlight.foreground3": "#ac6ce0",
+        "editorBracketHighlight.foreground4": "#dab570"
+    },
+
+    // "Developer: Generate Color Theme From Current Settings"
+    // "Developer: Inspect Editor Tokens and Scopes"
+
+    "editor.tokenColorCustomizations": {
+        "strings": "#019e0e",
+        "numbers": "#e46600",
+
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "foreground": "#666666",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "entity.name.type",
+                "settings": {
+                    "foreground": "#be80f0"
+                }
+            },
+            {
+                "scope": ["keyword", "keyword.control"],
+                "settings": {
+                    "foreground": "#0084ff"
+                }
+            },
+            {
+                "scope": "keyword.control.directive.include.cpp",
+                "settings": {
+                    "foreground": "#d187e7"
+                }
+            },
+            {
+                "scope": "keyword.operator",
+                "settings": {
+                    "foreground": "#a73bff"
+                }
+            },
+            {
+                "scope": "entity.name.function",
+                "settings": {
+                    "foreground": "#39b86e"
+                }
+            },
+            {
+                "scope": ["storage", "storage.modifier.glsl"],
+                "settings": {
+                    "foreground": "#ae6eeb"
+                }
+            },
+            {
+                "scope": "storage.type.glsl",
+                "settings": {
+                    "foreground": "#0084ff"
+                }
+            },
+            {
+                "scope": "keyword.operator.assignment.glsl",
+                "settings": {
+                    "foreground": "#eeeeee"
+                }
+            },
+            {
+                "scope": "string.interpolated.indexes.glsl",
+                "settings": {
+                    "foreground": "#f67df6"
+                }
+            },
+            {
+                "scope": "keyword.operator.arithmetic.glsl",
+                "settings": {
+                    "foreground": "#f05c5c"
+                }
+            },
+            {
+                "scope": "support.function.glsl",
+                "settings": {
+                    "foreground": "#39b86e"
+                }
+            },
+            {
+                "scope": "support.function.general.tex",
+                "settings": {
+                    "foreground": "#01c23b"
+                }
+            },
+            {
+                "scope": [
+                    "support.function.section.latex",
+                    "support.function.be.latex"
+                ],
+                "settings": {
+                    "foreground": "#03c4e6"
+                }
+            },
+            {
+                "scope": "string.quoted.docstring.multi.python",
+                "settings": {
+                    "foreground": "#69676c"
+                }
+            }
+        ]
+    },
+
+    /* [semantic token colorization]
+
+       semantic colorization is language-specific, so token names are not universal.
+       it depends on a semantic token provider, which is registered by the language
+       extension being used. For C++, we use the official Microsoft C/C++ extension
+       that supports semantic colorization out of the box. You can find some of the
+       C/C++ semantic token names at the link below. For the complete list of token
+       names, again, use "Developer: Inspect Editor Tokens and Scopes" to find out.
+
+       https://code.visualstudio.com/docs/cpp/colorization-cpp
+
+       note that not all language extensions come with this feature, so you may need
+       to implement a semantic token provider manually for minor languages like SQL.
+       there's also a list of predefined semantic token selectors that apply to all
+       languages if specific semantic rules are not defined:
+
+       https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide
+    */
+
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.enhancedColorization": "enabled",
+
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "enumMember":      "#f3e674",
+            "macro":           "#ff7b00",
+            "namespace":       "#a1e404",
+            "numberLiteral":   "#be2a32",
+            "parameter":       "#ABB2BF",
+
+            "type":            "#00aeff",
+            "genericType":     "#00aeff",
+            "templateType":    "#23b1b6",
+
+            "variable.global": "#E06C75",
+            "variable.local":  "#ABB2BF",
+
+            "method":          "#39b86e",
+            "method.static":   "#02d4e7",
+            "property":        "#ABB2BF",
+            "property.static": "#E06C75",
+
+            "newOperator": {
+                "foreground": "#f35438",
+                "fontStyle": "underline"
+            }
+        }
+    },
+
+    // terminal profiles
+
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "remote"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Git Bash": {
+            "source": "Git Bash",
+            "icon": "remote"
+        }
+    },
+
+    "terminal.explorerKind": "external",
+    // !!! shell integration must be disabled to ensure clean terminals are created
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.enableVisualBell": true,
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "terminal.integrated.enablePersistentSessions": false,
+
+    // language-specific features
+
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.wordWrap": "on"
+    },
+    "[usd]": {
+        "editor.wordWrap": "off"
+    },
+
+    // YAML schema validation (used by mkdocs)
+
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+    },
+    "yaml.customTags": [
+        "!ENV scalar",
+        "!ENV sequence",
+        "!relative scalar",
+        "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
+        "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
+        "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+    ],
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    "security.workspace.trust.untrustedFiles": "open",
+    "redhat.telemetry.enabled": false,
+}

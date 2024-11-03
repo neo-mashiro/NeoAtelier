@@ -1,0 +1,6 @@
+.venv/
+.idea/
+.temp/
+
+# do not ignore the vscode settings
+!.vscode/
