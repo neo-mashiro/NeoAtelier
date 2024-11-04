@@ -14,29 +14,40 @@ function print_info  { local message=$1; echo -e "${CYAN}[INFO]${NC} - ${message
 function print_warn  { local message=$1; echo -e "${ORANGE}[WARNING]${NC} - ${message}"; }
 function print_error { local message=$1; echo -e "${RED}[ERROR]${NC} - ${message}"; }
 
-export MANA_OASIS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && (pwd -W 2> /dev/null || pwd))"
-export PATH=${MANA_OASIS_ROOT}/bin:$PATH
-cd ${MANA_OASIS_ROOT}
+export ATELIER_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && (pwd -W 2> /dev/null || pwd))"
+export ATELIER_DOCS_ROOT="${ATELIER_ROOT}/docs"
+export ATELIER_BIN_ROOT="${ATELIER_ROOT}/bin"
+export PATH="${ATELIER_BIN_ROOT}:$PATH"
 
-print_info "Creating virtual environment in ${MANA_OASIS_ROOT}/.venv"
-python -m venv .venv
+function activate_venv
+{
+    cd ${ATELIER_ROOT}
 
-if [[ "$OSTYPE" == linux-gnu* ]]; then
-    source .venv/bin/activate
-    print_info "Activated virtual environment $VIRTUAL_ENV on Linux"
-elif [[ "$OSTYPE" == cygwin* || "$OSTYPE" == msys* || "$OSTYPE" == win32* ]]; then
-    source .venv/Scripts/activate
-    print_info "Activated virtual environment $VIRTUAL_ENV on Windows"
-else
-    print_error "Unsupported OS type detected: $OSTYPE"
-    exit 1
+    if [[ "$OSTYPE" == linux-gnu* ]]; then
+        source .venv/bin/activate
+        print_info "Activated virtual environment $VIRTUAL_ENV on Linux"
+    elif [[ "$OSTYPE" == cygwin* || "$OSTYPE" == msys* || "$OSTYPE" == win32* ]]; then
+        source .venv/Scripts/activate
+        print_info "Activated virtual environment $VIRTUAL_ENV on Windows"
+    else
+        print_error "Unsupported OS type detected: $OSTYPE"
+        exit 1
+    fi
+}
+
+if [ ! -d "${ATELIER_ROOT}/.venv" ]; then
+    cd ${ATELIER_ROOT}
+    print_info "Creating virtual environment in ${ATELIER_ROOT}/.venv"
+    python -m venv .venv
+
+    activate_venv
+
+    print_info "Installing packages to $VIRTUAL_ENV"
+    print_info "Installing mkdocs-material..."
+    pip install mkdocs-material
+
+    echo ""
+    print_info "Setup Done!"
+    print_info "Deactivated virtual environment"
+    deactivate
 fi
-
-print_info "Installing packages to $VIRTUAL_ENV"
-print_info "Installing mkdocs-material..."
-pip install mkdocs-material
-
-echo ""
-print_info "Setup Done!"
-print_info "Deactivated virtual environment"
-deactivate
