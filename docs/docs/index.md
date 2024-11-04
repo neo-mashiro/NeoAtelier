@@ -18,7 +18,7 @@ Welcome to Atelier Mana Oasis! This is the workshop where project [Mana-Oasis](.
 
 ## Emojis
 
-:smile:
+Hello, this is new and neo-mashiro :smile:
 
 ## Tables
 A simple table looks like this:
