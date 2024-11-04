@@ -1,58 +1,52 @@
 site_name: Atelier Mana Oasis
 site_url: https://atelier.mana-oasis.org/
-site_description: Welcome to Atelier Mana Oasis!
 site_author: neo-mashiro
+site_description: Welcome to Atelier Mana Oasis!
 
 repo_url: https://github.com/neo-mashiro/NeoAtelier
 remote_branch: gh-pages
 remote_name: origin
 
-validation:
-    omitted_files: warn
-    absolute_links: relative_to_docs
-    unrecognized_links: warn
-    anchors: warn
-
 nav:
-    - Docs Template: index.md
-    - Bookmarks: bookmarks.md
-    - ___________: dividor.md
-    - Apple:
-        - Apple 1: Apple/Apple1.md
-        - Apple 2: Apple/Apple2.md
-    - Banana:
-        - Banana 1: Banana/Banana1.md
-        - Banana 2: Banana/Banana2.md
-    - Cider:
-        - Cider 1: Cider/Cider1.md
-        - Cider 2: Cider/Cider2.md
-    - Donut:
-        - Donut 1: Donut/Donut1.md
-        - Donut 2: Donut/Donut2.md
+  - Docs Template: index.md
+  - Bookmarks: bookmarks.md
+  - ___________: dividor.md
+  - Apple:
+    - Apple 1: Apple/Apple1.md
+    - Apple 2: Apple/Apple2.md
+  - Banana:
+    - Banana 1: Banana/Banana1.md
+    - Banana 2: Banana/Banana2.md
+  - Cider:
+    - Cider 1: Cider/Cider1.md
+    - Cider 2: Cider/Cider2.md
+  - Donut:
+    - Donut 1: Donut/Donut1.md
+    - Donut 2: Donut/Donut2.md
 
 theme:
-    name: material
-    logo: assets/logo.png
-    favicon: assets/favicon.ico
-    font:
-        text: Merriweather Sans
-        code: Red Hat Mono
-    palette:
-        - scheme: slate
-          toggle:
-              icon: material/weather-sunny
-              name: Dark mode
-          primary: green
-          accent: deep purple
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  font:
+    text: Merriweather Sans
+    code: Red Hat Mono
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: green
+      accent: deep purple
 
-        - scheme: default
-          toggle:
-              icon: material/weather-night
-              name: Light mode
-          primary: blue
-          accent: deep orange
-    features:
-        - navigation.footer
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+  features:
+    - navigation.footer
 
 extra_css:
   - extra.css
@@ -73,30 +67,36 @@ copyright: Copyright &copy; 2024 neo-mashiro
 
 use_directory_urls: true
 
+validation:
+  omitted_files: warn
+  absolute_links: relative_to_docs
+  unrecognized_links: warn
+  anchors: warn
+
 markdown_extensions:
-    - attr_list
-    - pymdownx.emoji:
-        emoji_index: !!python/name:material.extensions.emoji.twemoji
-        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-    - pymdownx.highlight:
-        anchor_linenums: true
-        line_spans: __span
-        pygments_lang_class: true
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
 
-    - pymdownx.tabbed:
-        alternate_style: true
+  - pymdownx.tabbed:
+      alternate_style: true
 
-    - admonition
-    - pymdownx.details
+  - admonition
+  - pymdownx.details
 
-    - pymdownx.superfences:
-        custom_fences:
-            - name: mermaid
-              class: mermaid
-              format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
-    - toc:
-        permalink: ⚓︎
+  - toc:
+      permalink: ⚓︎
