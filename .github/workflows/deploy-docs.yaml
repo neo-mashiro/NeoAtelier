@@ -1,0 +1,55 @@
+name: Deploy Documentation
+on:
+  push:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1  # Only fetch the latest commit
+
+      - name: Verify current working directory and branch
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Current branch: $(git rev-parse --abbrev-ref HEAD)"
+
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
+      - name: Install and set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Generate weekly cache ID
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          key: dependencies-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            dependencies-
+
+      - name: Install packages
+        run: pip install mkdocs-material
+
+      - name: Deploy documentation to GitHub Pages
+        run: |
+          mkdocs gh-deploy \
+            --force \
+            --no-history \
+            --config-file docs/mkdocs.yml \
+            --message "deployed site from commit {sha}"
