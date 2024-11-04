@@ -2,5 +2,8 @@
 .idea/
 .temp/
 
+# mkdocs documentation builds
+docs/site/
+
 # do not ignore the vscode settings
 !.vscode/

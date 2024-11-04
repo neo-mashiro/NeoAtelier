@@ -1,8 +1,13 @@
 # Docs Template
 
+Welcome to Atelier Mana Oasis! This is the workshop where project [Mana-Oasis](../../) will come to life.
+
 ## Source
+
 - [mkdocs](https://www.mkdocs.org/getting-started/)
 - [mkdocs-material](https://squidfunk.github.io/mkdocs-material/getting-started/)
+- https://github.com/mkdocs/catalog
+- https://github.com/pawamoy/markdown-exec
 
 ## Commands
 
@@ -14,6 +19,31 @@
 ## Emojis
 
 :smile:
+
+## Tables
+A simple table looks like this:
+
+First Header | Second Header | Third Header
+------------ | ------------- | ------------
+Content Cell | Content Cell  | Content Cell
+Content Cell | Content Cell  | Content Cell
+
+Specify alignment for each column by adding colons to separator lines:
+
+First Header | Second Header | Third Header
+:----------- |:-------------:| -----------:
+Left         | Center        | Right
+Left         | Center        | Right
+
+Note that a table must be surrounded by blank lines. There must be a blank line before and after the table.
+
+## Links
+This is an [internal link](/bookmarks.md) that links to another Markdown document, the path is always relative to the `docs_dir` root. Here is [another internal link](/Cider/Cider1.md) for example.
+
+You can also link to a section (header) within a Markdown document by using an [anchor link](/index.md#code-blocks). Section IDs are created from the text of a header. All text is converted to lowercase and any disallowed characters, including white-space, are converted to dashes.
+
+## Images & Videos
+![Screenshot](assets/logo.png)
 
 ## Code Blocks
 

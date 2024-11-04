@@ -1,5 +1,35 @@
 site_name: Atelier Mana Oasis
-site_url: https://sitename.example
+site_url: https://www.mana-oasis.space/wiki/
+site_description: Welcome to Atelier Mana Oasis!
+site_author: neo-mashiro
+
+repo_url: https://github.com/neo-mashiro/NeoAtelier
+remote_branch: gh-pages
+remote_name: origin
+
+validation:
+    omitted_files: warn
+    absolute_links: relative_to_docs
+    unrecognized_links: warn
+    anchors: warn
+
+nav:
+    - Docs Template: index.md
+    - Bookmarks: bookmarks.md
+    - ___________: dividor.md
+    - Apple:
+        - Apple 1: Apple/Apple1.md
+        - Apple 2: Apple/Apple2.md
+    - Banana:
+        - Banana 1: Banana/Banana1.md
+        - Banana 2: Banana/Banana2.md
+    - Cider:
+        - Cider 1: Cider/Cider1.md
+        - Cider 2: Cider/Cider2.md
+    - Donut:
+        - Donut 1: Donut/Donut1.md
+        - Donut 2: Donut/Donut2.md
+
 theme:
     name: material
     logo: assets/logo.png
@@ -24,6 +54,14 @@ theme:
     features:
         - navigation.footer
 
+extra_css:
+  - extra.css
+
+# extra_javascript:
+#   - path: https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
+#     defer: true
+#     async: true
+
 extra:
   social:
     - icon: simple/youtube
@@ -32,6 +70,8 @@ extra:
       link: https://linkedin.com
 
 copyright: Copyright &copy; 2024 neo-mashiro
+
+use_directory_urls: true
 
 markdown_extensions:
     - attr_list
@@ -58,4 +98,5 @@ markdown_extensions:
               class: mermaid
               format: !!python/name:pymdownx.superfences.fence_code_format
 
-
+    - toc:
+        permalink: ⚓︎

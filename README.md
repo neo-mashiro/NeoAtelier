@@ -16,7 +16,10 @@ source docs.sh
 ```
 
 ## TODO
-Purchase domains on Cloudfare:
-- https://www.mana-oasis.space/
-- https://wiki.mana-oasis.space/
+Purchase custom domains on Cloudfare:
+- https://www.mana-oasis.org/
+- https://www.mana-oasis.org/wiki/
+
+Configure the custom domain for the github pages site:
+- https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
 
