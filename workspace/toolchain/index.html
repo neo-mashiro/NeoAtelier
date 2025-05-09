@@ -1,0 +1,1663 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to Atelier Mana Oasis!">
+      
+      
+        <meta name="author" content="neo-mashiro">
+      
+      
+        <link rel="canonical" href="https://atelier.mana-oasis.org/workspace/toolchain/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../watchdog/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Toolchain - Atelier Mana Oasis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%203h-1V1h-2v2H8V1H6v2H5c-1.1%200-2%20.9-2%202v14c0%201.1.9%202%202%202h3l-2-2H5V9h14v10h-1l-2%202h3c1.1%200%202-.9%202-2V5c0-1.1-.9-2-2-2M5%207V5h14v2zm8%2011v-6h-2v6H8l4%204%204-4z%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14.66%2014.18c.03.11.04.22.04.32.03.65-.26%201.35-.73%201.78-.22.19-.58.39-.86.47-.88.31-1.76-.13-2.28-.64.94-.22%201.49-.9%201.67-1.61.12-.61-.13-1.12-.23-1.72-.1-.58-.08-1.07.13-1.6.15.29.31.59.5.82.6.78%201.55%201.12%201.76%202.18M22%2012c0%205.5-4.5%2010-10%2010S2%2017.5%202%2012%206.5%202%2012%202s10%204.5%2010%2010m-4.84.56-.1-.2c-.16-.36-.61-.98-.61-.98-.18-.23-.4-.44-.6-.64-.53-.47-1.12-.8-1.63-1.29-1.17-1.14-1.43-3.01-.68-4.45-.75.18-1.4.58-1.96%201.03-2.03%201.62-2.83%204.47-1.87%206.92.03.08.06.16.06.26%200%20.17-.12.32-.27.39-.19.07-.37.03-.5-.1a.32.32%200%200%201-.13-.13c-.87-1.11-1.03-2.71-.44-3.98-1.31%201.06-2.02%202.85-1.93%204.53.06.39.1.78.24%201.17.11.47.32.91.56%201.35.84%201.34%202.31%202.31%203.89%202.5%201.68.21%203.48-.09%204.77-1.24%201.44-1.3%201.94-3.37%201.2-5.14%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m23%2012-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12%203%208.6%201.54%206.71%204.72l-3.61.81.34%203.68L1%2012l2.44%202.78-.34%203.69%203.61.82%201.89%203.18L12%2021l3.4%201.46%201.89-3.18%203.61-.82-.34-3.68zm-13%205-4-4%201.41-1.41L10%2014.17l6.59-6.59L18%209z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m23%2012-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12%203%208.6%201.54%206.71%204.72l-3.61.81.34%203.68L1%2012l2.44%202.78-.34%203.69%203.61.82%201.89%203.18L12%2021l3.4%201.46%201.89-3.18%203.61-.82-.34-3.68zm-10%205h-2v-2h2zm0-4h-2V7h2z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M3.05%2013H1v-2h2.05C3.5%206.83%206.83%203.5%2011%203.05V1h2v2.05c4.17.45%207.5%203.78%207.95%207.95H23v2h-2.05c-.45%204.17-3.78%207.5-7.95%207.95V23h-2v-2.05C6.83%2020.5%203.5%2017.17%203.05%2013M12%205c-3.87%200-7%203.13-7%207s3.13%207%207%207%207-3.13%207-7-3.13-7-7-7m-.87%2012.25h1.75V15.5h-1.75zM12%206.75c-1.93%200-3.5%201.57-3.5%203.5h1.75c0-.97.78-1.75%201.75-1.75s1.75.78%201.75%201.75c0%201.75-2.62%201.53-2.62%204.38h1.75c0-1.97%202.62-2.19%202.62-4.38%200-1.93-1.57-3.5-3.5-3.5%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%2015h2v2h-2zm0-8h2v6h-2zm1-4a9%209%200%200%200-9%209%209%209%200%200%200%209%209%209%209%200%200%200%209-9%209%209%200%200%200-9-9m0%2016c-3.86%200-7-3.14-7-7s3.14-7%207-7%207%203.14%207%207-3.14%207-7%207m8.5%201.5c2.16-2.19%203.5-5.19%203.5-8.5s-1.34-6.31-3.5-8.5l-1.08%201.08C21.32%206.5%2022.5%209.11%2022.5%2012c0%202.9-1.18%205.5-3.08%207.42zM4.58%2019.42C2.68%2017.5%201.5%2014.9%201.5%2012c0-2.89%201.18-5.5%203.08-7.42L3.5%203.5C1.34%205.69%200%208.69%200%2012s1.34%206.31%203.5%208.5z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M6%2016a5%205%200%200%201-5-5%205%205%200%200%201%205-5c1-2.35%203.3-4%206-4%203.43%200%206.24%202.66%206.5%206.03L19%208a4%204%200%200%201%204%204%204%204%200%200%201-4%204h-1a1%201%200%200%201-1-1%201%201%200%200%201%201-1h1a2%202%200%200%200%202-2%202%202%200%200%200-2-2h-2V9a5%205%200%200%200-5-5C9.5%204%207.45%205.82%207.06%208.19%206.73%208.07%206.37%208%206%208a3%203%200%200%200-3%203%203%203%200%200%200%203%203h1a1%201%200%200%201%201%201%201%201%200%200%201-1%201zm6-5h3l-2%204h2l-3.75%207%20.75-5H9.5z%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%207h-2.81c-.45-.8-1.07-1.5-1.82-2L16%203.41%2014.59%202l-2.17%202.17a6%206%200%200%200-2.83%200L7.41%202%206%203.41%207.62%205c-.75.5-1.36%201.21-1.81%202H3v2h2.09c-.06.33-.09.66-.09%201v1H3v2h2v1c0%20.34.03.67.09%201H3v2h2.81A6%206%200%200%200%2013%2019.65V19c0-.57.09-1.14.25-1.69-.66.45-1.45.69-2.25.69-2.21%200-4-1.79-4-4v-4c0-2.21%201.79-4%204-4s4%201.79%204%204v4c0%20.19%200%20.39-.05.58.59-.54%201.29-.96%202.05-1.23V13h2v-2h-2v-1c0-.34-.03-.67-.09-1H19zm-6%202v2H9V9zm0%204v2H9v-2zm7%203h2v6h-2m-4-6h2v6h-2z%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M5%2019a1%201%200%200%200%201%201h12a1%201%200%200%200%201-1c0-.21-.07-.41-.18-.57L13%208.35V4h-2v4.35L5.18%2018.43c-.11.16-.18.36-.18.57m1%203a3%203%200%200%201-3-3c0-.6.18-1.16.5-1.63L9%207.81V6a1%201%200%200%201-1-1V4a2%202%200%200%201%202-2h4a2%202%200%200%201%202%202v1a1%201%200%200%201-1%201v1.81l5.5%209.56c.32.47.5%201.03.5%201.63a3%203%200%200%201-3%203zm7-6%201.34-1.34L16.27%2018H7.73l2.66-4.61zm-.5-4a.5.5%200%200%201%20.5.5.5.5%200%200%201-.5.5.5.5%200%200%201-.5-.5.5.5%200%200%201%20.5-.5%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M9%2022a1%201%200%200%201-1-1v-3H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h16a2%202%200%200%201%202%202v12a2%202%200%200%201-2%202h-6.1l-3.7%203.71c-.2.19-.45.29-.7.29zm1-6v3.08L13.08%2016H20V4H4v12zm7-5h-2V9h2zm-4%200h-2V9h2zm-4%200H7V9h2z%22/%3E%3C/svg%3E');}</style>
+
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22%2012a10%2010%200%200%201-10%2010A10%2010%200%200%201%202%2012%2010%2010%200%200%201%2012%202a10%2010%200%200%201%2010%2010m-12%206%206-6-6-6-1.4%201.4%204.6%204.6-4.6%204.6z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#devops" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Atelier Mana Oasis" class="md-header__button md-logo" aria-label="Atelier Mana Oasis" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Atelier Mana Oasis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Toolchain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/neo-mashiro/NeoAtelier" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/academic/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Workspace
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../uiux/qt/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  UI/UX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../opensdk/openusd/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  OpenSDK
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../chaos/career/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Chaos
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Atelier Mana Oasis" class="md-nav__button md-logo" aria-label="Atelier Mana Oasis" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Atelier Mana Oasis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/neo-mashiro/NeoAtelier" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../resources/academic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Resources
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Workspace
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Workspace
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Toolchain
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Toolchain
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="ON THIS PAGE">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      ON THIS PAGE
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building &amp; Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#releasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Releasing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      CI/CD
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Watchdog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../uiux/qt/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    UI/UX
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../opensdk/openusd/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    OpenSDK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../chaos/career/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Chaos
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="ON THIS PAGE">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      ON THIS PAGE
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building &amp; Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#releasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Releasing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      CI/CD
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/neo-mashiro/NeoAtelier/edit/master/docs/workspace/toolchain.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/neo-mashiro/NeoAtelier/raw/master/docs/workspace/toolchain.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="devops">DevOps<a class="headerlink" href="#devops" title="Anchor link to this section for reference">⚓︎</a></h1>
+<h2 id="building-testing">Building &amp; Testing<a class="headerlink" href="#building-testing" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ul>
+<li><a href="https://crascit.com/professional-cmake/">Professional CMake</a></li>
+<li><a href="https://github.com/google/googletest">Google Test</a></li>
+</ul>
+<h2 id="releasing">Releasing<a class="headerlink" href="#releasing" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h2 id="cicd">CI/CD<a class="headerlink" href="#cicd" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Some people are under the impression that GCC is the same as gcc which is the GNU C compiler, but it’s not true. Initially, GCC was only the GNU C Compiler, but nowadays, GCC (GNU Compiler Collections) provides many compilers, including gcc and g++. GCC refers to a collection of compilers, while gcc is only the C compiler. gcc and g++ are both compiler-drivers of the GCC, g++ is used to compile C++ programs. When we talk about GCC compiler/linker flags, they apply to both gcc and g++.</p>
+<p>The g++ command is for both compiling and linking, depending on what the command line options are. Bonus: LLVM is a collection of compiler and toolchain technologies, while Clang is a compiler front-end for the C, C++, Objective-C, and Objective-C++ programming languages, built using LLVM as its back-end.</p>
+<p>On Linux, what is <code>rpath</code> and <code>LD_LIBRARY_PATH</code> ? What about LD?</p>
+<ul>
+<li><code>rpath</code> designates the run-time search path hard-coded in an executable file or library. Dynamic linking loaders use the <code>rpath</code> to find required libraries. When an executable is run, the dynamic linker/loader searches for its required shared libraries in a number of directories, including the standard system directories and any directories specified in the <code>LD_LIBRARY_PATH</code> environment variable. The <code>rpath</code> option allows developers to specify additional directories to search for shared libraries at runtime, without having to rely on environment variables. You can set it using the <code>-Wl,-rpath=&lt;dir&gt;</code> flag at link time.</li>
+<li>Note that on the command line, option <code>-rpath</code> is not the same as <code>-L</code>, <code>-L</code> tells ld where to look for libraries to link against when linking, whereas <code>-rpath</code> stores that path inside the executable or library so that the runtime dynamic linker can find the libraries. For example, <code>gcc -o app app.c -L/usr/local/lib -Wl,-rpath=/tmp/lib</code> adds <code>/tmp/lib</code> to the <code>app</code> executable as a run-time search path, this is mostly used when your libraries are outside the system library search path. Most of the time when you need <code>-Wl,-rpath=/some/weird/path</code>, you probably need <code>-L/some/weird/path</code> as well.</li>
+<li><code>LD_LIBRARY_PATH</code> is a predefined environment variable in Linux/Unix that specifies a colon-separated list of directories where the dynamic linker should look for shared libraries when running a program. What’s special about it is that, the linker gives priority to paths in <code>LD_LIBRARY_PATH</code> over the standard library paths <code>/lib</code> and <code>/usr/lib</code>. The standard paths will still be searched, but only after the list of paths in <code>LD_LIBRARY_PATH</code> has been exhausted. <code>LD_LIBRARY_PATH</code> is Linux specific, on Windows you need to play with the <code>PATH</code> environment variable instead. To use <code>LD_LIBRARY_PATH</code>, set it on the command line or in the script before executing the program: <code>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/your/custom/path/</code>. While you can add some weird paths to <code>LD_LIBRARY_PATH</code> in the script, the <code>rpath</code> option can be better and more convenient for this.</li>
+<li>Both <code>rpath</code> and <code>LD_LIBRARY_PATH</code> are Linux only, they do not exist on Windows. <code>LD_LIBRARY_PATH</code> is colon separated, but <code>rpath</code> is semicolon-delimited.</li>
+<li>Bonus - <code>LD_LIBRARY_PATH</code> stands for “LOAD LIBRARY PATH” or sometimes called “LOADER LIBRARY PATH”.</li>
+<li>A word of caution - You should probably stay away from altering your <code>LD_LIBRARY_PATH</code>, if you do, make sure to restore it when you're done, or you might screw the build processes of other software in the system. If you are using rez, this won’t be a problem, because every rez-resolved environment is an independent folder in <code>/tmp</code>, if you are not using rez, pay attention before doing it.</li>
+<li>On Unix-like operating systems, LD is the linker, you can think of it as the loader if that’s easier to remember. It combines many compiled object and archive files, relocates their data, and ties up symbol references. Usually, the last step in compiling a program is to run <code>ld</code> command.</li>
+<li>There’s a very similar command called <code>ldd</code>, which is used to print the shared library dependencies of an executable or a shared library. <code>ldd</code> shows you the list of shared libraries that the executable requires to run, along with the full path of the shared library file. It's a useful tool for troubleshooting issues related to shared library dependencies, such as missing libraries or version mismatches. You can try <code>ldd /bin/ls</code> to see where the standard libraries are on your system (mostly in <code>/lib64</code>).</li>
+</ul>
+<p>You should also know what is a soname and how it differs from the real name of a library, but that’s more complicated to discuss here.</p>
+<hr />
+<p>It’s good to know the common compile/linker options (flags) for GCC because they mostly have the same names being used in CMake. For example, if you know what <code>-Wl,-rpath=&lt;dir&gt;</code> does, you must also know the Linux specific <code>rpath</code>, then it’s very much trivial to understand the CMake variable <code>CMAKE_INSTALL_RPATH</code> and what this CMake command does:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">set_target_properties</span><span class="p">(</span><span class="s">mytarget</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s">PROPERTIES</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="s">INSTALL_RPATH</span><span class="w"> </span><span class="s2">&quot;@loader_path/../lib;@loader_path/../thirdparty/lib&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><code>-std=c++11</code> - Specify the C++ version or ISO standard version.</li>
+<li><code>-l[mylib]</code> - Link to shared library or shared object. For example, <code>-lm</code> compiles against the shared library <code>libm</code> (basic math library, mostly C only). <code>-lpthread</code> compiles against the POSIX threads shared library. <code>-ld3d9</code> compiles against DirectX <code>d3d9.dll</code> and <code>-ld3d12</code> compiles against DirectX 12 <code>d3d12.dll</code>. Note that DirectX is for Windows exclusively so there’s not a <code>libd3d9.so</code> on Linux. We also have <code>-lvulkan</code>, <code>-lGL</code>, <code>-lglfw</code> for linking to Vulkan, OpenGL and GLFW, and there’s the very popular <code>-lboost_system</code> and <code>-lboost_filesystem</code>.</li>
+<li>Note that there’s no white space after <code>-l</code>, the flag name must immediately follow, the same rule applies to <code>-L</code>, <code>-I</code> and <code>-D</code> as well. For example, <code>g++ -L/path/to/lib -I/path/to/include -lmylib foo.cpp -o myapp</code>.</li>
+<li><code>-L[/path/to/shared-libraries]</code> - Add search path to shared libraries, that is, a folder that contains <code>*.so</code>, <code>*.dll</code> or <code>*.dlyb</code> files, etc.</li>
+<li><code>-I[/path/to/header-files]</code> - Add search path to header files <code>.h</code> or <code>.hpp</code>. Usually we have many include paths, so you can pass as many <code>-I</code> as you need.</li>
+<li><code>-D[FLAG]</code> or <code>-D[FLAG]=VALUE</code> - Pass preprocessor flags to the header and source files so that <code>#ifdef FLAG</code> and <code>#if FLAG</code> evaluates to true. For example, <code>-DDEBUG</code> is equivalent to adding <code>#define DEBUG</code> to your code, <code>-DFOO=1</code> is equivalent to adding <code>#define FOO = 1</code>, and <code>-DVERSION="2.0.0"</code> is equivalent to adding <code>#define VERSION "2.0.0"</code>.</li>
+<li><code>-c [foo.cpp]</code> - Compile source file into object code (input to linker). <code>-c</code> means compile only, don't run the linker.</li>
+<li><code>-g</code> - Enable this flag will tell the compiler to generate debugging info so that you can view stacktraces in your code with GDB and Valgrind.</li>
+<li><code>-g3</code> - Similar to <code>-g</code> but will generate even more debugging info for more detailed views, at the cost of making your code much larger.</li>
+<li><code>-shared</code> - Build a shared library (<code>.so</code> on Unix-like OS, <code>.dylib</code> on MacOSX, or <code>.dll</code> on Windows).</li>
+<li><code>-o [/path/to/output-file]</code> - Specify the name and path of the output file, of course.</li>
+<li><code>-Wall</code> - Turn on all standard compiler warning flags, specifically <code>-Waddress, -Wcomment, -Wformat, -Wbool-compare, -Wuninitialized, -Wunknown-pragmas, -Wunused-value, -Wunused-value</code>, etc.</li>
+<li><code>-Werror</code> - Turn any warning into a compilation error.</li>
+<li><code>-Wextra</code> - Enable extra warning flags not enabled by <code>-Wall</code>, such as <code>-Wsign-compare</code> (C only), <code>-Wtype-limits</code>, <code>-Wuninitialized</code>.</li>
+<li><code>-Wpendantic</code> - Issue all warning required by ISO C and ISO C++ standard, it issues warning whenever there are compiler extensions non-compliant to ISO C or C++ standard.</li>
+<li><code>-Wunnused</code>, <code>-Wshadow</code>, <code>-Wpointer-arith</code>, <code>-Wconversion</code>, …, you can basically know what they are from their names. For example, <code>-Wshadow</code> warns you when a variable declaration hides a previous declaration in outer scope.</li>
+<li><code>-W[name]</code> - Enable a specific warning flag, as we can see above.</li>
+<li><code>-Wno-[name]</code> - Disable a specific warning flag, note that there’s a hyphen <code>-</code> after <code>-Wno</code>. For example, the opposite of <code>-Wunused</code> is <code>-Wno-unused</code>, and we also have <code>-Wno-pragmas</code>, <code>-Wno-invalid-memory-model</code>, etc.</li>
+<li><code>-Wl,-verbose</code> - Enable verbose mode in the linking process. You may find this syntax weird at first, but it does make sense. Compared to <code>-W[name]</code> which sets the compiler warning flag, <code>-Wl,-[name]</code> sets the linker warning flag, the <code>l</code> in <code>-Wl</code> means the linker.</li>
+<li><code>-Wl,-rpath=&lt;dir&gt;</code> - Set the Unix rpath. Note that <code>rpath</code> is semicolon-delimited so for multiple paths you would use <code>-Wl,rpath=/path/to/dir1;/path/to/dir2</code>, do not separate the paths by colons.</li>
+<li><code>-Wl,-rpath=$ORIGIN</code> - Set the Unix <code>rpath</code> to the executable current directory.</li>
+<li><code>-Wl,-dynamic-linker,/path/to/linker/ld-linux.so.2.1</code> - Change the default dynamic linker.</li>
+<li><code>-static-libgcc</code>, <code>-static-libstdc++</code> - Statically link against the <code>libgcc</code> and <code>libstdc++</code> runtime library.</li>
+<li><code>-O0</code> - Disable all optimization, faster compilation time, better for debugging builds. This allows you to step through code in the debugger.</li>
+<li><code>-Og</code> - Only enable optimizations which do not affect debugging, but in practice it’s not always guaranteed, so better use <code>-O0</code>.</li>
+<li><code>-O2</code>, <code>-O3</code> - Higher level of optimization. Slower compile-time, better for production builds. <code>-OFast</code> enables even more higher level of optimization than <code>-O3</code>.</li>
+<li><code>-Os</code> - Optimize for size at the cost of speed, barely used unless your target is really large or your target runs on embedded systems.</li>
+<li><code>-m32</code>, <code>-m64</code> - Generate code for a 32-bit or 64-bit environment. The 32-bit environment sets <code>int</code>, <code>long</code> and pointer to 32 bits and generates code that runs on any i386 system. The 64-bit environment sets <code>int</code> to 32 bits and <code>long</code> and pointer to 64 bits and generates code for AMD's x86-64 architecture.</li>
+<li><code>-fno-exceptions</code> - Disable C++ exceptions (it may be better for embedded systems or anything where exceptiions may not be acceptable).</li>
+<li><code>-fno-rtti</code> - Disable RTTI (Runtime Type Information). There are many texts around where game and embedded systems developers report that they disable RTTI due to performance concerns.</li>
+</ul>
+<hr />
+<p>Conventionally, people use names <code>CFLAGS/CXXFLAGS</code> and <code>LDFLAGS</code> for compiler and linker flags respectively that are used during the compilation and linking processes of a software project. <code>CFLAGS/CXXFLAGS</code> controls the behavior of the compiler during compilation, while <code>LDFLAGS</code> controls the behavior of the linker during linking. Note that <code>CXX</code> just stands for C++ but can be used as a valid variable name, <code>CPP</code> is not used in that sense as it mostly refers to the file extension.</p>
+<ul>
+<li><code>CFLAGS</code> or <code>CXXFLAGS</code> is a variable that contains options to be passed to the compiler (usually gcc or clang) when compiling the source code. These options may include optimization flags, warning flags, include paths, and macro definitions, among others. For example, <code>-O2</code> is an optimization flag that tells the compiler to optimize the code for speed, and <code>-I&lt;path&gt;</code> is an include path flag that tells the compiler where to look for header files.</li>
+<li><code>LDFLAGS</code>, on the other hand, is a variable that contains options to be passed to the linker (usually ld or gold) when linking the compiled object files into an executable or shared library. These options may include library paths, library names, and linker flags, among others. For example, <code>-L&lt;path&gt;</code> is a library path flag that tells the linker where to look for libraries, and <code>-l&lt;name&gt;</code> is a library name flag that tells the linker which libraries to link against.</li>
+</ul>
+<hr />
+<p>Object files are <code>*.obj</code> on Windows but <code>*.o</code> on Linux, Unix and MacOSX. An object file does not 1:1 map to a <code>.cpp</code> file or a translation unit, that’s a common misunderstanding! In fact, you can create an <code>.o</code> file for a single or for many source files. It is true that we usually compile every single source file into a single object file, but that’s just for the sake of speed so that we can take advantage of incremental builds.</p>
+<p>Static libraries are <code>*.a</code> on Linux and <code>*.lib</code> on Windows, a static library is created by putting together several <code>.o</code> files, that’s exactly what the linker does.</p>
+<p>Shared libraries and dynamic libraries are synonyms, they are the same thing. They are shared by many executables and they are dynamically loaded at runtime. Shared libraries are <code>*.so</code> (shared object) on Linux, <code>*.dylib</code> (dynamic library) on MacOSX, and <code>*.dll</code> (dynamically linked libraries) on Windows.</p>
+<p>The diff between static and dynamic libraries? That’s too basic and you already know that, but does loading a shared library slow down your program at runtime with extra cost? NO. Shared libraries are only loaded once in physical memory by the OS, but its symbols' offset are virtually mapped to the memory table for each process, so each process will see the same library symbols in different addresses. When you run your program, the shared library you need is probably already loaded by the OS.</p>
+<p>Object libraries are less known to most people, this is an advanced concept. Object libraries are code compiled into .o object files but not combined into a single library, they are almost like static libraries, except that they are only used in certain special cases. Most commonly, people want to improve performance by only building certain code files once that are needed for multiple targets, and that’s when object libraries can be useful. The core idea of creating object libraries is exactly the same as using precompiled headers pch.h for faster iteration, with the exception that it is targeting the program performance at runtime rather than the efficiency of build time.</p>
+<hr />
+<p>Some people (like me) have been under the impression that CMake is a piece of shit software. That’s probably true for older versions of CMake (&lt;=2.8) before C+11 even exists, but as it evolves over time, modern CMake (3.4+, or better 3.26+) has become super clean, powerful and elegant, and it’s been established as the industry standard for building C++ projects, that’s why Rez also uses CMake for building Python projects. CMake 3.11+ are said to be significantly faster than previous versions. CMake is more than just a build system, making good use of it can help you enforce a good modular design of your project.</p>
+<p>In addition to a build system, over the years CMake has evolved into a family of development tools: CMake, CTest, CPack, and CDash. CMake is the build tool responsible for building software. CTest is a test driver tool, used to run regression tests. CPack is a packaging tool used to create platform-specific installers for software built with CMake. CDash is a web application for displaying testing results and performing continuous integration testing.</p>
+<p>CMake is not a build system, it is a build system generator. On Linux, running CMake consists of 2 steps internally, a “Configure” step that processes your CMakeLists.txt file in memory, and a "Generate" step that actually creates the build files. The name “CMake” stems from the idea of creating a better cross-platform “make” system, where the letter “C” stands for “cross-platform”. On Linux, you can imagine that CMake is a layer/tool on top of make, and make is a layer/tool on top of the g++ command (assume we are using the GCC compiler instead of Clang/LLVM or MSVC).</p>
+<p>A minimum “Hello, world!” example of CMake:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.14</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">project</span><span class="p">(</span><span class="s">MyApp</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD</span><span class="w"> </span><span class="s">14</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">add_executable</span><span class="p">(</span><span class="s">myapp</span><span class="w"> </span><span class="s">main.cpp</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">install</span><span class="p">(</span><span class="s">TARGETS</span><span class="w"> </span><span class="s">myapp</span><span class="w"> </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">/foo/bar/bin</span><span class="p">)</span>
+</span></code></pre></div>
+<p>and this is how we can run <code>cmake</code> (when using <code>rez build ...</code> rez does everything for us behind the scenes).</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="err">cd</span><span class="w"> </span><span class="err">/root/to/your/project</span><span class="w">          </span><span class="c"># where the top-level CMakeLists.txt file is located</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="err">mkdir</span><span class="w"> </span><span class="err">build</span><span class="w"> </span><span class="err">&amp;&amp;</span><span class="w"> </span><span class="err">cd</span><span class="w"> </span><span class="err">build</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">cmake</span><span class="w"> </span><span class="err">..</span><span class="w">                          </span><span class="c"># parse the top-level CMakeLists.txt and generate the build files</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="err">cmake</span><span class="w"> </span><span class="err">--build</span><span class="w"> </span><span class="err">.</span><span class="w">                   </span><span class="c"># invoke the build files to build your targets (compiling + linking)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="err">cmake</span><span class="w"> </span><span class="err">--build</span><span class="w"> </span><span class="err">.</span><span class="w"> </span><span class="err">--target</span><span class="w"> </span><span class="err">install</span><span class="w">  </span><span class="c"># install your project (files, built targets, etc)</span>
+</span></code></pre></div>
+<p>Note that if using relative paths in <code>install(...)</code>, the paths are relative to <code>${CMAKE_INSTALL_PREFIX}</code> which typically defaults to <code>/usr/local</code>, it won’t be installed to your project directory (otherwise other users cannot find it).</p>
+<p>In CMake, every variable is a string. When a variable is undefined, it defaults to an empty string. To read a variable, use <code>${}</code>, this is called a <strong>variable reference</strong>. You can nest variable references: <code>${outer_${inner_var}_var}</code>. They will be evaluated from the inside out.</p>
+<p>To define a variable on the command line, use <code>DFOO=Bar</code>. For example, suppose you are in the build folder and you run <code>cmake -DNAME=cat ..</code> to execute the <code>CMakeLists.txt</code> file in the parent folder, this will create a variable called <code>NAME</code> in <code>CMakeLists.txt</code> and its value <code>${NAME}</code> is equal to <code>"cat"</code>.</p>
+<ul>
+<li>To define a variable inside a CMake script, use the <code>set</code> command. For example, <code>set(THING "funk")</code> creates a variable called <code>THING</code> and sets its value <code>${THING}</code> to <code>"funk"</code>. Note that quotes around arguments are optional, as long as there are no spaces or variable references in the argument.</li>
+</ul>
+<p>By convention, variable names are all CAPS, some people like to use lowercase for local variables though.</p>
+<p>CMake does not have classes, but you can simulate a data structure by defining a group of variables with names that begin with the same prefix. When you see a list of variables starting with the same prefix, you can assume that they belong to the same group. That’s just a convention.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">set</span><span class="p">(</span><span class="s">PACKAGE</span><span class="w"> </span><span class="s">OCIO</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">set</span><span class="p">(</span><span class="o">${</span><span class="nv">PACKAGE</span><span class="o">}</span><span class="s">_NAME</span><span class="w"> </span><span class="s2">&quot;OpenColorIO&quot;</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">set</span><span class="p">(</span><span class="o">${</span><span class="nv">PACKAGE</span><span class="o">}</span><span class="s">_VERSION</span><span class="w"> </span><span class="s2">&quot;2.0.1&quot;</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;The version of ${PACKAGE}_NAME is ${PACKAGE}_VERSION&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>In CMake, every statement is a command that takes a list of <strong>string arguments</strong> and has <strong>no return value</strong>. Arguments are separated by (unquoted) spaces. For example, CMake has a math command that performs arithmetic. The first argument must be <code>EXPR</code>, the second argument is the name of the variable to assign, and the third argument is the expression to evaluate – all strings.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">math</span><span class="p">(</span><span class="s">EXPR</span><span class="w"> </span><span class="s">MY_SUM</span><span class="w"> </span><span class="s2">&quot;1 + 1&quot;</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">math</span><span class="p">(</span><span class="s">EXPR</span><span class="w"> </span><span class="s">DOUBLE_SUM</span><span class="w"> </span><span class="s2">&quot;${MY_SUM} * 2&quot;</span><span class="p">)</span><span class="w">  </span><span class="c"># ${DOUBLE_SUM} will be 4</span>
+</span></code></pre></div>
+<p>https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html - A full list of all CMake native commands. For example, the <code>string</code> command lets you perform advanced string manipulation, including regular expression replacement. The <code>file</code> command can read or write files, or manipulate filesystem paths.</p>
+<p>Even flow control statements are commands: the <code>if/endif</code> commands, <code>while/endwhile</code> commands, <code>foreach/endforeach</code> commands, etc.</p>
+<p>White space doesn’t matter so there’s no indentation in CMake, but it’s common to indent the enclosed commands for readablity:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">if</span><span class="p">(</span><span class="s">WIN32</span><span class="p">)</span><span class="w">  </span><span class="c"># checks whether CMake&#39;s built-in variable WIN32 is set</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;You&#39;re running CMake on Windows.&quot;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">elseif</span><span class="p">(</span><span class="s">APPLE</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;You&#39;re running CMake on MacOS.&quot;</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">else</span><span class="p">()</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;You&#39;re running CMake on other platforms.&quot;</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nb">endif</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">set</span><span class="p">(</span><span class="s">x</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">while</span><span class="p">(</span><span class="s">x</span><span class="w"> </span><span class="s">LESS</span><span class="w"> </span><span class="s2">&quot;100&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;${x}&quot;</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nb">math</span><span class="p">(</span><span class="s">EXPR</span><span class="w"> </span><span class="s">x</span><span class="w"> </span><span class="s2">&quot;${x} + 1&quot;</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">endwhile</span><span class="p">()</span>
+</span></code></pre></div>
+<p>https://cmake.org/cmake/help/latest/command/if.html and https://cmake.org/cmake/help/latest/command/foreach.html - See documentation for how to write a condition.</p>
+<p>Since every variable is a string in CMake, there’s a rule for checking whether a condition <code>if(&lt;constant&gt;)</code> is true or false.</p>
+<ul>
+<li>True if the constant is <code>1</code>, <code>ON</code>, <code>YES</code>, <code>TRUE</code>, <code>Y</code>, or a non-zero number (including floating point numbers).</li>
+<li>False if the constant is <code>0</code>, <code>OFF</code>, <code>NO</code>, <code>FALSE</code>, <code>N</code>, <code>IGNORE</code>, <code>NOTFOUND</code>, the empty string, or ends in the suffix <code>-NOTFOUND</code>.</li>
+<li>Note that these named boolean constants are case-insensitive, so <code>YES/yes/Yes</code> all evaluate to true.</li>
+<li>Note that environment variables cannot be tested this way: <code>if(ENV{some_var})</code> will always evaluate to false.</li>
+</ul>
+<p><code>if</code> and <code>while</code> are different from other CMake commands in that if the name of a variable is specified without quotes, the command will use the variable’s value. So <code>while(x LESS "100")</code> is equivalent to <code>while("${x}" LESS "100")</code>, <code>if(x)</code> is equivalent to <code>if(${x})</code>, but for other commands we need to be explicit by using <code>${x}</code>.</p>
+<hr />
+<p>In CMake, lists are just semicolon-delimited strings. When you pass a list variable to a macro or command, CMake will split the value at the semicolons and pass <strong>multiple arguments</strong> to the enclosing command. For example:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">set</span><span class="p">(</span><span class="s">ARGS</span><span class="w"> </span><span class="s2">&quot;EXPR;T;1 + 1&quot;</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">math</span><span class="p">(</span><span class="o">${</span><span class="nv">ARGS</span><span class="o">}</span><span class="p">)</span><span class="w">  </span><span class="c"># equivalent to calling math(EXPR T &quot;1 + 1&quot;)</span>
+</span></code></pre></div>
+<p>If more than two arguments are passed to the set command, they are joined by semicolons, then assigned to the specified variable.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">set</span><span class="p">(</span><span class="s">MY_LIST</span><span class="w"> </span><span class="s">These</span><span class="w"> </span><span class="s">are</span><span class="w"> </span><span class="s">separate</span><span class="w"> </span><span class="s">arguments</span><span class="p">)</span><span class="w">      </span><span class="c"># this is how we create a list variable</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">set</span><span class="p">(</span><span class="s">MY_STRING</span><span class="w"> </span><span class="s2">&quot;These are separate arguments&quot;</span><span class="p">)</span><span class="w">  </span><span class="c"># will be treated as a single string if quoted</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;${MY_LIST}&quot;</span><span class="p">)</span><span class="w">                          </span><span class="c"># These;are;separate;arguments</span>
+</span></code></pre></div>
+<p>You can manipulate a list using the <code>list</code> command:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">list</span><span class="p">(</span><span class="s">REMOVE_ITEM</span><span class="w"> </span><span class="s">MY_LIST</span><span class="w"> </span><span class="s2">&quot;separate&quot;</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;${MY_LIST}&quot;</span><span class="p">)</span><span class="w">  </span><span class="c"># These;are;arguments</span>
+</span></code></pre></div>
+<p>The <code>foreach/endforeach</code> command accepts multiple arguments. It iterates over all arguments except the first, assigning each one to the named variable:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">foreach</span><span class="p">(</span><span class="s">ARG</span><span class="w"> </span><span class="s">These</span><span class="w"> </span><span class="s">are</span><span class="w"> </span><span class="s">separate</span><span class="w"> </span><span class="s">arguments</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;${ARG}&quot;</span><span class="p">)</span><span class="w">  </span><span class="c"># prints each word on a separate line</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nb">endforeach</span><span class="p">()</span>
+</span></code></pre></div>
+<p>This is how we iterate over a list (CMake will split the variable’s value and pass multiple arguments to the command):</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">foreach</span><span class="p">(</span><span class="s">ARG</span><span class="w"> </span><span class="o">${</span><span class="nv">MY_LIST</span><span class="o">}</span><span class="p">)</span><span class="w">  </span><span class="c"># CMake will split the variable&#39;s value and pass multiple arguments to the command</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;${ARG}&quot;</span><span class="p">)</span><span class="w">    </span><span class="c"># again, prints each item on a separate line</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">endforeach</span><span class="p">()</span>
+</span></code></pre></div>
+<p>There is also a more modern CMake foreach syntax.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">foreach</span><span class="p">(</span><span class="s">var</span><span class="w"> </span><span class="s">IN</span><span class="w"> </span><span class="s">ITEMS</span><span class="w"> </span><span class="s">foo</span><span class="w"> </span><span class="s">bar</span><span class="w"> </span><span class="s">baz</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="o">${</span><span class="nv">var</span><span class="o">}</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">endforeach</span><span class="p">()</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">foreach</span><span class="p">(</span><span class="s">var</span><span class="w"> </span><span class="s">IN</span><span class="w"> </span><span class="s">LISTS</span><span class="w"> </span><span class="s">my_list</span><span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="o">${</span><span class="nv">var</span><span class="o">}</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nb">endforeach</span><span class="p">()</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="nb">foreach</span><span class="p">(</span><span class="s">var</span><span class="w"> </span><span class="s">IN</span><span class="w"> </span><span class="s">LISTS</span><span class="w"> </span><span class="s">my_list</span><span class="w"> </span><span class="s">ITEMS</span><span class="w"> </span><span class="s">foo</span><span class="w"> </span><span class="s">bar</span><span class="w"> </span><span class="s">baz</span><span class="p">)</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="o">${</span><span class="nv">var</span><span class="o">}</span><span class="p">)</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="nb">endforeach</span><span class="p">()</span>
+</span></code></pre></div>
+<p>CMake script files with the extension <code>.cmake</code> are called CMake modules, they are CMake’s vehicle for enabling code reuse. Inside CMake modules, there are collections of functions and macros that are either CMake-defined or user-defined. In CMake macros and functions are universally referred to as commands, and they are the primary method of defining code that can be called multiple times.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">macro</span><span class="p">(</span><span class="s">macro_name</span><span class="w"> </span><span class="s">arg1</span><span class="w"> </span><span class="s">arg2</span><span class="w"> </span><span class="s">...</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="c"># body of the macro</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">endmacro</span><span class="p">()</span>
+</span></code></pre></div>
+<p>This is how you can define a macro in CMake. Note that CMake allows different ways of ending a macro, depending on the preference of the developer.</p>
+<ul>
+<li><code>endmacro()</code>: This is the simplest and most commonly used way to end a macro. It does not require any arguments.</li>
+<li><code>endmacro(macro_name)</code>: This specifies the name of the macro that is being ended. It is useful when you have multiple macros in your CMake file and you want to make it clear which macro is being closed.</li>
+<li><code>endmacro(macro_name arg1 arg2 ...)</code>: This is similar to the previous example, but it includes the arguments of the macro. This can be useful when you have macros with many arguments and you want to make sure you are closing the correct one.</li>
+</ul>
+<p>Macros can also have optional arguments, variable arguments, and use the <code>return()</code> command to return a value.</p>
+<p>Optional arguments can be specified by providing default values for the macro arguments, for example:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">macro</span><span class="p">(</span><span class="s">macro_name</span><span class="w"> </span><span class="s">arg1</span><span class="w"> </span><span class="s">arg2</span><span class="w"> </span><span class="s">arg3=</span><span class="s2">&quot;default_value&quot;</span><span class="p">)</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="c"># body of the macro</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">endmacro</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Variable arguments can be specified using the ... syntax, for example:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">macro</span><span class="p">(</span><span class="s">macro_name</span><span class="w"> </span><span class="s">arg1</span><span class="w"> </span><span class="s">arg2</span><span class="w"> </span><span class="s">...</span><span class="p">)</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="c"># body of the macro</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">endmacro</span><span class="p">()</span>
+</span></code></pre></div>
+<p>... indicates that the macro can accept an arbitrary number of additional arguments. The variable arguments can be accessed using the <code>ARGN</code> CMake variable, which contains a list of all the additional arguments passed to the macro. Note that <code>${ARGN}</code> contains all of the arguments passed to a macro after the named arguments, but <code>${ARGV}</code> is the full list of arguments passed to the function, including both named and unnamed (variable) arguments.</p>
+<p>Macros run in the same scope as their caller. Therefore, all variables defined inside a macro are set in the caller's scope. This can sometimes lead to naming conflicts with variables defined outside of the macro. When defining macros, the best practice is to make sure the variable names do not conflict with any other variables in the caller’s scope, otherwise it can lead to subtle bugs or unexpected results like this:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">macro</span><span class="p">(</span><span class="s">print_list</span><span class="w"> </span><span class="s">my_list</span><span class="p">)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nb">foreach</span><span class="p">(</span><span class="s">var</span><span class="w"> </span><span class="s">IN</span><span class="w"> </span><span class="s">LISTS</span><span class="w"> </span><span class="s">my_list</span><span class="p">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;${var}&quot;</span><span class="p">)</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nb">endforeach</span><span class="p">()</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">endmacro</span><span class="p">()</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nb">set</span><span class="p">(</span><span class="s">my_list</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">b</span><span class="w"> </span><span class="s">c</span><span class="w"> </span><span class="s">d</span><span class="p">)</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nb">set</span><span class="p">(</span><span class="s">my_list_of_numbers</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">2</span><span class="w"> </span><span class="s">3</span><span class="w"> </span><span class="s">4</span><span class="p">)</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="nb">print_list</span><span class="p">(</span><span class="s">my_list_of_numbers</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This code block will print <code>a b c d</code> (each on a separate line) instead of <code>1 2 3 4</code>, because the macro always takes in the variable <code>my_list</code> in the parent scope.</p>
+<p>In CMake, you can use a pair of <code>function/endfunction</code> commands to define a function.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">function</span><span class="p">(</span><span class="s">doubleIt</span><span class="w"> </span><span class="s">VALUE</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nb">math</span><span class="p">(</span><span class="s">EXPR</span><span class="w"> </span><span class="s">RESULT</span><span class="w"> </span><span class="s2">&quot;${VALUE} * 2&quot;</span><span class="p">)</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;${RESULT}&quot;</span><span class="p">)</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nb">endfunction</span><span class="p">()</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nb">doubleIt</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">)</span><span class="w">  </span><span class="c"># prints: 8</span>
+</span></code></pre></div>
+<p>Unlike macros, functions run in their own scope. None of the variables defined in a function pollute the caller’s scope. If you want to return a value, you can pass the name of a variable to your function, then call the set command with the special argument <code>PARENT_SCOPE</code>:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">function</span><span class="p">(</span><span class="s">doubleIt</span><span class="w"> </span><span class="s">VARNAME</span><span class="w"> </span><span class="s">VALUE</span><span class="p">)</span><span class="w">              </span><span class="c"># VARNAME is a variable in the global scope</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="nb">math</span><span class="p">(</span><span class="s">EXPR</span><span class="w"> </span><span class="s">RESULT</span><span class="w"> </span><span class="s2">&quot;${VALUE} * 2&quot;</span><span class="p">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="o">${</span><span class="nv">VARNAME</span><span class="o">}</span><span class="w"> </span><span class="s2">&quot;${RESULT}&quot;</span><span class="w"> </span><span class="s">PARENT_SCOPE</span><span class="p">)</span><span class="w">  </span><span class="c"># set the named variable in caller&#39;s scope</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nb">endfunction</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Functions also accept an arbitrary number of arguments in the same way that macros do.</p>
+<p>Both macros and functions can use the <code>return()</code> statement to exit early, but they do not return a value, instead, they typically modify one or more variables that are passed in as arguments. For example, <code>macro(foo outvar invar)</code>.</p>
+<hr />
+<p>CMake variables are defined at file scope. The <code>include</code> command executes another CMake script in the <strong>same scope</strong> as the calling script. It’s a lot like the <code>#include</code> directive in C/C++. It’s typically used to define a common set of functions or macros in the calling script. It uses the variable <code>CMAKE_MODULE_PATH</code> as a search path.</p>
+<p>The <code>find_package</code> command looks for scripts of the form <code>Find*.cmake</code> and also runs them in the same scope. Such scripts are often used to help find external libraries. For example, if there is a file named <code>FindSDL2.cmake</code> in the search path, <code>find_package(SDL2)</code> is equivalent to <code>include(FindSDL2.cmake)</code>. (Note that there are several ways to use the <code>find_package</code> command – this is just one of them.)</p>
+<p>CMake’s <code>add_subdirectory</code> command, on the other hand, creates a <strong>new scope</strong>, then executes the script named <code>CMakeLists.txt</code> from the specified directory in that new scope. You typically use it to add another CMake-based subproject, such as a library or executable, to the calling project. The targets defined by the subproject are added to the build pipeline unless otherwise specified. None of the variables defined in the subproject’s script will pollute the parent’s scope unless the <code>set</code> command’s <code>PARENT_SCOPE</code> option is used.</p>
+<p>So that means a child <code>CMakeLists.txt</code> has its own scope and it cannot see variables defined in the parent <code>CMakeLists.txt</code>? NO. To make it clear, when <code>add_subdirectory</code> is executed, it creates a separate scope to process the child <code>CMakeLists.txt</code> and creates a <strong>copy</strong> of all parent variables to the newly created scope, so the child <code>CMakeLists.txt</code> still sees the variable <strong>values</strong> defined in the parent level, but they are no longer the same variables, just copies. If you need to update a parent variable from the child CMakeLists.txt, you must use the <code>PARENT_SCOPE</code> option like this:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">set</span><span class="p">(</span><span class="s">A</span><span class="w"> </span><span class="s2">&quot;Child&quot;</span><span class="w"> </span><span class="s">PARENT_SCOPE</span><span class="p">)</span><span class="w">  </span><span class="c"># tells CMake to update the original A variable in the parent scope</span>
+</span></code></pre></div>
+<p>In other words, unless the <code>PARENT_SCOPE</code> option has been specified, when setting a parent-level variable in a subdirectory it overrides the value in that scope and any deeper subdirectories. Don’t forget that functions also create a new scope.</p>
+<p>Well, now we know <code>PARENT_SCOPE</code> sets a variable into the parent scope, but there’s another scope-related option called <code>CACHE</code> which sets the variable in the <code>CMakeCache.txt</code>, this effectively sets the variable in all scopes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unlike C-based languages, CMake’s loop and control flow blocks do not have their own scopes. Variables set inside conditional blocks or loops persist after the <code>endif()/endwhile()/endforeach()</code>.</p>
+</div>
+<p>A CMake script defines targets using the <code>add_executable</code>, <code>add_library</code> or <code>add_custom_target</code> commands. Once a target is created, it has properties that you can manipulate using the <code>get_property</code> and <code>set_property</code> commands. Unlike variables, targets are visible in every scope, even if they were defined in a subdirectory. All target properties are strings.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">add_executable</span><span class="p">(</span><span class="s">MyApp</span><span class="w"> </span><span class="s2">&quot;main.cpp&quot;</span><span class="p">)</span><span class="w">                           </span><span class="c"># create a target named MyApp</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">get_property</span><span class="p">(</span><span class="s">MYAPP_SOURCES</span><span class="w"> </span><span class="s">TARGET</span><span class="w"> </span><span class="s">MyApp</span><span class="w"> </span><span class="s">PROPERTY</span><span class="w"> </span><span class="s">SOURCES</span><span class="p">)</span><span class="w">  </span><span class="c"># get the target&#39;s SOURCES property and assign it to MYAPP_SOURCES</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nb">message</span><span class="p">(</span><span class="s2">&quot;${MYAPP_SOURCES}&quot;</span><span class="p">)</span><span class="w">                                </span><span class="c"># prints: main.cpp</span>
+</span></code></pre></div>
+<p>Other target properties include <code>LINK_LIBRARIES</code>, <code>INCLUDE_DIRECTORIES</code> and <code>COMPILE_DEFINITIONS</code>. Those properties are modified, indirectly, by the <code>target_link_libraries</code>, <code>target_include_directories</code> and <code>target_compile_definitions</code> commands. At the end of the script, CMake uses those target properties to generate the build pipeline. There are properties for other CMake entities, too. There is a set of <a href="https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html#properties-on-directories">directory properties</a> at every file scope. There is a set of <a href="https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html#properties-of-global-scope">global properties</a> that is accessible from all scripts. And there is a set of <a href="https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html#properties-on-source-files">source file properties</a> for every C/C++ source file.</p>
+<hr />
+<p>Arguments in CMake can be difficult at first. Previously we talked about named arguments, which are also called the positional arguments or required arguments, but there’s also the so-called keyword arguments. Keyword arguments use specific predefined ALL-CAPS keywords to separate arguments, each keyword can take no arguments, one argument, or a list. You already see the <code>PARSE_ARGUMENTS</code> macro in rez, and you know the examples I’ve written there. But keyword arguments are ubiquitous in CMake built-in commands as well, the only way to master them is to look at the documentation.</p>
+<p>CMake offers boolean operator for string comparisons, such as <code>STREQUAL</code> for string equality, and for version comparisons, such as <code>VERSION_EQUAL</code>.</p>
+<hr />
+<p>To create a list of lists, you make a list of variable names that refer to other lists.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">set</span><span class="p">(</span><span class="s">list_of_lists</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">b</span><span class="w"> </span><span class="s">c</span><span class="p">)</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">set</span><span class="p">(</span><span class="s">a</span><span class="w"> </span><span class="s">1</span><span class="w"> </span><span class="s">2</span><span class="w"> </span><span class="s">3</span><span class="p">)</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nb">set</span><span class="p">(</span><span class="s">b</span><span class="w"> </span><span class="s">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6</span><span class="p">)</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nb">set</span><span class="p">(</span><span class="s">c</span><span class="w"> </span><span class="s">7</span><span class="w"> </span><span class="s">8</span><span class="w"> </span><span class="s">9</span><span class="p">)</span>
+</span></code></pre></div>
+<p>and this is how you can iterate through the list of lists</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">foreach</span><span class="p">(</span><span class="s">list_name</span><span class="w"> </span><span class="s">IN</span><span class="w"> </span><span class="s">LISTS</span><span class="w"> </span><span class="s">list_of_lists</span><span class="p">)</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nb">foreach</span><span class="p">(</span><span class="s">value</span><span class="w"> </span><span class="s">IN</span><span class="w"> </span><span class="s">LISTS</span><span class="w"> </span><span class="o">${</span><span class="nv">list_name</span><span class="o">}</span><span class="p">)</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="o">${</span><span class="nv">value</span><span class="o">}</span><span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nb">endforeach</span><span class="p">()</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nb">endforeach</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<p>CMake has a list of predefined directory variables, must remember. Best practice - as a rule of thumb, you should always create a <code>build</code> folder under project root first, then run <code>cmake</code> command in the build folder, never run <code>cmake</code> in the project root.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Example Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CMAKE_INSTALL_PREFIX</code></td>
+<td>Where the build products will be installed to</td>
+<td><code>/usr/local/bin</code></td>
+</tr>
+<tr>
+<td><code>CMAKE_SOURCE_DIR</code></td>
+<td>Top level project root folder, your top level CMakeLists.txt is here</td>
+<td><code>…/myapp</code></td>
+</tr>
+<tr>
+<td><code>CMAKE_BINARY_DIR</code></td>
+<td>Top level project binary folder</td>
+<td><code>…/myapp/build</code></td>
+</tr>
+<tr>
+<td><code>CMAKE_CURRENT_SOURCE_DIR</code></td>
+<td>Source folder of the current CMakeLists.txt</td>
+<td><code>…/myapp/mylib</code></td>
+</tr>
+<tr>
+<td><code>CMAKE_CURRENT_BINARY_DIR</code></td>
+<td>Binary folder for the current CMakeLists.txt</td>
+<td><code>…/myapp/build/mylib</code></td>
+</tr>
+</tbody>
+</table>
+<p>Modern CMake are structured around targets and dependencies, not build flags, so you are not supposed to use a lot of custom defined variables. The whole family of CMake commands <code>target_*</code> can be used to express chains of dependencies and is much more effective than keeping track of state with variables. To create a target from source code, use <code>add_executable()</code> and <code>add_library()</code>. Then to configure the target, we use properties. Properties further determine the specific details of how CMake builds a target, such as compile flags and link libraries. The most common ones are:</p>
+<table>
+<thead>
+<tr>
+<th>CMake Property</th>
+<th>Scope</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COMPILE_DEFINITIONS</code></td>
+<td>Directory, Target, Source</td>
+<td>List of preprocessor macros to define when compiling the code</td>
+</tr>
+<tr>
+<td><code>COMPILE_OPTIONS</code></td>
+<td>Directory, Target, Source</td>
+<td>List of compiler flags to use when compiling the code</td>
+</tr>
+<tr>
+<td><code>INCLUDE_DIRECTORIES</code></td>
+<td>Directory, Target, Source</td>
+<td>List of directories to add to the include path</td>
+</tr>
+<tr>
+<td><code>INSTALL_RPATH</code></td>
+<td>Target</td>
+<td>rpath</td>
+</tr>
+<tr>
+<td><code>LINK_LIBRARIES</code></td>
+<td>Target</td>
+<td>List of other libraries (targets or file paths) that the target should be linked to</td>
+</tr>
+<tr>
+<td><code>OUTPUT_NAME</code></td>
+<td>Target</td>
+<td>Use this if you want the built executable or library to have a different name than its CMake target</td>
+</tr>
+<tr>
+<td><code>POSITION_INDEPENDENT_CODE</code></td>
+<td>Target</td>
+<td>Controls whether the code will be built as position independent, which is required when compiling shared libraries</td>
+</tr>
+<tr>
+<td><code>SOURCES</code></td>
+<td>Target</td>
+<td>The source files configured for a target</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html">this</a> is the full list of properties in CMake (but 90% of them are barely used). As you see, properties have scope, they can be set on a number of different levels:</p>
+<ul>
+<li>Global - affects the entire project</li>
+<li>Directory - affects the current directory and all sub-directories</li>
+<li>Target - only affects a specific target</li>
+<li>Source - affects a specific source file in all targets it’s present in</li>
+</ul>
+<p>Use <code>target_link_libraries()</code> to link targets (dependencies), this allows the target to reference code stored in the given libraries.</p>
+<p>Many target properties come in 2 types/versions: private and interface.</p>
+<ul>
+<li>A private property only affects the target it is set on, e.g. <code>COMPILE_DEFINITIONS</code>. They are only used to compile the current target into binary, so that’s an implementation detail, consumers of this target don’t care these private properties.</li>
+<li>An interface property affects every other target that links to this target, e.g. <code>INTERFACE_COMPILE_DEFINITIONS</code>. Interface properties are used to carry dependencies between targets, these are called <strong>Usage Requirements</strong> that consumers of this target must follow in order to work properly.</li>
+<li>So does that mean if A links to B, then A also needs to check all the interface properties in B and copy paste them to A’s own properties list? No. Link dependencies are transitive, meaning that linking will also pull in the interface options of the libraries being linked, and this is recursive. So if A links to B and B links to C, then CMake will automatically link A to C as well, pulling in all the interface properties from C to A, so we don’t need to do it manually.</li>
+<li>If A links to B (so A is a customer of B), the author of B must make sure that B is properly configured in the sense that A (and any other customer) doesn’t need to look at how target B is configured, because that’s an implementation detail of B that other customers should not care about. If the author of B failed to do so, target B would be an ill-formed dependency, the project would be unmaintainable and there’s no way to enforce a modular design. For example, you are a library writer and you created a library called Y, where the public API in header files requires an include path <code>/foo/include</code>, if you’ve only added <code>/foo/include</code> to target Y’s <code>INCLUDE_DIRECTORIES</code> property, then another library X which depends on Y will not be able to compile without manually adding <code>/foo/include</code> to its own <code>INCLUDE_DIRECTORIES</code> property, and this breaks the modular rule. To avoid this, target Y must add <code>/foo/include</code> to its <code>INTERFACE_INCLUDE_DIRECTORIES</code> property instead, target X should not need to know how Y works.</li>
+<li>In summary, modern CMake requires that each library defines its own usage requirements properly so they are passed transitively to other targets as necessary.</li>
+</ul>
+<p>So how do we set the properties then? Use commands that leverage <strong>usage requirements</strong> as listed below, do not use commands at the directory or global scope.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">target_compile_definitions</span><span class="p">()</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">target_compile_options</span><span class="p">()</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nb">target_include_directories</span><span class="p">()</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="nb">target_link_directories</span><span class="p">()</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nb">target_link_options</span><span class="p">()</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nb">target_precompile_headers</span><span class="p">()</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="nb">target_sources</span><span class="p">()</span>
+</span></code></pre></div>
+<p>There are 3 keywords for setting target properties in a command:</p>
+<ul>
+<li><code>PRIVATE</code> - only sets the private version of the property, e.g. <code>COMPILE_DEFINITIONS</code></li>
+<li><code>INTERFACE</code> - only sets the interface version of the property, e.g. <code>INTERFACE_COMPILE_DEFINITIONS</code></li>
+<li><code>PUBLIC</code> - sets both the private and interface version of the property, e.g. <code>COMPILE_DEFINITIONS</code> + <code>INTERFACE_COMPILE_DEFINITIONS</code></li>
+</ul>
+<p>Cache variables are special variables that keep their values between invocations of CMake. These variables are persistent across calls to <code>cmake</code> and available to all scopes in the project. Modifying a cache variable requires using a special form of the set function: <code>set(&lt;variable&gt; &lt;value&gt;... CACHE &lt;type&gt; &lt;docstring&gt; [FORCE])</code>.</p>
+<p><code>CMAKE_BUILD_TYPE</code> has 4 standard build types: <code>Debug</code>, <code>Release</code>, <code>RelWithDebInfo</code> and <code>MinSizeRel</code>. To set this variable, use <code>-DCMAKE_BUILD_TYPE=Release</code> command option for example. The main purpose of this variable is to control which compile flags are used.</p>
+<p>Generator expression are introduced in CMake 3.15, don’t use them if you are running an older version.</p>
+<p><code>BUILD_INTERFACE</code> is a generator expression used in target properties that allows specifying include directories or compile definitions only when building a target. It is commonly used to specify header-only dependencies that are not needed at runtime.</p>
+<p>For example, the following code adds the include directory <code>./include</code> to the target <code>mylib</code> only when building the target, once it’s already built into a binary, running it at runtime does not need that include path anymore.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">mylib</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="s">PUBLIC</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="o">$&lt;</span><span class="nv">BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include</span><span class="o">&gt;</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Another example, the following code sets compile options for the target <code>mylib</code> only when the target is being built, not when it is installed. Once it’s already built into a binary, consumers of <code>mylib</code> should not inherit these warning flags.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">target_compile_options</span><span class="p">(</span><span class="s">mylib</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="s">INTERFACE</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="s2">&quot;$&lt;BUILD_INTERFACE:-Wall;-Wextra;-Wshadow;-Wformat=2;-Wunused&gt;&quot;</span><span class="w">  </span><span class="c"># must be quoted since we have semicolons in the argument</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>In general, <code>BUILD_INTERFACE</code> is used to specify include path or compiler flags that are only needed during the build process, while <code>INSTALL_INTERFACE</code> is used to specify things that are needed both during the build process and during installation.</p>
+<hr />
+<p>In CMake, an interface library is a special type of library that defines a set of requirements for linking against it. Unlike traditional libraries that contain actual object code, an interface library only specifies a list of headers and required linker flags. Interface libraries are useful when you have a set of requirements that multiple other libraries or executables share. Instead of duplicating the same requirements across all targets, you can define them once in an interface library and let the dependent targets link against it. Header-only libraries is a common example of an interface library, but an interface library doesn’t even need to have header files or any code, it could just be a code-less target with only usage requirements.</p>
+<p>To create an interface library in CMake, you can use the <code>add_library()</code> command with the <code>INTERFACE</code> keyword. Here is an example:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">add_library</span><span class="p">(</span><span class="s">A</span><span class="w"> </span><span class="s">INTERFACE</span><span class="p">)</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">A</span><span class="w"> </span><span class="s">INTERFACE</span><span class="w"> </span><span class="s">include</span><span class="p">)</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">A</span><span class="w"> </span><span class="s">INTERFACE</span><span class="w"> </span><span class="s">pthread</span><span class="p">)</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nb">target_compile_features</span><span class="p">(</span><span class="s">A</span><span class="w"> </span><span class="s">INTERFACE</span><span class="w"> </span><span class="s">cxx_std_11</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Then, any target that links against A will inherit these requirements.</p>
+<hr />
+<p>Build vs Install - "build" refers to the process of compiling the source code and linking the object files to create the target binary, whereas "install" refers to the process of copying the binary files to a specified location on the system, typically in order to make them available to other programs or users. Compared with “build”, specifying install rules is much easier using the <code>install()</code> command.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">install</span><span class="p">(</span><span class="s">TARGETS</span><span class="w"> </span><span class="s">XXX</span><span class="w"> </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">bin</span><span class="p">)</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nb">install</span><span class="p">(</span><span class="s">FILES</span><span class="w"> </span><span class="s">XXX.h</span><span class="w"> </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">include</span><span class="p">)</span>
+</span></code></pre></div>
+<p>In graphics and rendering, we often use the term “artifacts” to describe anomalies apparent during visual representation as in digital graphics and other forms of imagery, those are the visual artifacts or rendering artifacts that should not appear if everything works correctly, they signal that something is wrong. However, the official definition of “artifacts” merely refers to things made by human/artists, things that are not natural. In software engineering, a software artifact is an item that is produced during the development process, it could be any intermediate or final output produced during the software build process. In CMake or other build tools, “build artifacts” are the files generated by a build process, including the executable files, libraries, object files, configuration files, documentation, and any other files needed to run or distribute the software.</p>
+<p>For every target in the project, CMake will create a subfolder <code>&lt;target&gt;.dir</code> under <code>CMakeFiles</code>. The intermediate object files are stored in these folders, together with compiler flags and link line.</p>
+<hr />
+<p>When debugging CMake, how to print out the value of a variable? - You can use the <code>message()</code> command, but it’s not user-friendly nor pretty, instead you should use:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">include</span><span class="p">(</span><span class="s">CMakePrintHelpers</span><span class="p">)</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nb">cmake_print_variables</span><span class="p">(</span><span class="s">var1</span><span class="w"> </span><span class="s">var2</span><span class="w"> </span><span class="s">...</span><span class="w"> </span><span class="s">varN</span><span class="p">)</span>
+</span></code></pre></div>
+<p>In CMake, you can run custom commands at configure-time (when CMake is parsing your <code>CMakeLists.txt</code> file) prior to build system generation. This is achieved with the <code>execute_process</code> command which explicitly runs one (or more) child process(es) when invoking the cmake command. https://cmake.org/cmake/help/latest/command/execute_process.html How can this be useful? - Well, it’s super useful, for example, we can use <code>execute_process</code> to check whether a module or library is installed on our computer before building occurs, we can use <code>execute_process</code> to resolve a rez environment first so that building process can find all the packages, etc. You can also use <code>execute_process</code> to run checks on our compilers and linkers, or check whether a certain library can be used correctly before attempting to build our own artifacts, but CMake already provides modules and commands for these purposes so you should directly use these: <code>check_cxx_compiler_flag</code>, <code>check_cxx_source_compiles</code>, etc.</p>
+<p>What if we want to perform some specific actions depending on targets (not configure-time anymore)? - In this case, we can use <code>add_custom_command</code> to add custom commands to a target, these commands can be executed before linking (with <code>PRE_BUILD</code> and <code>PRE_LINK</code>) or after (with <code>POST_BUILD</code>). That’s also how rez implements its <code>pre_*</code> and <code>post_*</code> commands in package.py.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For large projects with many targets, we can visualize the dependencies between the targets with Graphviz:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="err">$</span><span class="w"> </span><span class="err">cd</span><span class="w"> </span><span class="err">build</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="err">$</span><span class="w"> </span><span class="err">cmake</span><span class="w"> </span><span class="err">--graphviz=myapp.dot</span><span class="w"> </span><span class="err">..</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="err">$</span><span class="w"> </span><span class="err">dot</span><span class="w"> </span><span class="err">-T</span><span class="w"> </span><span class="err">svg</span><span class="w"> </span><span class="err">myapp.dot</span><span class="w"> </span><span class="err">-o</span><span class="w"> </span><span class="err">myapp.svg</span>
+</span></code></pre></div>
+<p>The visualization can help you quickly reason about the dependencies within your project.</p>
+</div>
+<p>With the advent of CMake 3.0, also known as Modern CMake, there has been a significant shift in the way the CMake domain-specific language (DSL) is structured. Rather than relying on variables to convey information in a project, we should shift to using targets and properties. A target is declared by either <code>add_executable</code> or <code>add_library</code>. Each target has properties, which can be read with <code>get_target_property</code> and modified with <code>set_target_properties</code>. Compile options, compile definitions, include directories, source files, link libraries, and link options are common properties of targets. It is much more robust to use targets and properties than using variables. Using targets, you can achieve granular control over how artifacts are built and how their dependencies are handled. Get away from the legacy old-school CMake! (before v2.8)</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">A</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">B</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">  </span><span class="s">INTERFACE</span><span class="w"> </span><span class="s">C</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">  </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">D</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><code>PRIVATE</code> - B will only be used to build A but not be propagated as a dependency to other targets consuming A.</li>
+<li><code>INTERFACE</code> - C will only be propagated as a dependency to other targets consuming A.</li>
+<li><code>PUBLIC</code> - D will be used to build A and will also be propagated as a dependency to any other targets consuming A.</li>
+</ul>
+<p>You can get the current value of any property with <code>get_property</code> and set the value of any property with <code>set_property</code>, these are mainly used for properties not in the target scope.</p>
+<p>OK, targets and properties are great, but how do I set up a target that is a header-only library? - Use only the <code>INTERFACE</code> visibility keyword!</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">add_library</span><span class="p">(</span><span class="s">mylib</span><span class="w"> </span><span class="s">INTERFACE</span><span class="p">)</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">mylib</span><span class="w"> </span><span class="s">INTERFACE</span><span class="w"> </span><span class="s">include</span><span class="p">)</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">mylib</span><span class="w"> </span><span class="s">INTERFACE</span><span class="w"> </span><span class="s">Boost::Boost</span><span class="p">)</span>
+</span></code></pre></div>
+<p>CMake offers a family of commands to find artifacts installed on your system - <code>find_file</code>, <code>find_library</code>, <code>find_package</code>, <code>find_path</code>, <code>find_program</code>. The workhorse of dependency discovery is <code>find_package</code>, which will cover your needs in almost all use cases.</p>
+<p><code>find_package</code> will attempt finding the package with name <code>&lt;PackageName&gt;</code> by searching in a number of <a href="https://cmake.org/cmake/help/latest/command/find_package.html?highlight=find_package#search-procedure">predefined folders</a>. It is possible to ask for a minimum or exact version. If <code>REQUIRED</code> is given, a failed search will trigger a fatal error. The rules for the search are obtained from modules named <code>Find&lt;PackageName&gt;.cmake</code>. You should only use the other commands in the <code>find_*</code> family in very special, very narrow circumstances.</p>
+<p>Why we should only use <code>find_package</code> in modern CMake? Because it will set up imported targets: targets defined outside your project that you can use with your own targets. The properties on imported targets defines usage requirements for the dependencies. This means that when you <code>target_link_libraries</code> to link an external target discovered by <code>find_package</code>, the compiler flags, definitions, include directories, and link libraries from that external target will propagate to your own target as well.</p>
+<p>When attempting dependency detection with <code>find_package</code>, you should make sure that:</p>
+<ul>
+<li>A <code>Find&lt;PackageName&gt;.cmake</code> module exists,</li>
+<li>Which components, if any, it provides, and</li>
+<li>What imported targets it will set up.</li>
+</ul>
+<p>Where to acquire this information? - https://cmake.org/cmake/help/latest/manual/cmake-modules.7.html#find-modules for example, from https://cmake.org/cmake/help/latest/module/FindBoost.html you can see that <code>find_package(Boost)</code> will set up a <code>Boost::boost</code> imported target for header-only dependencies (Boost include directory), use that as the argument to <code>target_link_libraries</code>. Here’s another example that will pull in all the usage requirements from OpenMP to your own target.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">OpenMP</span><span class="w"> </span><span class="s">4.5</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">COMPONENTS</span><span class="w"> </span><span class="s">CXX</span><span class="p">)</span><span class="err">.</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">task-loop</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">OpenMP::OpenMP_CXX</span><span class="p">)</span>
+</span></code></pre></div>
+<p>What to do when there is no built-in <code>Find&lt;PackageName&gt;.cmake</code> module for a package you depend on? e.g. Pixar USD? - That’s a hard question, I still need time to figure out.</p>
+<p>What if you want to compile Python wrappers to C++ in your project? - Use pybind11, it is a header-only library and has excellent integration with CMake.</p>
+<hr />
+<p>In CMake, an "imported target" is a target that is not built by the current CMake project, but is provided by an external source, such as a system library or a library built by another CMake project. An imported target can be used as a dependency of other targets, and CMake provides several commands to configure the usage of imported libraries, such as <code>find_package()</code> and <code>target_link_libraries()</code>.</p>
+<p>An "interface library" is a special type of CMake library target that only defines an interface and does not build any code. It can be used to specify dependencies and other properties that are required by other targets, without actually building any code.</p>
+<p>An “alias target” is a way to create a new target name that refers to an existing target. This can be useful for creating shorter or more convenient target names or for creating different configurations for the same library. To create an alias target, you can use the <code>add_library()</code> command with the <code>ALIAS</code> option, followed by the name of the alias and the name of the target it should refer to. For example:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nb">add_library</span><span class="p">(</span><span class="s">mylib</span><span class="w"> </span><span class="s">mylib.cpp</span><span class="p">)</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nb">add_library</span><span class="p">(</span><span class="s">mylib_alias</span><span class="w"> </span><span class="s">ALIAS</span><span class="w"> </span><span class="s">mylib</span><span class="p">)</span>
+</span></code></pre></div>
+<p>An alias target is effectively just a synonym, so it is read-only and non-modifiable. You can not use <code>set_target_properties</code> on an alias target.</p>
+<hr />
+<p>CMake tips and tricks?</p>
+<ul>
+<li>Do not glob patterns (e.g. all files that end with <code>*.cpp</code>) when defining targets, instead, list them explicitly, otherwise CMake can have trouble tracking dependency changes when you add files after you have configured.</li>
+<li>Do not collect all sources in one file, every subfolder deserves its own <code>CMakeLists.txt</code> for maintainability.</li>
+<li>Avoid variables with parent or global scope. Prefer functions over macros. Encapsulate and prefer separation of concerns.</li>
+<li>Always run <code>cmake</code> or <code>ccmake</code> in the build folder.</li>
+<li>Treat CMake code like production code and version control them. Do not version control the build files or make files.</li>
+<li>Define project-level properties globally. For example, a project might use a common set of compiler warnings. Defining such properties globally in the top-level <code>CMakeLists.txt</code> file prevents scenarios where public headers of a dependent target causing a depending target not to compile because the depending target uses stricter compiler options. e.g. <code>add_compile_options(-W -Wall -Werror)</code>.</li>
+<li>In modern CMake, forget the commands <code>add_compile_options</code>, <code>add_definitions</code>, <code>include_directories</code>, <code>link_directories</code>, <code>link_libraries</code>, etc. Those commands operate on the directory level rather than on the target scope, so all targets defined on that level inherit those properties which increases the chance of hidden dependencies.</li>
+<li>Instead of setting <code>CMAKE_CXX_FLAGS</code>, it’s much better to tell CMake the compile features and let it figure out the appropriate compiler option to use.</li>
+<li>Don’t understand targets and properties and the visibility levels and propagation rules? Think in terms of OOP! A target is just an object, and the properties are its member variables. Similarly, <code>add_executable</code> and <code>add_library</code> are the class constructors, <code>set_target_property</code>, <code>get_target_property</code> and the <code>target_*</code> family of commands are member functions.</li>
+<li>Always use visibility keywords <code>PUBLIC</code>, <code>PRIVATE</code> and <code>INTERFACE</code> in the <code>target_*</code> family of commands.</li>
+<li>Do not abuse <code>target_compile_options</code> to declare compile options that affect the ABI. Those options should be declared globally using the old-school <code>add_compile_options</code> as they have nothing to do with the target.</li>
+<li>Don’t use <code>target_include_directories</code> with a path outside your module. That breaks the rule. Instead, properly specify the dependencies via <code>target_link_directories</code> to propagate include directories as usage requirements.</li>
+<li>Use <code>cmake_parse_arguments</code> as the recommended way to handle complex argument-based behaviors or optional arguments in any function.</li>
+<li>Finally this is a C++ tip - For each header file, there must be an associated source file that <code>#includes</code> the header file at the top, even if that source file would otherwise be empty. This helps keep the source tree clean and complete, otherwise most analysis tools cannot analyze the header file alone and report diagnostics.</li>
+</ul>
+<p>Deep industry talks:</p>
+<ul>
+<li>https://www.youtube.com/watch?v=bsXLMQ6WgIk, https://github.com/boostcon/cppnow_presentations_2017/blob/master/05-19-2017_friday/effective_cmake__daniel_pfeifer__cppnow_05-19-2017.pdf</li>
+<li>https://www.youtube.com/watch?v=m0DwB4OvDXk, https://github.com/CppCon/CppCon2019/blob/master/Presentations/deep_cmake_for_library_authors/deep_cmake_for_library_authors__craig_scott__cppcon_2019.pdf</li>
+</ul>
+<p>Now you should be much more comfortable reading the <a href="https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#target-usage-requirements">official documentation</a> for a deeper exploration</p>
+<p>When CMake is mixed with Rez…</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nb">if</span><span class="p">(</span><span class="s">COVERAGE</span><span class="p">)</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">    </span><span class="nb">ADD_DEFINITIONS</span><span class="p">(</span><span class="s">-pg</span><span class="w"> </span><span class="s">-fprofile-arcs</span><span class="w"> </span><span class="s">-ftest-coverage</span><span class="p">)</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="nb">SET_GLOBAL_LINKER_CXX_FLAGS</span><span class="p">(</span><span class="s">-fprofile-arcs</span><span class="p">)</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="nb">endif</span><span class="p">(</span><span class="s">COVERAGE</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><code>ADD_DEFINITIONS</code> is a CMake native command that adds definitions to the compilation command line for source files. In this case, <code>-pg</code>, <code>-fprofile-arcs</code>, and <code>-ftest-coverage</code> are added as definitions (compiler flags).</li>
+<li><code>-pg</code> is a compiler flag used for profiling the code. When this flag is used, the compiler generates profiling information that can be used to determine the execution time of different functions in the program. For example, the <code>gprof</code> profiling tool can use this profiling information to determine which functions in a program take the most time to execute.</li>
+<li><code>-fprofile-arcs</code> and <code>-ftest-coverage</code> are compiler flags used for code coverage analysis. These flags instrument the code with probes that record how many times each line of code is executed during the program's execution. The information is then used to generate a report that shows which lines of code were executed and which were not.</li>
+<li><code>-fprofile-arcs</code> is also a linker flag. <code>SET_GLOBAL_LINKER_CXX_FLAGS(-fprofile-arcs)</code> tells the linker to generate code coverage information as well.</li>
+</ul>
+<p>These flags are often used together to generate profiling and coverage information for the program when it is compiled and executed. That’s what this code block does. To enable it, add a line <code>set(COVERAGE TRUE)</code> to your <code>CMakeLists.txt</code> file before it imports <code>include(RezBuild)</code>, alternatively, add an extra command line option, i.e. <code>cmake -DCOVERAGE=TRUE ...</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Workspace">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Workspace
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../watchdog/" class="md-footer__link md-footer__link--next" aria-label="Next: Watchdog">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Watchdog
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Amethystia Group, 2022-2024
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.path", "navigation.prune", "navigation.indexes", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="../../javascripts/shortcuts.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

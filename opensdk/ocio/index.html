@@ -1,0 +1,2045 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to Atelier Mana Oasis!">
+      
+      
+        <meta name="author" content="neo-mashiro">
+      
+      
+        <link rel="canonical" href="https://atelier.mana-oasis.org/opensdk/ocio/">
+      
+      
+        <link rel="prev" href="../openexr/">
+      
+      
+        <link rel="next" href="../oiio/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>OpenColorIO - Atelier Mana Oasis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%203h-1V1h-2v2H8V1H6v2H5c-1.1%200-2%20.9-2%202v14c0%201.1.9%202%202%202h3l-2-2H5V9h14v10h-1l-2%202h3c1.1%200%202-.9%202-2V5c0-1.1-.9-2-2-2M5%207V5h14v2zm8%2011v-6h-2v6H8l4%204%204-4z%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14.66%2014.18c.03.11.04.22.04.32.03.65-.26%201.35-.73%201.78-.22.19-.58.39-.86.47-.88.31-1.76-.13-2.28-.64.94-.22%201.49-.9%201.67-1.61.12-.61-.13-1.12-.23-1.72-.1-.58-.08-1.07.13-1.6.15.29.31.59.5.82.6.78%201.55%201.12%201.76%202.18M22%2012c0%205.5-4.5%2010-10%2010S2%2017.5%202%2012%206.5%202%2012%202s10%204.5%2010%2010m-4.84.56-.1-.2c-.16-.36-.61-.98-.61-.98-.18-.23-.4-.44-.6-.64-.53-.47-1.12-.8-1.63-1.29-1.17-1.14-1.43-3.01-.68-4.45-.75.18-1.4.58-1.96%201.03-2.03%201.62-2.83%204.47-1.87%206.92.03.08.06.16.06.26%200%20.17-.12.32-.27.39-.19.07-.37.03-.5-.1a.32.32%200%200%201-.13-.13c-.87-1.11-1.03-2.71-.44-3.98-1.31%201.06-2.02%202.85-1.93%204.53.06.39.1.78.24%201.17.11.47.32.91.56%201.35.84%201.34%202.31%202.31%203.89%202.5%201.68.21%203.48-.09%204.77-1.24%201.44-1.3%201.94-3.37%201.2-5.14%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m23%2012-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12%203%208.6%201.54%206.71%204.72l-3.61.81.34%203.68L1%2012l2.44%202.78-.34%203.69%203.61.82%201.89%203.18L12%2021l3.4%201.46%201.89-3.18%203.61-.82-.34-3.68zm-13%205-4-4%201.41-1.41L10%2014.17l6.59-6.59L18%209z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m23%2012-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12%203%208.6%201.54%206.71%204.72l-3.61.81.34%203.68L1%2012l2.44%202.78-.34%203.69%203.61.82%201.89%203.18L12%2021l3.4%201.46%201.89-3.18%203.61-.82-.34-3.68zm-10%205h-2v-2h2zm0-4h-2V7h2z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M3.05%2013H1v-2h2.05C3.5%206.83%206.83%203.5%2011%203.05V1h2v2.05c4.17.45%207.5%203.78%207.95%207.95H23v2h-2.05c-.45%204.17-3.78%207.5-7.95%207.95V23h-2v-2.05C6.83%2020.5%203.5%2017.17%203.05%2013M12%205c-3.87%200-7%203.13-7%207s3.13%207%207%207%207-3.13%207-7-3.13-7-7-7m-.87%2012.25h1.75V15.5h-1.75zM12%206.75c-1.93%200-3.5%201.57-3.5%203.5h1.75c0-.97.78-1.75%201.75-1.75s1.75.78%201.75%201.75c0%201.75-2.62%201.53-2.62%204.38h1.75c0-1.97%202.62-2.19%202.62-4.38%200-1.93-1.57-3.5-3.5-3.5%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%2015h2v2h-2zm0-8h2v6h-2zm1-4a9%209%200%200%200-9%209%209%209%200%200%200%209%209%209%209%200%200%200%209-9%209%209%200%200%200-9-9m0%2016c-3.86%200-7-3.14-7-7s3.14-7%207-7%207%203.14%207%207-3.14%207-7%207m8.5%201.5c2.16-2.19%203.5-5.19%203.5-8.5s-1.34-6.31-3.5-8.5l-1.08%201.08C21.32%206.5%2022.5%209.11%2022.5%2012c0%202.9-1.18%205.5-3.08%207.42zM4.58%2019.42C2.68%2017.5%201.5%2014.9%201.5%2012c0-2.89%201.18-5.5%203.08-7.42L3.5%203.5C1.34%205.69%200%208.69%200%2012s1.34%206.31%203.5%208.5z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M6%2016a5%205%200%200%201-5-5%205%205%200%200%201%205-5c1-2.35%203.3-4%206-4%203.43%200%206.24%202.66%206.5%206.03L19%208a4%204%200%200%201%204%204%204%204%200%200%201-4%204h-1a1%201%200%200%201-1-1%201%201%200%200%201%201-1h1a2%202%200%200%200%202-2%202%202%200%200%200-2-2h-2V9a5%205%200%200%200-5-5C9.5%204%207.45%205.82%207.06%208.19%206.73%208.07%206.37%208%206%208a3%203%200%200%200-3%203%203%203%200%200%200%203%203h1a1%201%200%200%201%201%201%201%201%200%200%201-1%201zm6-5h3l-2%204h2l-3.75%207%20.75-5H9.5z%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%207h-2.81c-.45-.8-1.07-1.5-1.82-2L16%203.41%2014.59%202l-2.17%202.17a6%206%200%200%200-2.83%200L7.41%202%206%203.41%207.62%205c-.75.5-1.36%201.21-1.81%202H3v2h2.09c-.06.33-.09.66-.09%201v1H3v2h2v1c0%20.34.03.67.09%201H3v2h2.81A6%206%200%200%200%2013%2019.65V19c0-.57.09-1.14.25-1.69-.66.45-1.45.69-2.25.69-2.21%200-4-1.79-4-4v-4c0-2.21%201.79-4%204-4s4%201.79%204%204v4c0%20.19%200%20.39-.05.58.59-.54%201.29-.96%202.05-1.23V13h2v-2h-2v-1c0-.34-.03-.67-.09-1H19zm-6%202v2H9V9zm0%204v2H9v-2zm7%203h2v6h-2m-4-6h2v6h-2z%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M5%2019a1%201%200%200%200%201%201h12a1%201%200%200%200%201-1c0-.21-.07-.41-.18-.57L13%208.35V4h-2v4.35L5.18%2018.43c-.11.16-.18.36-.18.57m1%203a3%203%200%200%201-3-3c0-.6.18-1.16.5-1.63L9%207.81V6a1%201%200%200%201-1-1V4a2%202%200%200%201%202-2h4a2%202%200%200%201%202%202v1a1%201%200%200%201-1%201v1.81l5.5%209.56c.32.47.5%201.03.5%201.63a3%203%200%200%201-3%203zm7-6%201.34-1.34L16.27%2018H7.73l2.66-4.61zm-.5-4a.5.5%200%200%201%20.5.5.5.5%200%200%201-.5.5.5.5%200%200%201-.5-.5.5.5%200%200%201%20.5-.5%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M9%2022a1%201%200%200%201-1-1v-3H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h16a2%202%200%200%201%202%202v12a2%202%200%200%201-2%202h-6.1l-3.7%203.71c-.2.19-.45.29-.7.29zm1-6v3.08L13.08%2016H20V4H4v12zm7-5h-2V9h2zm-4%200h-2V9h2zm-4%200H7V9h2z%22/%3E%3C/svg%3E');}</style>
+
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22%2012a10%2010%200%200%201-10%2010A10%2010%200%200%201%202%2012%2010%2010%200%200%201%2012%202a10%2010%200%200%201%2010%2010m-12%206%206-6-6-6-1.4%201.4%204.6%204.6-4.6%204.6z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opencolorio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Atelier Mana Oasis" class="md-header__button md-logo" aria-label="Atelier Mana Oasis" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Atelier Mana Oasis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenColorIO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/neo-mashiro/NeoAtelier" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/academic/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workspace/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Workspace
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../uiux/qt/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  UI/UX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../openusd/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  OpenSDK
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../chaos/career/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Chaos
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Atelier Mana Oasis" class="md-nav__button md-logo" aria-label="Atelier Mana Oasis" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Atelier Mana Oasis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/neo-mashiro/NeoAtelier" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../resources/academic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Resources
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../workspace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Workspace
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../uiux/qt/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    UI/UX
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    OpenSDK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            OpenSDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../openusd/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    OpenUSD
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../intel/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Intel® Render Kit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openexr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenEXR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    OpenColorIO
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenColorIO
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="ON THIS PAGE">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      ON THIS PAGE
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#color-science-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Science Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Space
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scene-referred-vs-display-referred" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene-referred vs Display-referred
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tone Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfer-function-in-sdr-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Function in SDR Workflows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-function-in-hdr-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Function in HDR Workflows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hdr-users-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDR Users Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hdr-developers-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDR Developers Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDR Developers Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ????
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oiio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenImageIO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openpbr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenPBR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../osl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenShadingLanguage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materialx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MaterialX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openvdb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenVDB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../otio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenTimelineIO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openxr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenXR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NVIDIA OptiX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../chaos/career/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Chaos
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="ON THIS PAGE">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      ON THIS PAGE
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#color-science-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Science Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Space
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scene-referred-vs-display-referred" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene-referred vs Display-referred
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tone Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfer-function-in-sdr-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Function in SDR Workflows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-function-in-hdr-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transfer Function in HDR Workflows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hdr-users-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDR Users Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hdr-developers-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDR Developers Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HDR Developers Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ????
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Color Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/neo-mashiro/NeoAtelier/edit/master/docs/opensdk/ocio.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/neo-mashiro/NeoAtelier/raw/master/docs/opensdk/ocio.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="opencolorio">OpenColorIO<a class="headerlink" href="#opencolorio" title="Anchor link to this section for reference">⚓︎</a></h1>
+<ul>
+<li><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">Source Code</a></li>
+<li><a href="https://opencolorio.readthedocs.io/en/latest/">Documentation</a></li>
+<li><a href="https://opencolorio.readthedocs.io/projects/config-aces/en/latest/">Configuration for ACES</a></li>
+</ul>
+<h2 id="color-science-basics">Color Science Basics<a class="headerlink" href="#color-science-basics" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ul>
+<li>Color is the visual byproduct of the spectrum of light as it is either transmitted through a transparent medium, or absorbed and reflected off a surface.</li>
+<li>Complementary colors (aka opposite colors) are pairs of colors which, when combined or mixed, cancel each other out by producing a grayscale color like white or black. When placed next to each other, they create the strongest contrast for those two colors. Complementary color pairs include red–cyan, green–magenta and blue–yellow, or any pairs that sit opposite to each other on the <a href="https://www.canva.com/colors/color-wheel/">color wheel</a>.</li>
+<li>In the HSV color model, hue is measured in degrees from 0~360, saturation and value are expressed in 0-100% percents. Complementary colors must have a 180 degrees difference in hues.</li>
+<li>Lift, Gamma and Gain is a set of controls designed for primary color correction. They allow colorists to manipulate shadows (Lift), midtones (Gamma), and highlights (Gain) to achieve the desired look for an image. Offset is another control used to adjust the overall brightness and color balance across the entire image. More granular control on specific parts of the image can be achieved by using mattes or masks.</li>
+<li>Luminance measures the amount of light that is emitted, passed through or reflected from a surface from a solid angle, in candela per square meter (cd/m²), also known as nits. Illuminance measures the total amount of light falling onto and spreading over a given surface area, in lux (lx) or lumens per square meter (lm/m²). Luminance and illuminance are photometric quantities, they are the equivalents of radiometric quantities radiance and irradiance.</li>
+</ul>
+<hr />
+<div class="annotate">
+<ul>
+<li>A typical human eye will respond to wavelengths from ~ 380 to 750 nanometers.(1)This visible band sits between the infrared (with longer wavelengths) and the ultraviolet (with shorter wavelengths), collectively known as optical radiation.</li>
+<li>The human eye can detect a luminance from 10<small><sup>−6</sup></small> to 10<small><sup>8</sup></small> nits(2), or 14 stops, but can only adapt to about 2-3 orders of magnitude at a time via the iris. This means that, at any given time, the eye can only sense a contrast ratio of 1,000. Larger ranges take time and require neural adaptation. The eye takes ~20–30 minutes to fully adapt from bright sunlight to complete darkness and becomes 10<small><sup>4</sup></small> to 10<small><sup>6</sup></small> times more sensitive than at full daylight. It takes ~5 minutes to adapt from darkness to bright sunlight.</li>
+<li>Humans have three types of cones (<span class="icon-blue">S</span>, <span class="icon-green">M</span> and <span class="icon-red">L</span>), each sensitive to different wavelengths of light (blue, green and red).</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law">Weber–Fechner law</a> states that human perception is logarithmic, the perceived intensity is proportional to the logarithm of the stimulus intensity, so we perceive things by the relative change (e.g. in brightness), not the actual change.(3)</li>
+<li><a href="https://en.wikipedia.org/wiki/Metamerism_(color)">Metamers</a> are colors with different spectral power distributions (SPDs) but have the same visual appearance. This is possible because different SPDs can map into the same tristimulus values and hence look identical. However, when the lighting conditions change, the two colors may no longer match since different SPDs reflect different wavelengths of light. This phenomenon is known as <a href="https://en.wikipedia.org/wiki/Metamerism_(color)">metamerism</a>.</li>
+</ul>
+</div>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Visible_spectrum#Spectral_colors">Spectral Colors</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Orders_of_magnitude_(illuminance)#Luminance">Luminances grouped by order of magnitude</a></li>
+<li>
+<ul>
+<li>The human eye can perceive a range of light intensities on a logarithmic scale. This allows us to see objects and details in both dark shade and bright sunlit areas.</li>
+<li>The human ear has a logarithmic response to sound levels. We can hear very soft noises and tolerate very loud ones.</li>
+<li>The perceived reduction of the length of a fixed period as we age suggests a logarithmic scale to time.</li>
+</ul>
+</li>
+</ol>
+<h2 id="color-space">Color Space<a class="headerlink" href="#color-space" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>The <a href="https://en.wikipedia.org/wiki/CIE_1931_color_space">CIE 1931 color space</a> is the standardized reference color space used to describe all other color spaces. The 2D horseshoe shape is the "CIE 1931 color space chromaticity diagram", with luminance (the third dimension) factored out. Note that the CIE XYZ primaries are not physically realizable.</p>
+<ul>
+<li>The outer curved boundary of the diagram is called the spectral locus. It represents the chromaticity of monochromatic light (pure colors) with wavelengths from 380~700 nm. Each point on the locus corresponds to a specific wavelength of light.</li>
+<li>The color temperature curve, aka the black body curve/locus, is a downward curve in the middle that represents the trajectory of a blackbody's color as its temperature increases. Each point on the curve corresponds to a color temperature.</li>
+<li>The interior of the diagram can be divided into 20 color zones, each with an average dominant wavelength.</li>
+<li>Within this diagram, it's natural and intuitive to encode colors in HSV, where hue (H) corresponds to the dominant wavelength, saturation (S) = distance from white point, and value (V) = height out of plane.</li>
+</ul>
+<details class="info" open="open">
+<summary>Color Spaces</summary>
+<p>This table lists some of the most common color spaces, ordered from smaller to larger in terms of gamut size.<br />
+Note that ProPhoto RGB covers nearly all perceivable colors, but ACES has even wider gamuts.<br />
+ProPhoto RGB is more focused on photography and print, while ACES is tailored for film and television production.</p>
+<table>
+<thead>
+<tr>
+<th>Color Space</th>
+<th>Description</th>
+<th>White Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sRGB</td>
+<td>Standard for web and many consumer devices</td>
+<td>D65</td>
+</tr>
+<tr>
+<td>Rec.709</td>
+<td>Standard for HDTV</td>
+<td>D65</td>
+</tr>
+<tr>
+<td>Adobe RGB</td>
+<td>Developed for professional photography and print</td>
+<td>D65</td>
+</tr>
+<tr>
+<td>DCI-P3</td>
+<td>Used in digital cinema and high-end displays</td>
+<td>D63</td>
+</tr>
+<tr>
+<td>Rec.2020</td>
+<td>Standard for UHDTV and HDR content</td>
+<td>D65</td>
+</tr>
+<tr>
+<td>ProPhoto RGB</td>
+<td>Used in high-end photography and imaging</td>
+<td>D50</td>
+</tr>
+<tr>
+<td>ACES</td>
+<td>Used in VFX for HDR and wide gamut</td>
+<td>ACES White</td>
+</tr>
+</tbody>
+</table>
+<p>Rec.709/sRGB
+DCI-P3 specifications are designed for viewing in a fully darkened theater environment.
+Rec.2100</p>
+</details>
+<p>Gamut is the range of colors (hues and saturations) that can be represented within a particular color space. When people refer to gamut in the CIE 1931 chromaticity diagram, it is a triangle subset of this diagram. Note that color gamut does not have to be a triangle. Monitor's gamut is triangular only because additive colors (light) follow <a href="https://en.wikipedia.org/wiki/Grassmann%27s_laws_(color_science)">Grassman's laws</a> where color matching is linear.</p>
+<p>Gamut is often defined by three primary colors (red, green and blue) which are called color primaries, they are used to create all other colors within the same color space. Each primary is a specific point <code>(x,y)</code> on the CIE 1931 chromaticity diagram. These coordinates determine the exact hue and saturation of each primary color. Since different color spaces define different primaries, the same RGB triplet is not the same color. For instance, <code>rgb(255,0,0)</code> in color space A and in color space B are different colors. If B is a larger color space, it will give us a redder red, which is "out-of-gamut" in color space A. The process of converting colors from one color space to anothre is called gamut mapping.</p>
+<p>Note that RGB is not the only set of color primaries, there are other sets of primaries. These refer to the concept of color (encoding) models. For example, there's also the CMY, YUV, LAB and HSL color models. The CIE 1931 reference color space itself uses the XYZ color model, where the three primaries X, Y, Z are hypothetical but good for mathematical color representation.</p>
+<p>The white point is a reference point in a color space that defines what is considered "white" under specific lighting conditions. It sits on the black body curve and is associated with a color temperature (e.g. 3200K), measured in Kelvin (K), which describes the hue of the white light.</p>
+<details class="info" open="open">
+<summary>White Point</summary>
+<table>
+<thead>
+<tr>
+<th>White Point</th>
+<th>Color Temperature</th>
+<th>Usage and Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D65</td>
+<td>~6500K</td>
+<td>Represents average daylight</td>
+</tr>
+<tr>
+<td>D63</td>
+<td>~6300K</td>
+<td>Used in digital cinema and high-end displays.</td>
+</tr>
+<tr>
+<td>D50</td>
+<td>~5000K</td>
+<td>Common in printing and graphic arts, represents warmer daylight</td>
+</tr>
+<tr>
+<td>D55</td>
+<td>~5500K</td>
+<td>Used in photography and film for slightly warmer daylight conditions</td>
+</tr>
+<tr>
+<td>D75</td>
+<td>~7500K</td>
+<td>Represents cooler, bluer daylight, less commonly used</td>
+</tr>
+<tr>
+<td>Illuminant A</td>
+<td>~2856K</td>
+<td>Represents typical incandescent lighting</td>
+</tr>
+<tr>
+<td>ACES White</td>
+<td>N/A</td>
+<td>Unique to ACES, designed for wide range of lighting in film production</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>Gamma refers to the exponent in a power-law relationship that describes how the brightness of a pixel is encoded in a digital image. Standard gamma values are 2.2 and 2.4. The gamma curve is a transfer function used to correct for the nonlinear response of display devices and the human eye. However, it is not the only transfer function, there are linear, logarithmic and other transfer functions. For example, PQ (Perceptual Quantizer) and HLG (Hybrid Log-Gamma) are both transfer functions specifically designed for HDR content and displays.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Transfer function is not an inherent part of a color space, it is a separate concept that deals with encoding and decoding color values.<br />
+A color space often provides a transfer function for convenience, but it is not a defining characteristic. For instance, linear-sRGB color space uses the sRGB color gamut, but doesn't have a transfer function since color values are in scene-linear.</p>
+</div>
+<p>At the bare minimum, these are the things to bake into your brain:</p>
+<div class="annotate">
+<ul>
+<li>Color space = Gamut + White point, and it  (although not a defining characteristic)</li>
+<li>Color management often involves 3 color spaces<ul>
+<li>source (capture) color space</li>
+<li>intermediate (working) color space (1)</li>
+<li>destination (delivery) color space</li>
+</ul>
+</li>
+<li>from source color space &rarr; intermediate color space, we need the input transform (IDT).</li>
+<li>from intermediate color space &rarr; delivery color space, we need the output transform (ODT).</li>
+</ul>
+</div>
+<ol>
+<li>ACES is often used as the intermediate color space since it encompasses a very wide color gamut.</li>
+</ol>
+<p>Further readings:</p>
+<ul>
+<li><a href="https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a">A Beginner's Guide to (CIE) Colorimetry</a></li>
+</ul>
+<h2 id="scene-referred-vs-display-referred">Scene-referred vs Display-referred<a class="headerlink" href="#scene-referred-vs-display-referred" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Color spaces can be categorized by the <strong>image state</strong> they are associated with.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Scene-referred</label><label for="__tabbed_1_2">Display-referred</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Color spaces defined in relation to input devices (e.g. scenes captured by a camera or created by a renderer) are <strong>scene-referred</strong>. It means that the pixel values correspond to the actual physical luminance and color values of the scene. The data is linear and directly proportional to the light intensity in the real world. In other words, if you double the light intensity in the scene, the pixel value also doubles. This linear property is often referred to as <strong>scene-linear</strong>.</p>
+<p>Lighting, shading and rendering are typically done in scene-referred color spaces. This scene-linear property not only makes it easier to work with physically based calculations, but is also crucial for accurate image operations such as compositing, blending and certain types of color correction and anti-aliasing. Since scene-linear data does not have any nonlinear correction applied, it is not directly suitable for human perception or display.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not all scene-referred data is necessarily scene-linear. Scene-referred data could be encoded in a non-linear fashion (e.g. log) for specific purposes (e.g. debugging and diagnostics).</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Color spaces defined in relation to output devices (e.g. monitors, television or projectors) are <strong>display-referred</strong>. It means that the pixel values are encoded for display on a physical device. The data is optimized for human perception by taking into account the display's limitations and characteristics. This is sometimes also referred to as <strong>output-referred</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Modifying an image in the display-referred color space limits the result to looking appropriate only on a specific display. The image can look very different on another display with different characteristics.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="tone-mapping">Tone Mapping<a class="headerlink" href="#tone-mapping" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>In practice, tone mapping is the combination of these two since the HDR content's dynamic range will (almost) never match the display's color space. It does some color enhancement in the context of the display's capabilities, and then convert the working color space to the delivery color space (so that your working red can map to another red on the monitor).</p>
+<p>today's goal of tone mapping:
+- To reduce excessive dynamic range
+- To customize the look (colour grading)
+- To simulate human vision
+- To adapt displayed images to a display and viewing conditions
+- To make rendered images look more realistic</p>
+<p>While the legacy tone map only intends to preserve limited details and contrast so that it doesn't look washed out on the SDR display, a photographic tone map aims to enhance details and contrast to take full advantage of the display's capabilities. There is a collection of techniques that determine the scene brightness in the previous frame and slowly adapt the exposure parameter. They mimick how the human eye adapts to different lighting conditions, such that the scene gets brighter in dark areas (using a higher exposure) and darker in bright areas (using a lower exposure). Advanced techniques even leverage the power of machine learning to produce better cinematic HDR content. Think of it as a way to enhance visual fidelity, rather than just a color convertion step using a single mathematical function.</p>
+<p>dynamic tone mapping happens inside the view transform?</p>
+<p>even the best displays come nowhere close to the range of luminances in the real world, there still needs to be a tone mapping step to compress and convert from scene referred to output referred on HDR displays.</p>
+<p>In the future, when consumer monitors become more capable, the same films will look better as they require less tone-mapping and the original intent can be more accurately rendered.</p>
+<h2 id="transfer-function">Transfer Function<a class="headerlink" href="#transfer-function" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ul>
+<li>OETF (opto-electronic transfer function) converts scene-linear luminance values to non-linear electrical signals. It involves a quantization process that restricts the signal to a certain bit depth. This ensures that the image data can be efficiently stored and transmitted through the HDMI or DP cable.</li>
+<li>EOTF (electro-optical transfer function) converts non-linear electrical signals to visible light emitted by the display. It describes how digital signal values are converted into visible light by the display device. EOTF is typically implemented on the display side so we have no direct control over it a user or content creator.</li>
+<li>OETF and EOTF are both non-linear functions, but they are independent. EOTF is not a simple inversion of OETF.</li>
+<li>OETF is about capturing and encoding, EOTF is about decoding and displaying.</li>
+<li>OOTF (opto-optical transfer function) describes the overall transformation, OOTF = OETF + EOTF.</li>
+<li>OOTF ensures that the final displayed image maintains the intended appearance on the target display.</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Electrical Signals</p>
+<p>In the context of display technology, electrical signals are often normalized to the range [0,1] to represent the intensity of light emitted by a display, but the interpretation of these values can vary depending on the type of display. For example, a signal value of 0.5 might correspond to 50~150 nits on SDR displays but 300~500 nits on HDR displays.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A tone mapper is a function that simply maps a range of values to another range of values, but a transfer function is also concerned with physically changing the state of the data from optical to electrical and vice versa (although it is not done by the transfer function itself), so they are totally different things!</p>
+<ul>
+<li>Tone mapping is generally used to apply a "look", such as the popular filmic S-curve. It adds some contrast in the shadows and a nice roll-off that gradually brings luminance level to 100%. Think of it as a post-processing step just like applying a filter over an image. The post-processing effects should be computed in linear space so it must be done before the transfer function or color space conversion.</li>
+<li>A transfer function changes the form of the data, hence the name "transfer". It is not a post-processing step used to apply a custom look. While a transfer function also redistributes a range of values to another, it's for a different purpose. When we send our image to the display or save it to a file on disk, OETF remaps the values in order to use the storage more efficiently, that is, with a limited amount of bits, we want to use more bits for the darker areas and less on the brighter areas. When a monitor sends electrical signals to the actual pixels on the screen, EOTF remaps the values to take advantage of the display's capabilities.</li>
+<li>Tone mapping operates on 16 or 32-bit floats to maintain precision during the process, it does not change the data format so the output is still floating-point. Transfer functions often involve a change in data format, it needs to convert floating-point values to 10 or 12-bit integer values when encoding image data for storage or transmission. This is necessary to reduce data size and match the capabilities of the storage medium or transmission channel.</li>
+<li>Transfer functions are always applied as part of the standard process. Since EOTF is built into the display's design and operation, OETF must be applied when sending images to the display. In contrast, tone mapping is just an optional tool used to adapt the content to a creative look. You don't have to apply a tone mapper, only if you want to.</li>
+</ul>
+</div>
+<h3 id="transfer-function-in-sdr-workflows">Transfer Function in SDR Workflows<a class="headerlink" href="#transfer-function-in-sdr-workflows" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Traditionally, EOTF used for CRT displays was a standard 2.2 gamma curve. This is because the non-linear relationship between the applied voltage and electron output in a CRT picture tube follows such a standard gamma curve. To compensate for that non-linear response of CRTs, image data is gamma encoded (OETF applies an inverse gamma curve) before getting sent to the display. The combined OOTF results in a linear correspondence between the original luminance and the displayed light intensity. In summary, both OETF and EOTF are standard gamma curves, a world of simplicity!</p>
+<h3 id="transfer-function-in-hdr-workflows">Transfer Function in HDR Workflows<a class="headerlink" href="#transfer-function-in-hdr-workflows" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>With modern HDR, 4K and 8K displays, the idea is kind of similar, but it's a very complex topic filled with nuances.</p>
+<p>Today, <a href="https://en.wikipedia.org/wiki/Rec._2100">Rec.2100</a> recommends two standard HDR transfer functions, <a href="https://www.color.org/hdr/04-Timo_Kunkel.pdf">PQ (Perceptual Quantization)</a> and <a href="https://en.wikipedia.org/wiki/Hybrid_log%E2%80%93gamma">HLG (Hybrid-Log-Gamma)</a>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">HLG (Hybrid-Log-Gamma)</label><label for="__tabbed_2_2">PQ (Perceptual Quantization)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>HLG is designed for broadcast, streaming or scenarios where SDR compatibility is desired, so it is not our focus.</li>
+<li>The HLG transfer function is primarily an OETF. It is used to encode the light captured by cameras into a digital signal. The HLG curve was designed to be backward compatible with SDR displays. The lower half of the signal values use a gamma curve, and the upper half is logarithmic. HLG is also a standard HDR video format that uses the HLG transfer function, Rec.2020 color primaries and a 10-bit bit depth.</li>
+<li>HLG is a relative scene-referred signal, meaning that HLG-enabled displays automatically adjust light levels based on the content and their display capabilities. HLG does not require metadata to be transmitted with the video stream, as the same signal can be used for both SDR and HDR displays. For PQ, we need to manage metadata.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>PQ is designed for high-quality HDR displays where you have control over the viewing environment, which is well-suited for our needs.</li>
+<li>The PQ transfer function (standardized by SMPTE ST 2084) is primarily an EOTF. It aims for perceptually uniform quantization based on Barten's model to better align with human perception. A PQ-encoded signal can represent luminance levels from 0.0001 nits to 10,000 nits. The PQ curve is not backward compatible with the BT.1886 EOTF (i.e. the standard SDR gamma curve), so PQ-encoded content requires HDR-capable displays to be viewed correctly.</li>
+<li>PQ is an absolute display-referred signal, meaning that it is designed to map directly to the display's capabilities. This requires display devices to implement tone mapping to adapt the light levels. Display devices use metadata to interpret and display PQ-encoded content correctly. This metadata can be either static or dynamic, which includes information like the mastering display's color primaries and the content's min/max/avg luminance levels (e.g. MaxFALL and MaxCLL).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="annotate">
+<p>Let's focus on HDR workflows using PQ. Here the focus is on converting scene-referred linear values (e.g. in ACES color space) to a display-referred format that the PQ EOTF can interpret. This involves encoding the content for HDR display using the PQ curve. This process is akin to an OETF, but it is not an OETF in the traditional sense as PQ is display-referred.(1)</p>
+</div>
+<ol>
+<li>
+<p>The PQ curve is designed to be perceptually uniform, meaning it directly maps digital values to absolute luminance levels in a way that aligns with human perception. In this context, the traditional concept of OEFT as used in SDR workflows does not directly apply. In other words, we do not have or need an OEFT.</p>
+</li>
+<li>
+<p>Check your display's HDR standards (e.g. HDR10, Dolby Vision) to see if it supports PQ.</p>
+</li>
+<li>Adjust settings in the display's menu and use calibration software to ensure it is operating in the correct HDR mode that supports PQ.</li>
+<li>Encode the content (rendered output) for HDR display using the PQ curve, make sure to manage metadata.</li>
+</ol>
+<div class="admonition question">
+<p class="admonition-title">Do I need tone mapping?</p>
+<p>In the HDR workflow with PQ, both content-side and display-side tone mapping might be applied, which is called <strong>Dual tone mapping</strong>.</p>
+<ul>
+<li>Content-Side Tone Mapping is optional and used for creative control or specific target display adaptation.</li>
+<li>Display-Side Tone Mapping is automatically done by the display which adapts PQ-encoded content to its capabilities and limitations.</li>
+<li>So when do I need content-side tone mapping? or not?</li>
+</ul>
+</div>
+<h2 id="hdr-users-guide">HDR Users Guide<a class="headerlink" href="#hdr-users-guide" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>VESA's <a href="https://displayhdr.org/">DisplayHDR</a> specifications are open standards that help consumers identify a monitor's HDR capabilities. Common tiers include 400/600/1000 and 1400, where the number indicates the peak brightness in nits. Certified displays have wider color gamuts, 10+ bit depth, higher luminance levels and contrast ratios. You can check the <a href="https://displayhdr.org/performance-criteria/">performance criteria details here</a>. Other HDR standards also exist (e.g. HDR10, Dolby Vision) catering to various applications. Note that these standards can vary wildly in terms of peak brightness, color space and contrast ratios so the HDR experience differs significantly from one display to another.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A typical SDR display is capable of emitting luminance between 50 and 300 nits. While HDR displays can emit 400 &rarr; 2000 nits, the HDR standards allow for a maximum luminance of 10,000 nits.</p>
+<p>There is no standardized way to measure the contrast ratio, but it's often defined as the ratio of the max/min luminance that the display can produce. It is usually written as C:1 (e.g. 3000:1), but can also be expressed in stops by taking its base-2 logarithm where each stop doubles the amount of light. For example, a contrast ratio of 2 stops = 4 times as much light at the brightest pixel than at the darkest pixel. Dynamic range can also be measured this way, either as a ratio or in # of stops.</p>
+</div>
+<p>We need several pieces working together to ensure HDR content is properly rendered and displayed.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Hardware</label><label for="__tabbed_3_2">Software</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>The display itself must support one or more HDR standards, and color calibration must be done properly.</li>
+<li>The connection between the graphics card and the display must support HDR. This means using HDMI 2.0+ or DisplayPort 1.4+ cables, which are capable of transmitting data (e.g. 12-bit color) for HDR content.</li>
+<li>The graphics card and drivers must support HDR processing and output (e.g. output 12-bit color)</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>The operating system must support HDR and provide settings to enable it.</li>
+<li>The application, in our case the renderer, must be capable of rendering content in HDR. It needs to handle a wider range of brightness and color values during the rendering process.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Fake HDR</p>
+<p>If the software does not natively render content in HDR but instead outputs on a HDR display by adjusting the brightness and contrast of the final rendered SDR image to fit a higher dynamic range, it is called <ins>fake HDR</ins> or <ins>pseudo-HDR</ins> that can lead to a degraded visual experience. This is because the process of stretching the dynamic range can distort colors. The conversion process can also introduce visual artifacts such as banding, where smooth gradients appear as distinct bands of color.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To enable HDR on desktop for games:</p>
+<ul>
+<li>Check your monitor's HDR standards and specs, learn the capabilities of your display.</li>
+<li>Physically tune your display settings, if there's a review on <a href="https://www.rtings.com/">rtings</a> that could be helpful.</li>
+<li>At the OS level, enable HDR in the display settings and run the HDR calibration. This will tell the OS what your display's capabilities are. Note that the <ins>Auto HDR</ins> option on Windows must be disabled.</li>
+<li>Open the NVIDIA Control Panel and select "Use NVIDIA color settings" under "Change Resolution", adjust the Output Color Format to use RGB and the Output Color Depth to use 10-bit or 12-bit. Depending on your hardware you may only have certain options available.</li>
+<li>Make sure your game supports HDR and has it enabled, then enable <ins>RTX HDR</ins> in the NVIDIA app and click <ins>Optimize</ins>. This often yields much better visual results compared to tweaking graphics settings yourself.</li>
+<li>For games that don't support HDR, the <ins>RTX HDR</ins> option will convert SDR content to HDR using your GPU driver, but of course this is a compromise.</li>
+</ul>
+</div>
+<h2 id="hdr-developers-guide">HDR Developers Guide<a class="headerlink" href="#hdr-developers-guide" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>HDR Formats include: HDR10, HDR10+, Dolby Vision, PQ10 and HLG.</p>
+<h3 id="_1">????<a class="headerlink" href="#_1" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>HDR at the OS level? OS does the tone mapping? or use OCIO? could it be applying twice if both are used ?
+While OS support for HDR is important for displaying HDR content directly on HDR-capable monitors, it is not a hard requirement, you can still create, process, and prepare HDR content within your software, even if the OS itself doesn't fully support HDR output.</p>
+<p>I'm not sure if glimpse or glimpseRealtime has tone mapping. I think to ensure that the dynamic range of the rendered content fits within the capabilities of our HDR display, we are just manually adjusting the scene setup (light sources, exposure settings, and material properties) to avoid extreme brightness or darkness?</p>
+<p>What is fractional scaling? there is no support for HDR, Fractional Scaling, Wide color gamut in Linux.</p>
+<p><a href="https://en.wikipedia.org/wiki/ColorChecker">Color checker</a></p>
+<h2 id="color-management">Color Management<a class="headerlink" href="#color-management" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Ask GPT: what is a complete color management system</p>
+<p>Historically, we only have SDR content and SDR monitors, where sRGB is the standard color space. In that context, tone mapping refers to the process of converting HDR values to LDR values, and gamma correction is used to encode/decode luminance values between linear and sRGB color space. A "linear" workflow typically looks like this:</p>
+<ul>
+<li>When reading textures and images, always assume the data is in sRGB and decode it to linear space.</li>
+<li>During lighting, shading and rendering, everything should work with linear values only.</li>
+<li>After rendering, apply tone mapping to compress the dynamic range to the limited [0,1] range.</li>
+<li>Finally, encode the data back to sRGB color space to better match human perception on the display.</li>
+</ul>
+<p>In today's world of HDR, this simplistic "de-gamma and re-gamma" workflow no longer applies. A complete color management system (CMS) is needed to manage color accurately throughout the pipeline, from capture to display, across devices and media.</p>
+<p>Here's an overview of what a complete color management system should include.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:6"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><input id="__tabbed_4_6" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">ascasc</label><label for="__tabbed_4_2">ascasc</label><label for="__tabbed_4_3">ascasc</label><label for="__tabbed_4_4">ascasc</label><label for="__tabbed_4_5">ascasc</label><label for="__tabbed_4_6">ascasc</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p>A complete color management system should enable a linear workflow by properly converting colors for input, rendering, display and output, and we need a proper view transform that prepares color values from the rendering space for display, not just a gamma curve. The view transform should also involve a tone map with a photographic response.</p>
+<p>need to be in the same frame of reference</p>
+<p>Floating Point Render Target is enabled
+If you will be rendering images for further processing like compositing and grading, make sure that File Output Image format on the Common tab of the Render Settings window is set to a format that supports high-dynamic-range values, such as OpenEXR.</p>
+<p>Ideally, no color space conversions should be required during the execution of the render, as all input assets such as textures, plate re-projections, and skydomes, can be linearized beforehand.  Image viewing of scene-linear data is typically handled by converting to the color space being delivered to digital intermediate (commonly a log color space), and then applying the view transform suitable for the specified display. For convenience, these transforms are typically baked into a single 3D-LUT, though care must be taken to assure the LUT has suitable fidelity over an ppropriate HDR domain. As mentioned earlier, you must use a viewing transform when viewing HDR scene-linear data.</p>
+<p>Rendering and shading occurs in a scene-linear floating point space, typically named “ln”. Half-float (16-bit) images are labeled lnh, full float images (32-bit) are labeled lnf. All image inputs should be converted to ln prior to render-time. Typically, this is done when textures are published. Renderer outputs are always floating-point. Color outputs are typically stored as lnh (16-bit half float). Data outputs (normals, depth data, etc) are stored as ncf (“not color” data, 32-bit full float).</p>
+<p>https://acescentral.com/user-guides/</p>
+<p>user interfaces are generally authored in the output referred sRGB space. This means that some care needs to be taken in compositing them into the HDR scene. (You don’t want to have your user squinting at a 1000 nit white dialog, so white sRGB content clearly doesn’t mean maximum brightness).</p>
+<p>A good solution that we’ve worked with for getting from scene referred to output referred is the Academy Color Encoding System (ACES).　A central part of ACES is that it applies a filmic sigmoid curve in an extremely wide color space. The result is that the overly bright colors naturally desaturate to white.　The sigmoidal curve is actually similar to how the eyes work. ACES color space is a high-dynamic range, scene-linear space, with middle gray pegged to 0.18, and a very wide color gamut.</p>
+<h3 id="color-configuration">Color Configuration<a class="headerlink" href="#color-configuration" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>A color configuration (typically a YAML file) contains all the information that OCIO needs.</p>
+<ul>
+<li>It includes definitions for various color spaces available in a project, such as linear, sRGB, ACES and others, along with their associated transforms.</li>
+<li>It outlines the mathematical transformations required to convert images from one color space to another.</li>
+<li>It assigns roles to specific color spaces, which are used by applications to understand how to handle different types of color data (e.g. the "scene_linear" role for linear scene-referred data).</li>
+<li>It defines how images should be displayed on different devices, including any necessary view transforms to ensure consistent appearance.</li>
+</ul>
+<details class="example">
+<summary>Example Color Configuration</summary>
+<p>This <code>config.ocio</code> is an overly simplified color config file. In practice, this file can have 5k+ lines, it is often accompanied by a variety of other files, such as color space presets (<code>.csp</code> files), LUTs (<code>.spi1d</code>, <code>.spi3d</code>, <code>.cube</code> files) and ICC color profiles (<code>.icc</code> files).</p>
+</details>
+<p><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO-Config-ACES">OpenColorIO Configuration for ACES</a> provides a set of configuration files that enable OCIO to work seamlessly with the ACES color management framework. You can generate OCIO configurations for ACES using this package, or simply download the <a href="https://github.com/AcademySoftwareFoundation/OpenColorIO-Config-ACES/releases">built-in configurations</a>. The configuration includes a variety of color transformations that are necessary for working with ACES, such as converting between different color spaces, applying look modifications, and managing display outputs. While it provides a standardized framework, the configuration can be customized to meet the specific needs of a production.</p>
+<p>OpenImageIO depends on OpenColorIO, but it only allows applying color conversions to images. We would still need OCIO for pixels directly in framebuffers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../openexr/" class="md-footer__link md-footer__link--prev" aria-label="Previous: OpenEXR">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                OpenEXR
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../oiio/" class="md-footer__link md-footer__link--next" aria-label="Next: OpenImageIO">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                OpenImageIO
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Amethystia Group, 2022-2024
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.path", "navigation.prune", "navigation.indexes", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="../../javascripts/shortcuts.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2445 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Nullam urna elit, malesuada eget finibus ut, ac tortor.">
+      
+      
+        <meta name="author" content="neo-mashiro">
+      
+      
+        <link rel="canonical" href="https://atelier.mana-oasis.org/home/docs-template/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../about-me/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Docs Template - Atelier Mana Oasis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%203h-1V1h-2v2H8V1H6v2H5c-1.1%200-2%20.9-2%202v14c0%201.1.9%202%202%202h3l-2-2H5V9h14v10h-1l-2%202h3c1.1%200%202-.9%202-2V5c0-1.1-.9-2-2-2M5%207V5h14v2zm8%2011v-6h-2v6H8l4%204%204-4z%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14.66%2014.18c.03.11.04.22.04.32.03.65-.26%201.35-.73%201.78-.22.19-.58.39-.86.47-.88.31-1.76-.13-2.28-.64.94-.22%201.49-.9%201.67-1.61.12-.61-.13-1.12-.23-1.72-.1-.58-.08-1.07.13-1.6.15.29.31.59.5.82.6.78%201.55%201.12%201.76%202.18M22%2012c0%205.5-4.5%2010-10%2010S2%2017.5%202%2012%206.5%202%2012%202s10%204.5%2010%2010m-4.84.56-.1-.2c-.16-.36-.61-.98-.61-.98-.18-.23-.4-.44-.6-.64-.53-.47-1.12-.8-1.63-1.29-1.17-1.14-1.43-3.01-.68-4.45-.75.18-1.4.58-1.96%201.03-2.03%201.62-2.83%204.47-1.87%206.92.03.08.06.16.06.26%200%20.17-.12.32-.27.39-.19.07-.37.03-.5-.1a.32.32%200%200%201-.13-.13c-.87-1.11-1.03-2.71-.44-3.98-1.31%201.06-2.02%202.85-1.93%204.53.06.39.1.78.24%201.17.11.47.32.91.56%201.35.84%201.34%202.31%202.31%203.89%202.5%201.68.21%203.48-.09%204.77-1.24%201.44-1.3%201.94-3.37%201.2-5.14%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m23%2012-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12%203%208.6%201.54%206.71%204.72l-3.61.81.34%203.68L1%2012l2.44%202.78-.34%203.69%203.61.82%201.89%203.18L12%2021l3.4%201.46%201.89-3.18%203.61-.82-.34-3.68zm-13%205-4-4%201.41-1.41L10%2014.17l6.59-6.59L18%209z%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m23%2012-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12%203%208.6%201.54%206.71%204.72l-3.61.81.34%203.68L1%2012l2.44%202.78-.34%203.69%203.61.82%201.89%203.18L12%2021l3.4%201.46%201.89-3.18%203.61-.82-.34-3.68zm-10%205h-2v-2h2zm0-4h-2V7h2z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M3.05%2013H1v-2h2.05C3.5%206.83%206.83%203.5%2011%203.05V1h2v2.05c4.17.45%207.5%203.78%207.95%207.95H23v2h-2.05c-.45%204.17-3.78%207.5-7.95%207.95V23h-2v-2.05C6.83%2020.5%203.5%2017.17%203.05%2013M12%205c-3.87%200-7%203.13-7%207s3.13%207%207%207%207-3.13%207-7-3.13-7-7-7m-.87%2012.25h1.75V15.5h-1.75zM12%206.75c-1.93%200-3.5%201.57-3.5%203.5h1.75c0-.97.78-1.75%201.75-1.75s1.75.78%201.75%201.75c0%201.75-2.62%201.53-2.62%204.38h1.75c0-1.97%202.62-2.19%202.62-4.38%200-1.93-1.57-3.5-3.5-3.5%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%2015h2v2h-2zm0-8h2v6h-2zm1-4a9%209%200%200%200-9%209%209%209%200%200%200%209%209%209%209%200%200%200%209-9%209%209%200%200%200-9-9m0%2016c-3.86%200-7-3.14-7-7s3.14-7%207-7%207%203.14%207%207-3.14%207-7%207m8.5%201.5c2.16-2.19%203.5-5.19%203.5-8.5s-1.34-6.31-3.5-8.5l-1.08%201.08C21.32%206.5%2022.5%209.11%2022.5%2012c0%202.9-1.18%205.5-3.08%207.42zM4.58%2019.42C2.68%2017.5%201.5%2014.9%201.5%2012c0-2.89%201.18-5.5%203.08-7.42L3.5%203.5C1.34%205.69%200%208.69%200%2012s1.34%206.31%203.5%208.5z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M6%2016a5%205%200%200%201-5-5%205%205%200%200%201%205-5c1-2.35%203.3-4%206-4%203.43%200%206.24%202.66%206.5%206.03L19%208a4%204%200%200%201%204%204%204%204%200%200%201-4%204h-1a1%201%200%200%201-1-1%201%201%200%200%201%201-1h1a2%202%200%200%200%202-2%202%202%200%200%200-2-2h-2V9a5%205%200%200%200-5-5C9.5%204%207.45%205.82%207.06%208.19%206.73%208.07%206.37%208%206%208a3%203%200%200%200-3%203%203%203%200%200%200%203%203h1a1%201%200%200%201%201%201%201%201%200%200%201-1%201zm6-5h3l-2%204h2l-3.75%207%20.75-5H9.5z%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%207h-2.81c-.45-.8-1.07-1.5-1.82-2L16%203.41%2014.59%202l-2.17%202.17a6%206%200%200%200-2.83%200L7.41%202%206%203.41%207.62%205c-.75.5-1.36%201.21-1.81%202H3v2h2.09c-.06.33-.09.66-.09%201v1H3v2h2v1c0%20.34.03.67.09%201H3v2h2.81A6%206%200%200%200%2013%2019.65V19c0-.57.09-1.14.25-1.69-.66.45-1.45.69-2.25.69-2.21%200-4-1.79-4-4v-4c0-2.21%201.79-4%204-4s4%201.79%204%204v4c0%20.19%200%20.39-.05.58.59-.54%201.29-.96%202.05-1.23V13h2v-2h-2v-1c0-.34-.03-.67-.09-1H19zm-6%202v2H9V9zm0%204v2H9v-2zm7%203h2v6h-2m-4-6h2v6h-2z%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M5%2019a1%201%200%200%200%201%201h12a1%201%200%200%200%201-1c0-.21-.07-.41-.18-.57L13%208.35V4h-2v4.35L5.18%2018.43c-.11.16-.18.36-.18.57m1%203a3%203%200%200%201-3-3c0-.6.18-1.16.5-1.63L9%207.81V6a1%201%200%200%201-1-1V4a2%202%200%200%201%202-2h4a2%202%200%200%201%202%202v1a1%201%200%200%201-1%201v1.81l5.5%209.56c.32.47.5%201.03.5%201.63a3%203%200%200%201-3%203zm7-6%201.34-1.34L16.27%2018H7.73l2.66-4.61zm-.5-4a.5.5%200%200%201%20.5.5.5.5%200%200%201-.5.5.5.5%200%200%201-.5-.5.5.5%200%200%201%20.5-.5%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M9%2022a1%201%200%200%201-1-1v-3H4a2%202%200%200%201-2-2V4a2%202%200%200%201%202-2h16a2%202%200%200%201%202%202v12a2%202%200%200%201-2%202h-6.1l-3.7%203.71c-.2.19-.45.29-.7.29zm1-6v3.08L13.08%2016H20V4H4v12zm7-5h-2V9h2zm-4%200h-2V9h2zm-4%200H7V9h2z%22/%3E%3C/svg%3E');}</style>
+
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22%2012a10%2010%200%200%201-10%2010A10%2010%200%200%201%202%2012%2010%2010%200%200%201%2012%202a10%2010%200%200%201%2010%2010m-12%206%206-6-6-6-1.4%201.4%204.6%204.6-4.6%204.6z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CSpace+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"Space Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-text" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Atelier Mana Oasis" class="md-header__button md-logo" aria-label="Atelier Mana Oasis" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Atelier Mana Oasis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docs Template
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/neo-mashiro/NeoAtelier" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resources/academic/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workspace/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Workspace
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../uiux/qt/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  UI/UX
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../opensdk/openusd/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  OpenSDK
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../chaos/career/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Chaos
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Atelier Mana Oasis" class="md-nav__button md-logo" aria-label="Atelier Mana Oasis" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Atelier Mana Oasis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/neo-mashiro/NeoAtelier" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Docs Template
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docs Template
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="ON THIS PAGE">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      ON THIS PAGE
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Tabs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists-and-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lists and Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Math
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emojis-and-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emojis and Icons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Blocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admonitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admonitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admonitions-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admonitions (inline)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowcharts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flowcharts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequence Diagrams
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    <span class="md-ellipsis">
+      More
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-insiders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version (Insiders)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overriding blocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-me/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../life-a4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Life on A4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mana-oasis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mana Oasis
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../resources/academic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Resources
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../workspace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Workspace
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../uiux/qt/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    UI/UX
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../opensdk/openusd/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    OpenSDK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../chaos/career/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Chaos
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="ON THIS PAGE">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      ON THIS PAGE
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Tabs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists-and-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lists and Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Math
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emojis-and-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emojis and Icons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Blocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admonitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admonitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admonitions-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admonitions (inline)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flowcharts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flowcharts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequence Diagrams
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    <span class="md-ellipsis">
+      More
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-insiders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version (Insiders)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overriding blocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/neo-mashiro/NeoAtelier/edit/master/docs/home/docs-template.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/neo-mashiro/NeoAtelier/raw/master/docs/home/docs-template.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>Docs Template</h1>
+
+<p>add <code>requirements.txt</code> and <code>pyproject.toml</code> to the root.</p>
+<h2 id="basic-text">Basic Text<a class="headerlink" href="#basic-text" title="Anchor link to this section for reference">⚓︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Format document</label><label for="__tabbed_1_2">Format text</label><label for="__tabbed_1_3">HTML entities</label><label for="__tabbed_1_4">Blockquotes</label><label for="__tabbed_1_5">Keycodes</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Use <code>---</code> to write a horizontal rule.</li>
+<li>Use EOF <code>\</code> to force a line break (never use trailing spaces).</li>
+<li>Only use <code>&amp;nbsp;</code> and <code>&amp;emsp;</code> when you really need it.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>This is <strong>bold</strong> and <em>italic</em>. This is also <strong>bold</strong> and <em>italic</em>. This is <strong><em>bold and italic</em></strong> combined.</li>
+<li>This is <ins>underlined</ins>, <del>strikethrough</del>, <mark>highlighted</mark> and <mark class="critic">inline highlighted</mark> in Markdown.</li>
+<li>This is <ins>underlined</ins>, <del>strikethrough</del> and <mark>highlighted</mark> in HTML syntax.</li>
+<li>This is superscript<sup>s</sup> and subscript<sub>s</sub> in Markdown. For example, H<sub>2</sub>O, CO<sub>2</sub>, A<sup>T</sup>P, mc<sup>2</sup>.</li>
+<li>This is superscript<sup>s</sup> and subscript<sub>s</sub> in HTML syntax.</li>
+<li>This is <del class="critic">deleted text</del> and this is <ins class="critic">added text</ins>. You can combine them into one <del class="critic">changed </del><ins class="critic"> text</ins>.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Often used to display characters that have special meanings in HTML.</li>
+<li>For example, &copy; &amp; &lt; &gt; &para; &reg; &trade; &sect; &euro; &pound; &aacute; &eacute; &ntilde; &ouml; &larr; &rarr; &uarr; &darr;</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod.</p>
+<p>Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus.<br />
+Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Keyboard keys can be rendered with a simple syntax, e.g.</li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-delete">Del</kbd></span></li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-delete">Del</kbd></span></li>
+<li>to be continued here</li>
+</ul>
+</div>
+</div>
+</div>
+<p><small>
+  <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a9 9 0 0 0-.542-.68q-.126-.149-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259q-.142.172-.268.319c-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848q.113-.133.213-.253c.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75M5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5M6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75"/></svg></span>
+  <strong>Tip -</strong> You can always use <code>&lt;small&gt;...&lt;/small&gt;</code> or <code>&lt;big&gt;...&lt;/big&gt;</code> to adjust font size when needed.
+</small></p>
+<h2 id="content-tabs">Content Tabs<a class="headerlink" href="#content-tabs" title="Anchor link to this section for reference">⚓︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Unordered list</label><label for="__tabbed_2_2">Code block</label><label for="__tabbed_2_3">Plain text</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Nullam dignissim ultrices urna non auctor.</li>
+<li>Duis mollis est eget nibh volutpat.</li>
+<li>Duis efficitur accumsan nibh eu mattis.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<div class="language-js highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">code-helloworld.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="hll"><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">);</span>
+</span></span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>Basically everything can be wrapped into a content tab for readability.</p>
+<p>In most cases, content tabs, callouts, lists and many others can all be nested within each other.</p>
+</div>
+</div>
+</div>
+<h2 id="lists-and-tables">Lists and Tables<a class="headerlink" href="#lists-and-tables" title="Anchor link to this section for reference">⚓︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:5"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Unordered list</label><label for="__tabbed_3_2">Ordered list</label><label for="__tabbed_3_3">Task list</label><label for="__tabbed_3_4">Simple Table</label><label for="__tabbed_3_5">Aligned Table</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Nullam dignissim ultrices urna non auctor.<ul>
+<li>Duis mollis est eget nibh volutpat.</li>
+<li>Duis efficitur accumsan nibh eu mattis.</li>
+</ul>
+</li>
+<li>Ante turpis integer aliquet porttitor.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Nullam dignissim ultrices urna non auctor.<ol>
+<li>Duis mollis est eget nibh volutpat.</li>
+<li>Duis efficitur accumsan nibh eu mattis.</li>
+</ol>
+</li>
+<li>Ante turpis integer aliquet porttitor.</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Nullam dignissim ultrices urna non auctor.<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Duis mollis est eget nibh volutpat.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Duis efficitur accumsan nibh eu mattis.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ante turpis integer aliquet porttitor.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+<th>Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell 6</td>
+<td>Content Cell 2</td>
+<td>Content Cell 4</td>
+</tr>
+<tr>
+<td>Content Cell 3</td>
+<td>Content Cell 5</td>
+<td>Content Cell 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">First Header</th>
+<th style="text-align: center;">Second Header</th>
+<th style="text-align: right;">Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Left</td>
+<td style="text-align: center;">Center</td>
+<td style="text-align: right;">Right</td>
+</tr>
+<tr>
+<td style="text-align: left;">Left</td>
+<td style="text-align: center;">Center</td>
+<td style="text-align: right;">Right</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>A table must be surrounded by blank lines. There must be a blank line before and after the table.<br />
+By default, tables are also sortable by columns, but don't do it on large tables.</p>
+<p>For more complex tables that need custom styling, consider embedding HTML directly into markdown.<br />
+If there's a pattern to follow, <code>jinja2</code> can generate it for you. For example, this <a href="../life-a4/">HTML table</a> is generated by this <a href="">Python script</a> and is appended to the markdown file with automated Github actions.</p>
+</details>
+<h2 id="math">Math<a class="headerlink" href="#math" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Inline math must be enclosed in <code>$...$</code> or <code>\(...\)</code></p>
+<p>The homomorphism <span class="arithmatex">\(f\)</span> is injective if and only if its kernel is only the
+singleton set <span class="arithmatex">\(e_G\)</span>, because otherwise <span class="arithmatex">\(\exists a,b\in G\)</span> with <span class="arithmatex">\(a\neq b\)</span> such
+that <span class="arithmatex">\(f(a)=f(b)\)</span>. <span class="arithmatex">\(5x - 3y + 6z - 7\)</span> where <span class="arithmatex">\(d=\sqrt{y^{2} + z^{2}} = \sqrt{1/3}\)</span>. Note that the dollar sign can be escaped using <code>\$</code>, e.g., <span class="arithmatex">\(p=\sqrt{p_{x}^{2} + p_{y}^{2}} = \$10.00\)</span></p>
+<p>Block math must be enclosed in <code>$$...$$</code>, <code>\[...\]</code> or <code>\begin{}...\end{}</code>. A block also must contain no empty lines and should be both preceded and followed by an empty line.</p>
+<div class="arithmatex">\[
+\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
+\]</div>
+<div class="arithmatex">\[
+u = -\frac{xd}{z},\; v = -\frac{yd}{z},\; \frac{|d \vec{v} \cdot n|}{|n|} = 4\sqrt{3}
+\]</div>
+<div class="arithmatex">\[\begin{bmatrix}
+    1  &amp;   0   &amp;   0   &amp;  0\\
+    0  &amp;  z/d  &amp; -y/d  &amp;  0\\
+    0  &amp;  y/d  &amp;  z/d  &amp;  0\\
+    0  &amp;   0   &amp;   0   &amp;  1
+\end{bmatrix}\]</div>
+<p><a href="https://www.mathjax.org/">MathJax</a> seems to accept the standard amsmath syntax.
+Rows are terminated with <code>\\</code> and columns are separated by <code>&amp;</code></p>
+<div class="arithmatex">\[\begin{align*}
+    R_{vx}(\theta _{vx}) &amp;= \begin{bmatrix}
+        1  &amp;   0   &amp;   0   &amp;  0\\
+        0  &amp;  z/d  &amp; -y/d  &amp;  0\\
+        0  &amp;  y/d  &amp;  z/d  &amp;  0\\
+        0  &amp;   0   &amp;   0   &amp;  1
+    \end{bmatrix},
+    R_{vy}(\theta _{vy}) = \begin{bmatrix}
+        d  &amp;  0  &amp; -x  &amp;  0\\
+        0  &amp;  1  &amp;  0  &amp;  0\\
+        x  &amp;  0  &amp;  d  &amp;  0\\
+        0  &amp;  0  &amp;  0  &amp;  1
+    \end{bmatrix}
+\end{align*}\]</div>
+<div class="arithmatex">\[\begin{align*}
+    \begin{pmatrix}
+        c &amp; s\\-s &amp; c
+    \end{pmatrix}
+\end{align*}\]</div>
+<p>For vectors just use a tuple, e.g. <span class="arithmatex">\(\vec{v_1} = (1, 2, 0)\)</span>.</p>
+<p>This is an inline matrix <span class="arithmatex">\(r_{\omega} =\)</span>
+<span class="arithmatex">\(\begin{psmallmatrix}
+    0 &amp; x\\z &amp; 0
+\end{psmallmatrix}\)</span>.</p>
+<h2 id="colors">Colors<a class="headerlink" href="#colors" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ul>
+<li>HEX color <code>#0969DA</code></li>
+<li>RGB color <code>rgb(9, 105, 218)</code></li>
+<li>HSL color <code>hsl(212, 92%, 45%)</code></li>
+</ul>
+<p>inline text color:</p>
+<p><span class="icon-red">This is line red text</span></p>
+<p><span class="icon-blue">This is a colored paragraph.</span></p>
+<p>Click on a tile to change the accent color:</p>
+<style>
+  .md-typeset button[data-md-color-accent] > code {
+    background-color: var(--md-code-bg-color);
+    color: var(--md-accent-fg-color);
+  }
+</style>
+
+<div class="mdx-switch">
+  <button data-md-color-accent="red"><code>red</code></button>
+  <button data-md-color-accent="pink"><code>pink</code></button>
+  <button data-md-color-accent="purple"><code>purple</code></button>
+  <button data-md-color-accent="deep-purple"><code>deep purple</code></button>
+  <button data-md-color-accent="indigo"><code>indigo</code></button>
+  <button data-md-color-accent="blue"><code>blue</code></button>
+  <button data-md-color-accent="light-blue"><code>light blue</code></button>
+  <button data-md-color-accent="cyan"><code>cyan</code></button>
+  <button data-md-color-accent="teal"><code>teal</code></button>
+  <button data-md-color-accent="green"><code>green</code></button>
+  <button data-md-color-accent="light-green"><code>light green</code></button>
+  <button data-md-color-accent="lime"><code>lime</code></button>
+  <button data-md-color-accent="yellow"><code>yellow</code></button>
+  <button data-md-color-accent="amber"><code>amber</code></button>
+  <button data-md-color-accent="orange"><code>orange</code></button>
+  <button data-md-color-accent="deep-orange"><code>deep orange</code></button>
+</div>
+
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-accent]")
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var attr = this.getAttribute("data-md-color-accent")
+      document.body.setAttribute("data-md-color-accent", attr)
+      var name = document.querySelector("#__code_2 code span.l")
+      name.textContent = attr.replace("-", " ")
+    })
+  })
+</script>
+
+<h2 id="emojis-and-icons">Emojis and Icons<a class="headerlink" href="#emojis-and-icons" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>While icons can be both colored and animated, emojis can only be animated but not colored as they already have colors.<br />
+Use this <a href="https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search">icon search tool</a> to find out the shortcode for an icon or emoji.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:6"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><input id="__tabbed_4_5" name="__tabbed_4" type="radio" /><input id="__tabbed_4_6" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Default</label><label for="__tabbed_4_2">Using <code>&lt;big&gt;</code></label><label for="__tabbed_4_3">Using <code>&lt;small&gt;</code></label><label for="__tabbed_4_4">Icon animated</label><label for="__tabbed_4_5">Icon colored and animated</label><label for="__tabbed_4_6">Emoji animated</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></span> <span class="twemoji icon-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2-5.8 5-6.7V4c0-1.1.9-2 2-2s2 .9 2 2v.3c3 .9 5 3.6 5 6.7v6zm-4-8c0-2.8-2.2-5-5-5s-5 2.2-5 5v7h10z"/></svg></span> <span class="twemoji icon-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2-5.8 5-6.7V4c0-1.1.9-2 2-2s2 .9 2 2v.3c3 .9 5 3.6 5 6.7v6zm-4-8c0-2.8-2.2-5-5-5s-5 2.2-5 5v7h10z"/></svg></span></p>
+</div>
+<div class="tabbed-block">
+<p><big>
+    <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></span> <span class="twemoji icon-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2-5.8 5-6.7V4c0-1.1.9-2 2-2s2 .9 2 2v.3c3 .9 5 3.6 5 6.7v6zm-4-8c0-2.8-2.2-5-5-5s-5 2.2-5 5v7h10z"/></svg></span> <span class="twemoji icon-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2-5.8 5-6.7V4c0-1.1.9-2 2-2s2 .9 2 2v.3c3 .9 5 3.6 5 6.7v6zm-4-8c0-2.8-2.2-5-5-5s-5 2.2-5 5v7h10z"/></svg></span>
+</big></p>
+</div>
+<div class="tabbed-block">
+<p><small>
+    <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></span> <span class="twemoji icon-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6zm-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2-5.8 5-6.7V4c0-1.1.9-2 2-2s2 .9 2 2v.3c3 .9 5 3.6 5 6.7v6zm-4-8c0-2.8-2.2-5-5-5s-5 2.2-5 5v7h10z"/></svg></span> <span class="twemoji icon-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2-5.8 5-6.7V4c0-1.1.9-2 2-2s2 .9 2 2v.3c3 .9 5 3.6 5 6.7v6zm-4-8c0-2.8-2.2-5-5-5s-5 2.2-5 5v7h10z"/></svg></span>
+</small></p>
+</div>
+<div class="tabbed-block">
+<p><span class="twemoji heart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 21.35-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"/></svg></span> &nbsp; <span class="twemoji heart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3"/></svg></span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="twemoji icon-red heart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 21.35-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"/></svg></span> &nbsp; <span class="twemoji icon-red heart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3"/></svg></span></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="💖" class="twemoji heart" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f496.svg" title=":sparkling_heart:" /> &nbsp; <img alt="🍀" class="twemoji heart" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f340.svg" title=":four_leaf_clover:" /> &nbsp; <img alt="🌴" class="twemoji heart" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f334.svg" title=":palm_tree:" /></p>
+</div>
+</div>
+</div>
+<h2 id="links">Links<a class="headerlink" href="#links" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>This is an <a href="../../">internal link</a> that links to another Markdown document, here is <a href="../about-me/">another internal link</a> for example.</p>
+<p>This is a <a href="../../opensdk/openusd/usd-basics/#test">global anchor link</a> that links to a section (header) within another Markdown document. This is a <a href="#images">local anchor link</a> that links to a section (header) within the current Markdown document. Generated anchor/section IDs follow the <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links">same rules</a> that apply in Github markdown.</p>
+<details class="warning">
+<summary>Rules for relative paths</summary>
+<p>Make sure the path starts with a <code>/</code> so that it's relative to the <code>docs_dir</code> root. This applies regardless of whether the link is used as a URL or for embedding an image. If the path doesn't begin with a <code>/</code>, it will be interpreted as relative to the current markdown file. This makes it difficult to reference local resources, especially for files buried deep in the hierarchy. Note that it also leads to inconsistencies, as the same file could be referenced by many different paths.</p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Links don't have to be authored inline, you can also define them in one place after a block.<br />
+This can be especially helpful if a link needs to be reused multiple times.</p>
+</div>
+<h2 id="images">Images<a class="headerlink" href="#images" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>With the built-in extension, you can specify image attributes directly in Markdown with <code>{...}</code>.<br />
+Normally you shouldn't need to specify <code>{ loading=lazy }</code> on images, as modern browsers by default will decide when to load the resource based on heuristics like network speed and device capabilities.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Markdown</label><label for="__tabbed_5_2">HTML</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-markdown highlight"><span class="filename">Markdown</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>![<span class="nt">Image title</span>](<span class="na">/assets/images/chizuru.png</span>){ width=60% }
+</span></code></pre></div>
+<p><img alt="Image title" src="../../assets/images/chizuru.png" width="60%" /></p>
+</div>
+<div class="tabbed-block">
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/assets/images/chizuru.png&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">60%</span> <span class="na">height</span><span class="o">=</span><span class="s">auto</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p><img src="/assets/images/chizuru.png" width=60% height=auto></p>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Append this block to the image to add a caption:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/// caption
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>This is my wife
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>///
+</span></code></pre></div>
+</div>
+<figure>
+<p><img src="/assets/images/chizuru.png" width=60% height=auto></p>
+<figcaption>
+<p>This is my wife</p>
+</figcaption>
+</figure>
+<p>Use the <code>align</code> attribute to align images to the left or right, note that there is not a <mark>center</mark> option.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg></span></label><label for="__tabbed_6_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-markdown highlight"><span class="filename">Markdown</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>![<span class="nt">Image title</span>](<span class="na">/assets/images/BG203.jpg</span>){ align=left width=280 }
+</span></code></pre></div>
+<p><img align="left" alt="Image title" src="../../assets/images/BG203.jpg" width="280" />
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.</p>
+</div>
+<div class="tabbed-block">
+<div class="language-markdown highlight"><span class="filename">Markdown</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>![<span class="nt">Image title</span>](<span class="na">/assets/images/BG203.jpg</span>){ align=right width=280 }
+</span></code></pre></div>
+<p><img align="right" alt="Image title" src="../../assets/images/BG203.jpg" width="280" />
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.</p>
+</div>
+</div>
+</div>
+<h2 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Anchor link to this section for reference">⚓︎</a></h2>
+<div class="annotate">
+<p>Annotations can be added to virtually all elements. It has a little marker(1)marked with the <code>annotate</code> class, and the content is listed below the block containing the marker(2).</p>
+</div>
+<ol>
+<li>I'm an annotation who can contain <code>code</code>, <strong>formatted text</strong>, images, ..., basically anything that can be expressed in Markdown.</li>
+<li>For example, let me show you some code:
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="p">;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</span></code></pre></div></li>
+</ol>
+<p>To simplify the usage syntax, wrap the markdown block in <code class="language-html highlight"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;annotate&quot;</span> <span class="na">markdown</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code>, then define all the annotations in a list. This works for everything except code blocks.</p>
+<div class="language-html highlight"><span class="filename">Annotations made easier</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;annotate&quot;</span> <span class="na">markdown</span><span class="p">&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>This is an annotation(1). This is another annotation(2).
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>1. Hello!
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>2. Howdy!
+</span></code></pre></div>
+<div class="annotate">
+<p>This is an annotation(1). This is another annotation(2).</p>
+</div>
+<ol>
+<li>Hello!</li>
+<li>Howdy!</li>
+</ol>
+<p>Here for example we have annotations in callouts and content tabs, all using this trick.</p>
+<div class="annotate">
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Tab One</label><label for="__tabbed_7_2">Tab Two</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Lorem ipsum dolor(1)sit amet, consectetur adipiscing elit.</p>
+</div>
+<div class="tabbed-block">
+<p>Phasellus posuere in sem ut cursus(2).</p>
+</div>
+</div>
+</div>
+</div>
+<ol>
+<li>Hello from content tab!</li>
+<li>Howdy from content tab!</li>
+</ol>
+<div class="annotate">
+<div class="admonition note">
+<p class="admonition-title">Phasellus posuere in sem ut cursus(1)</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
+euismod(2)nulla. Curabitur feugiat, tortor non consequat finibus, justo
+purus auctor massa, nec semper lorem quam in massa.</p>
+</div>
+</div>
+<ol>
+<li>Hello from callout!</li>
+<li>Howdy from callout!</li>
+</ol>
+<p>For code blocks, code annotation has been globally enabled so don't worry about the <code>annotate</code> class or the <code class="language-html highlight"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code> block. Within a code block, annotations can only be placed within a line/block comment, like <code class="language-cpp highlight"><span class="c1">// (1)!</span></code>. The trailing exclamation mark <code>!</code> is used to strip the comment characters surrounding a code annotation.</p>
+<div class="language-cpp highlight"><span class="filename">Code annotations</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">intersect</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">Vec3</span><span class="w"> </span><span class="n">oc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">origin</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">center</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oc</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">ray</span><span class="p">.</span><span class="n">direction</span><span class="p">);</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oc</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">oc</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">discriminant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">discriminant</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="hll"><span class="w">        </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">discriminant</span><span class="p">);</span><span class="w"> </span><span class="c1">// (1)!</span>
+</span></span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li>I'm a friendly <img alt="🤝" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f91d.svg" title=":handshake:" /> annotation who wants to help explain a specific line of code.</li>
+</ol>
+<h2 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>buttons, buttons with icon</p>
+<h2 id="code-blocks">Code Blocks<a class="headerlink" href="#code-blocks" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>With our built-in extension, syntax highlight is also supported on inline code. Just prepend <code>#!py</code>, <code>#!sh</code> or whatever to the inline code, and you will see colors in no time. Recall that we also have inline comment (in grey).</p>
+<ul>
+<li>This is Python inline code <code>import os, sys</code> in plain form.</li>
+<li>This is Python inline code <code class="language-py highlight"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span></code> with syntax highlight.</li>
+<li>This is C++ inline code <code>constexpr int factorial(int n)</code> in plain form.</li>
+<li>This is C++ inline code <code class="language-c++ highlight"><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span></code> with syntax highlight.</li>
+<li>This is <span class="critic comment">an inline comment</span> which is <span class="critic comment">programming-language-agnostic</span>.</li>
+</ul>
+<div class="annotate">
+<p>Code blocks can have custom titles, annotations(1), line numbers(2)and highlighted lines(3). For example, this code block has options <code class="language-css highlight"><span class="nt">py</span><span class="w"> </span><span class="nt">title</span><span class="o">=</span><span class="s2">&quot;bubble_sort.py&quot;</span><span class="w"> </span><span class="nt">linenums</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="nt">hl_lines</span><span class="o">=</span><span class="s2">&quot;3-5&quot;</span></code>. Don't know the lexer code for a particular programming language? The <a href="https://pygments.org/docs/lexers/#">pygments</a> website got your back!</p>
+</div>
+<ol>
+<li><a href="#annotations">annotations</a></li>
+<li>user can optionally define a starting line number other than 1</li>
+<li>line counts start at 1, regardless of the starting line number</li>
+</ol>
+<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">bubble_sort.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="hll">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
+</span></span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="hll">            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="hll">                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span></span></code></pre></div></td></tr></table></div>
+<p>Content of the code block can be imported from external sources as well, such as a local file or a URL. This feature requires some configuration on the <a href="https://facelessuser.github.io/pymdown-extensions/extensions/snippets/">Snippets</a> extension. In practice though, I would be inclined not to do it due to the maintenance cost and the potential for things to break. In this case, I'd rather just use a permalink on Github instead. It does take one more click but has zero cost moving forward.</p>
+<h2 id="admonitions">Admonitions<a class="headerlink" href="#admonitions" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Admonitions, aka <em>callouts</em>, are side content in the main document.</p>
+<div class="admonition note">
+<p>Callout without a title.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Callout with default title (will use name of the type qualifier).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Custom Title</p>
+<p>Callout with custom title.</p>
+</div>
+<details class="tip">
+<summary>Collapsible callout (collapsed)</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.
+Curabitur feugiat, nec semper lorem quam in massa.</p>
+</details>
+<details class="tip" open="open">
+<summary>Collapsible callout (expanded)</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.
+Curabitur feugiat, nec semper lorem quam in massa.</p>
+</details>
+<p>There are 12 built-in callout types available.</p>
+<details class="note">
+<summary>Note</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="abstract">
+<summary>Abstract</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="info">
+<summary>Info</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="tip">
+<summary>Tip</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="success">
+<summary>Success</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="question">
+<summary>Question</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="warning">
+<summary>Warning</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="failure">
+<summary>Failure</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="danger">
+<summary>Danger</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="bug">
+<summary>Bug</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="example">
+<summary>Example</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<details class="quote">
+<summary>Quote</summary>
+<p>Lorem ipsum dolor sit amet. Nulla et euismod nulla.</p>
+</details>
+<div class="admonition key">
+<p class="admonition-title">Custom admonition</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
+euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
+purus auctor massa, nec semper lorem quam in massa.</p>
+</div>
+<h2 id="admonitions-inline">Admonitions (inline)<a class="headerlink" href="#admonitions-inline" title="Anchor link to this section for reference">⚓︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">inline callout (<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06"/></svg></span>)</label><label for="__tabbed_8_2">inline callout (<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M7.78 12.53a.75.75 0 0 1-1.06 0L2.47 8.28a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042L4.81 7h7.44a.75.75 0 0 1 0 1.5H4.81l2.97 2.97a.75.75 0 0 1 0 1.06"/></svg></span>)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition tip inline end">
+<p class="admonition-title">Lorem ipsum</p>
+<p>Lorem ipsum dolor sit amet, nulla et euismod nulla. Lorem ipsum dolor sit amet, nulla et euismod.</p>
+</div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>!!! tip inline end &quot;Lorem ipsum&quot;
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    Lorem ipsum dolor sit amet, nulla et euismod nulla...
+</span></code></pre></div>
+Use <code>inline end</code> to align to the right (for LTR languages).</p>
+</div>
+<div class="tabbed-block">
+<div class="admonition tip inline">
+<p class="admonition-title">Lorem ipsum</p>
+<p>Lorem ipsum dolor sit amet, nulla et euismod nulla. Lorem ipsum dolor sit amet, nulla et euismod.</p>
+</div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>!!! tip inline &quot;Lorem ipsum&quot;
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    Lorem ipsum dolor sit amet, nulla et euismod nulla...
+</span></code></pre></div>
+Use <code>inline</code> to align to the left (for RTL languages only).</p>
+</div>
+</div>
+</div>
+<p><strong>Important</strong>: admonitions that use the <code>inline</code> modifiers <em>must</em> be declared
+prior to the content block you want to place them beside. If there's
+insufficient space to render the admonition next to the block, the admonition
+will stretch to the full width of the viewport, e.g., on mobile viewports.</p>
+<h2 id="flowcharts">Flowcharts<a class="headerlink" href="#flowcharts" title="Anchor link to this section for reference">⚓︎</a></h2>
+<pre class="mermaid"><code>graph LR
+  A[Start] --&gt; B{Failure?};
+  B --&gt;|Yes| C[Investigate...];
+  C --&gt; D[Debug];
+  D --&gt; B;
+  B ----&gt;|No| E[Success!];</code></pre>
+<h2 id="sequence-diagrams">Sequence Diagrams<a class="headerlink" href="#sequence-diagrams" title="Anchor link to this section for reference">⚓︎</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+  autonumber
+  Server-&gt;&gt;Terminal: Send request
+  loop Health
+      Terminal-&gt;&gt;Terminal: Check for health
+  end
+  Note right of Terminal: System online
+  Terminal--&gt;&gt;Server: Everything is OK
+  Terminal-&gt;&gt;Database: Request customer data
+  Database--&gt;&gt;Terminal: Customer data</code></pre>
+<h2 id="more">More<a class="headerlink" href="#more" title="Anchor link to this section for reference">⚓︎</a></h2>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">theme</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span><span class="w"> </span><span class="c1"># (1)!</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="c1"># Palette toggle for light mode</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-7</span><span class="w"> </span><span class="c1"># (2)!</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switch to dark mode</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="c1"># Palette toggle for dark mode</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slate</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-4</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switch to light mode</span>
+</span></code></pre></div>
+<ol>
+<li>
+<p>Note that the <code>theme.palette</code> setting is now defined as a list.</p>
+</li>
+<li>
+<p>Enter a few keywords to find the perfect icon using our <a href="../reference/icons-emojis.md#search">icon search</a> and
+    click on the shortcode to copy it to your clipboard:</p>
+<p><div class="mdx-iconsearch" data-mdx-component="iconsearch">
+  <input class="md-input md-input--stretch mdx-iconsearch__input" placeholder="Search icon" data-mdx-component="iconsearch-query" value="brightness" />
+  <div class="mdx-iconsearch-result" data-mdx-component="iconsearch-result" data-mdx-mode="file">
+    <div class="mdx-iconsearch-result__meta"></div>
+    <ol class="mdx-iconsearch-result__list"></ol>
+  </div>
+</div></p>
+</li>
+</ol>
+<p>This configuration will render a color palette toggle next to the search bar.
+Note that you can also define separate settings for <a href="#primary-color"><code>primary</code></a>
+and <a href="#accent-color"><code>accent</code></a> per color palette.</p>
+<p>The following properties must be set for each toggle:</p>
+<dl>
+<dt><!-- md:option palette.toggle.icon -->
+</dt>
+<dd>
+<p><!-- md:default none --> <!-- md:flag required -->
+This property must point to a valid icon path referencing any icon bundled
+with the theme, or the build will not succeed. Some popular combinations:</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg></span> + <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg></span> – <code>material/brightness-7</code> + <code>material/brightness-4</code></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg></span> + <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg></span> – <code>material/toggle-switch</code> + <code>material/toggle-switch-off-outline</code></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg></span> + <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg></span> – <code>material/weather-night</code> + <code>material/weather-sunny</code></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg></span> + <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0"/></svg></span> – <code>material/eye</code> + <code>material/eye-outline</code></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg></span> + <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg></span> – <code>material/lightbulb</code> + <code>material/lightbulb-outline</code></li>
+</ul>
+</dd>
+<dt><!-- md:option palette.toggle.name -->
+</dt>
+<dd>
+<p><!-- md:default none --> <!-- md:flag required -->
+This property is used as the toggle's <code>title</code> attribute and should be set to
+a discernable name to improve accessibility. It's rendered as a <a href="../reference/tooltips.md">tooltip</a>.</p>
+</dd>
+</dl>
+<p>you're <span class="twemoji" style="color: #EE0F0F"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"/></svg></span>
+<strong>YouTube</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg></span> <code>docs/stylesheets/extra.css</code></label><label for="__tabbed_9_2"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg></span> <code>mkdocs.yml</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-css highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nv">--md-primary-fg-color</span><span class="p">:</span><span class="w">        </span><span class="mh">#EE0F0F</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nv">--md-primary-fg-color--light</span><span class="p">:</span><span class="w"> </span><span class="mh">#ECB7B7</span><span class="p">;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nv">--md-primary-fg-color--dark</span><span class="p">:</span><span class="w">  </span><span class="mh">#90030C</span><span class="p">;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">extra_css</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stylesheets/extra.css</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>you can add an <a href="../customization.md#additional-css">additional style sheet</a> and tweak the values</p>
+<h3 id="version"><!-- md:version --> – Version<a class="headerlink" href="#version" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="version-insiders"><!-- md:version insiders- --> – Version (Insiders)<a class="headerlink" href="#version-insiders" title="Anchor link to this section for reference">⚓︎</a></h3>
+<h3 id="default"><!-- md:default --> – Default value<a class="headerlink" href="#default" title="Anchor link to this section for reference">⚓︎</a></h3>
+<details class="question">
+<summary>How to add plugins to the Docker image?</summary>
+<p>Material for MkDocs only bundles selected plugins in order to keep the size
+of the official image small. If the plugin you want to use is not included,
+you can add them easily:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Material for MkDocs</label><label for="__tabbed_10_2">Insiders</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Create a <code>Dockerfile</code> and extend the official image:</p>
+<div class="language-Dockerfile highlight"><span class="filename">Dockerfile</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">squidfunk/mkdocs-material</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-glightbox
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Clone or fork the Insiders repository, and create a file called
+<code>user-requirements.txt</code> in the root of the repository. Then, add the
+plugins that should be installed to the file, e.g.:</p>
+<div class="language-text highlight"><span class="filename">user-requirements.txt</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>mkdocs-macros-plugin
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>mkdocs-glightbox
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<p>This is one<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and this is two<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p>no copy code
+<div class="language-sh no-copy highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>.
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>├─<span class="w"> </span>docs/
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>│<span class="w">  </span>└─<span class="w"> </span>index.md
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>└─<span class="w"> </span>mkdocs.yml
+</span></code></pre></div></p>
+<details class="tip" open="open">
+<summary>Recommended: [configuration validation and auto-complete]</summary>
+<p>In order to minimize friction and maximize productivity</p>
+</details>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.75 0A2.75 2.75 0 0 0 3 2.75v1a.75.75 0 0 0 1.5 0v-1c0-.69.56-1.25 1.25-1.25h1a.75.75 0 0 0 0-1.5zm4 0a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zm7.5 0a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-.75-.75zM4.5 6.5a.75.75 0 0 0-1.5 0v3.75a.75.75 0 0 0 1.5 0zm16.5 0a.75.75 0 0 0-1.5 0v3.75a.75.75 0 0 0 1.5 0zM4.5 13.25a.75.75 0 0 0-1.5 0v5.5a3.25 3.25 0 0 0 1.95 2.98.75.75 0 1 0 .6-1.375A1.75 1.75 0 0 1 4.5 18.75V18A1.5 1.5 0 0 1 6 16.5h.75a.75.75 0 0 0 0-1.5H6c-.546 0-1.059.146-1.5.401zm16.5 0a.75.75 0 0 0-1.5 0V15h-2.25a.75.75 0 0 0 0 1.5h2.25v4h-5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 .75-.75zM9.75 15a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zm-2.353 8.461A.25.25 0 0 1 7 23.26v-5.01a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0z"/></svg></span> &nbsp; <strong><a href="https://github.com/mkdocs-material/create-blog">Blog</a></strong></p>
+<hr />
+<p>Create a blog</p>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.75 0A2.75 2.75 0 0 0 3 2.75v1a.75.75 0 0 0 1.5 0v-1c0-.69.56-1.25 1.25-1.25h1a.75.75 0 0 0 0-1.5zm4 0a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zm7.5 0a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-.75-.75zM4.5 6.5a.75.75 0 0 0-1.5 0v3.75a.75.75 0 0 0 1.5 0zm16.5 0a.75.75 0 0 0-1.5 0v3.75a.75.75 0 0 0 1.5 0zM4.5 13.25a.75.75 0 0 0-1.5 0v5.5a3.25 3.25 0 0 0 1.95 2.98.75.75 0 1 0 .6-1.375A1.75 1.75 0 0 1 4.5 18.75V18A1.5 1.5 0 0 1 6 16.5h.75a.75.75 0 0 0 0-1.5H6c-.546 0-1.059.146-1.5.401zm16.5 0a.75.75 0 0 0-1.5 0V15h-2.25a.75.75 0 0 0 0 1.5h2.25v4h-5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 .75-.75zM9.75 15a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zm-2.353 8.461A.25.25 0 0 1 7 23.26v-5.01a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0z"/></svg></span> &nbsp; <strong><a href="https://github.com/mkdocs-material/create-social-cards">Social cards</a></strong></p>
+<hr />
+<p>Create documentation with social cards</p>
+</li>
+</ul>
+</div>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>mkdocs<span class="w"> </span>serve<span class="w"> </span><span class="c1"># (1)!</span>
+</span></code></pre></div>
+<ol>
+<li>If you have a large documentation project, it might take minutes until
+    MkDocs has rebuilt all pages for you to preview.</li>
+</ol>
+<div class="mdx-columns">
+<ul>
+<li><a href="https://bawmedical.co.uk/t/publishing-a-material-for-mkdocs-site-to-azure-with-automatic-branch-pr-preview-deployments/763"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22 18-5 4-8-3v3l-4.19-5.75 12.91 1.05V6.34L22 5.65zM4.81 16.25V8.96l12.91-2.62L10.6 2v2.84L3.97 6.76 2 9.38v5.69z"/></svg></span> Azure</a></li>
+<li><a href="https://deborahwrites.com/guides/deploy-mkdocs-material-cloudflare/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.715 14.32H5.442l-.64-1.203L13.673 0l1.397.579-1.752 9.112h5.24l.648 1.192L10.719 24l-1.412-.54ZM4.091 5.448a.579.579 0 1 1 0-1.157.579.579 0 0 1 0 1.157m1.543 0a.579.579 0 1 1 0-1.157.579.579 0 0 1 0 1.157m1.544 0a.579.579 0 1 1 0-1.157.579.579 0 0 1 0 1.157m8.657-2.7h5.424l.772.771v16.975l-.772.772h-7.392l.374-.579h6.779l.432-.432V3.758l-.432-.432h-4.676l-.552 2.85h-.59l.529-2.877.108-.552ZM2.74 21.265l-.772-.772V3.518l.772-.771h7.677l-.386.579H2.98l-.432.432v16.496l.432.432h5.586l-.092.579zm1.157-1.93h3.28l-.116.58h-3.55l-.192-.193v-3.473l.578 1.158zm13.117 0 .579.58H14.7l.385-.58z"/></svg></span> Cloudflare Pages</a></li>
+<li><a href="https://deborahwrites.com/guides/deploy-mkdocs-material-digitalocean-app-platform/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.04 0C5.408-.02.005 5.37.005 11.992h4.638c0-4.923 4.882-8.731 10.064-6.855a6.95 6.95 0 0 1 4.147 4.148c1.889 5.177-1.924 10.055-6.84 10.064v-4.61H7.391v4.623h4.61V24c7.86 0 13.967-7.588 11.397-15.83-1.115-3.59-3.985-6.446-7.575-7.575A12.8 12.8 0 0 0 12.039 0zM7.39 19.362H3.828v3.564H7.39zm-3.563 0v-2.978H.85v2.978z"/></svg></span> DigitalOcean</a></li>
+<li><a href="https://documentation.breadnet.co.uk/cloud/fly/mkdocs-on-fly/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 23c-1.1 0-2-.9-2-2v-2h6v2c0 1.1-.9 2-2 2zm1-20c.28 0 .55 0 .81.05C13.42 4.22 14 6.26 14 9c0 2.1-1 7-1 7h-2s-1-4.9-1-7c0-2.74.58-4.78 1.19-5.95.26-.05.53-.05.81-.05m0-2c-.71 0-1.39.09-2.05.26C8.78 2.83 8 5.71 8 9c0 2.28.38 4.37 1 7 0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2 .62-2.63 1-4.72 1-7 0-3.29-.78-6.17-1.95-7.74C13.39 1.09 12.71 1 12 1M4 8c0 3.18 1.85 7.92 4.54 9.21-.54-1-.93-2.54-1.2-4.21C6.55 11.53 6 9.62 6 8c0-1.34.44-2.33 1.47-3.2.26-1.13.62-2.15 1.07-3.01C5.85 3.08 4 4.82 4 8m11.46-6.21c.45.86.81 1.88 1.07 3.01C17.56 5.67 18 6.66 18 8c0 1.62-.55 3.53-1.34 5-.27 1.67-.66 3.21-1.2 4.21C18.15 15.92 20 11.18 20 8s-1.85-4.92-4.54-6.21"/></svg></span> Fly.io</a></li>
+<li><a href="https://deborahwrites.com/projects/deploy-host-docs/deploy-mkdocs-material-netlify/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.49 19.04h-.23L5.13 17.9v-.23l1.73-1.71h1.2l.15.15v1.2L6.5 19.04ZM5.13 6.31V6.1l1.13-1.13h.23L8.2 6.68v1.2l-.15.15h-1.2zm9.96 9.09h-1.65l-.14-.13v-3.83c0-.68-.27-1.2-1.1-1.23-.42 0-.9 0-1.43.02l-.07.08v4.96l-.14.14H8.9l-.13-.14V8.73l.13-.14h3.7a2.6 2.6 0 0 1 2.61 2.6v4.08l-.13.14Zm-8.37-2.44H.14L0 12.82v-1.64l.14-.14h6.58l.14.14v1.64zm17.14 0h-6.58l-.14-.14v-1.64l.14-.14h6.58l.14.14v1.64zM11.05 6.55V1.64l.14-.14h1.65l.14.14v4.9l-.14.14h-1.65zm0 15.81v-4.9l.14-.14h1.65l.14.13v4.91l-.14.14h-1.65z"/></svg></span> Netlify</a></li>
+<li><a href="https://deborahwrites.com/guides/deploy-mkdocs-material-vercel/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 1.608 12 20.784H0Z"/></svg></span> Vercel</a></li>
+<li><a href="https://andre601.ch/blog/2023/11-05-using-codeberg-pages/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.955.49A12 12 0 0 0 0 12.49a12 12 0 0 0 1.832 6.373L11.838 5.928a.187.14 0 0 1 .324 0l10.006 12.935A12 12 0 0 0 24 12.49a12 12 0 0 0-12-12zm.375 6.467 4.416 16.553a12 12 0 0 0 5.137-4.213z"/></svg></span> Codeberg Pages</a></li>
+<li><a href="https://www.scaleway.com/en/docs/tutorials/using-bucket-website-with-mkdocs/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.605 11.11v5.72a1.77 1.77 0 0 1-1.54 1.69h-4a1.43 1.43 0 0 1-1.31-1.22 1 1 0 0 1 0-.18 1.37 1.37 0 0 1 1.37-1.36h1.74a1 1 0 0 0 1-1v-3.62a1.4 1.4 0 0 1 1.18-1.39h.17a1.37 1.37 0 0 1 1.39 1.36m-6.46 1.74V9.26a1 1 0 0 1 1-1h1.85a1.37 1.37 0 0 0 1.37-1.37 1 1 0 0 0 0-.17 1.45 1.45 0 0 0-1.41-1.2h-3.96a1.81 1.81 0 0 0-1.58 1.66v5.7a1.37 1.37 0 0 0 1.37 1.37h.21a1.4 1.4 0 0 0 1.15-1.4m12-4.29V20a4.53 4.53 0 0 1-4.15 4h-7.58a8.57 8.57 0 0 1-8.56-8.57V4.54A4.54 4.54 0 0 1 6.395 0h7.18a8.56 8.56 0 0 1 8.56 8.56zm-2.74 0a5.83 5.83 0 0 0-5.82-5.82h-7.19a1.79 1.79 0 0 0-1.8 1.8v10.89a5.83 5.83 0 0 0 5.82 5.8h7.44a1.79 1.79 0 0 0 1.54-1.48z"/></svg></span> Scaleway</a></li>
+</ul>
+</div>
+<h3 id="overriding-blocks">Overriding blocks <small>recommended</small><a class="headerlink" href="#overriding-blocks" title="Anchor link to this section for reference">⚓︎</a></h3>
+<figure>
+<table>
+<thead>
+<tr>
+<th>Browser</th>
+<th style="text-align: right;">Version</th>
+<th style="text-align: right;">Release date</th>
+<th style="text-align: right;"></th>
+<th style="text-align: right;"></th>
+<th style="text-align: right;">Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">desktop</td>
+<td style="text-align: right;">mobile</td>
+<td style="text-align: right;">overall</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 256c0-46.6 12.47-90.4 34.27-128.9L144.1 318.3C166 357.5 207.9 384 256 384c14.3 0 27.1-2.3 40.8-6.6l-76.3 132.2C95.9 492.3 0 385.3 0 256m365.1 65.6c12.3-19.2 18.9-42.5 18.9-65.6 0-38.2-16.8-72.5-43.3-96h152.7c12 29.6 18.6 62.1 18.6 96 0 141.4-114.6 255.1-256 256zM477.8 128H256c-62.9 0-113.7 44.1-125.5 102.7L54.19 98.47C101 38.53 174 0 256 0c94.8 0 177.5 51.48 221.8 128M168 256c0-48.6 39.4-88 88-88s88 39.4 88 88-39.4 88-88 88-88-39.4-88-88"/></svg></span> Chrome</td>
+<td style="text-align: right;">49+</td>
+<td style="text-align: right;">03/2016</td>
+<td style="text-align: right;">25.65%</td>
+<td style="text-align: right;">38.33%</td>
+<td style="text-align: right;">63.98%</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m274.69 274.69-37.38-37.38L166 346ZM256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8m155.85 174.79 14.78-6.13a8 8 0 0 1 10.45 4.34 8 8 0 0 1-4.33 10.46L418 197.57a8 8 0 0 1-10.45-4.33 8 8 0 0 1 4.3-10.45M314.43 94l6.12-14.78a8 8 0 0 1 10.45-4.3 8 8 0 0 1 4.33 10.45l-6.13 14.78a8 8 0 0 1-10.45 4.33A8 8 0 0 1 314.43 94M256 60a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8 8 8 0 0 1-8-8V68a8 8 0 0 1 8-8m-75 14.92a8 8 0 0 1 10.46 4.33L197.57 94a8 8 0 1 1-14.78 6.12l-6.13-14.78A8 8 0 0 1 181 74.92m-63.58 42.49a8 8 0 0 1 11.31 0L140 128.72a8 8 0 0 1 0 11.28 8 8 0 0 1-11.31 0l-11.31-11.31a8 8 0 0 1 .03-11.28ZM60 256a8 8 0 0 1 8-8h16a8 8 0 0 1 8 8 8 8 0 0 1-8 8H68a8 8 0 0 1-8-8m40.15 73.21-14.78 6.13A8 8 0 0 1 74.92 331a8 8 0 0 1 4.33-10.46L94 314.43a8 8 0 0 1 10.45 4.33 8 8 0 0 1-4.3 10.45m4.33-136A8 8 0 0 1 94 197.57l-14.78-6.12a8 8 0 0 1-4.3-10.45 8 8 0 0 1 10.45-4.33l14.78 6.13a8 8 0 0 1 4.33 10.44ZM197.57 418l-6.12 14.78a8 8 0 0 1-14.79-6.12l6.13-14.78a8 8 0 1 1 14.78 6.12M264 444a8 8 0 0 1-8 8 8 8 0 0 1-8-8v-16a8 8 0 0 1 8-8 8 8 0 0 1 8 8Zm67-6.92a8 8 0 0 1-10.46-4.33L314.43 418a8 8 0 0 1 4.33-10.45 8 8 0 0 1 10.45 4.33l6.13 14.78a8 8 0 0 1-4.34 10.42m63.58-42.49a8 8 0 0 1-11.31 0L372 383.28a8 8 0 0 1 0-11.28 8 8 0 0 1 11.31 0l11.31 11.31a8 8 0 0 1-.03 11.28ZM286.25 286.25 110.34 401.66l115.41-175.91 175.91-115.41ZM437.08 331a8 8 0 0 1-10.45 4.33l-14.78-6.13a8 8 0 0 1-4.33-10.45 8 8 0 0 1 10.48-4.32l14.78 6.12a8 8 0 0 1 4.3 10.45m6.92-67h-16a8 8 0 0 1-8-8 8 8 0 0 1 8-8h16a8 8 0 0 1 8 8 8 8 0 0 1-8 8"/></svg></span> Safari</td>
+<td style="text-align: right;">10+</td>
+<td style="text-align: right;">09/2016</td>
+<td style="text-align: right;">4.63%</td>
+<td style="text-align: right;">14.96%</td>
+<td style="text-align: right;">19.59%</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M120.1 37.44C161.1 12.23 207.7-.775 255 .002 423 .002 512 123.8 512 219.5c-.1 32.7-13 63.9-35.9 87.2-22.9 23.2-54 36.5-86.7 37-75.2 0-91.5-23.1-91.5-32 0-3.8 1.2-6.2 4.8-9.4l1-1.2.4-1.6c10.5-11.5 15.9-26.2 15.9-41.6 0-78.7-82.2-142.7-184-142.7-37.54-.3-74.54 8.9-107.52 26.9 27-57.52 82.72-97.6 91.32-103.82.8-.55.3-.84.3-.84m15.6 318.06c-1.4 30 4.6 60 16.4 87.2 13.6 26.4 32.7 51 56.5 69.3-59.5-11.5-111.49-43.9-149.4-89.3C21.12 376.3 0 318.4 0 257.9c0-51.2 62.4-94.4 136-94.4 36.6-.6 72.4 10.9 101.8 32.7l-3.6 1.2c-51.5 17.6-98.5 90.7-98.5 158.1M469.8 400l-.7.1c-11.8 18.8-25.9 35.1-42.2 49.5-30.8 28-68.1 45.5-108.8 49.9-18.6.3-36.8-3.2-53.8-11.4-25.6-10.3-47.1-30-61.6-53-14.4-23.9-21.1-51.7-19-79.6-.6-20.1 5.4-40.3 15-58.2 13.9 33.1 37.5 61.3 67.6 80.8s65.5 29.5 101.4 28.6c31 .3 62.1-6.7 90.2-20.5l1.9-.9c3.9-2.3 7.7-3.9 11.6 0 4.5 4.9 1.8 9.2-1.2 14-.2.2-.3.5-.4.7"/></svg></span> Edge</td>
+<td style="text-align: right;">79+</td>
+<td style="text-align: right;">01/2020</td>
+<td style="text-align: right;">3.95%</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">3.95%</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M503.52 241.48c-.12-1.56-.24-3.12-.24-4.68v-.12l-.36-4.68v-.12a246 246 0 0 0-7.32-41.15c0-.12 0-.12-.12-.24l-1.08-4c-.12-.24-.12-.48-.24-.6-.36-1.2-.72-2.52-1.08-3.72-.12-.24-.12-.6-.24-.84-.36-1.2-.72-2.4-1.08-3.48-.12-.36-.24-.6-.36-1-.36-1.2-.72-2.28-1.2-3.48l-.36-1.08c-.36-1.08-.84-2.28-1.2-3.36a8 8 0 0 0-.36-1c-.48-1.08-.84-2.28-1.32-3.36-.12-.24-.24-.6-.36-.84-.48-1.2-1-2.28-1.44-3.48 0-.12-.12-.24-.12-.36-1.56-3.84-3.24-7.68-5-11.4l-.36-.72c-.48-1-.84-1.8-1.32-2.64-.24-.48-.48-1.08-.72-1.56-.36-.84-.84-1.56-1.2-2.4-.36-.6-.6-1.2-1-1.8s-.84-1.44-1.2-2.28c-.36-.6-.72-1.32-1.08-1.92s-.84-1.44-1.2-2.16a18 18 0 0 0-1.2-2c-.36-.72-.84-1.32-1.2-2s-.84-1.32-1.2-2-.84-1.32-1.2-1.92-.84-1.44-1.32-2.16a16 16 0 0 0-1.2-1.8L463.2 119a16 16 0 0 0-1.2-1.8c-.48-.72-1.08-1.56-1.56-2.28-.36-.48-.72-1.08-1.08-1.56l-1.8-2.52c-.36-.48-.6-.84-1-1.32-1-1.32-1.8-2.52-2.76-3.72a249 249 0 0 0-23.51-26.64A187 187 0 0 0 412 62.46c-4-3.48-8.16-6.72-12.48-9.84a162.5 162.5 0 0 0-24.6-15.12c-2.4-1.32-4.8-2.52-7.2-3.72a254 254 0 0 0-55.43-19.56c-1.92-.36-3.84-.84-5.64-1.2h-.12c-1-.12-1.8-.36-2.76-.48a236.4 236.4 0 0 0-38-4h-10.63a234.6 234.6 0 0 0-45.48 5c-33.59 7.08-63.23 21.24-82.91 39-1.08 1-1.92 1.68-2.4 2.16l-.48.48h.13l-.12.12.12-.12a.12.12 0 0 0 .12-.12l-.12.12a.42.42 0 0 1 .24-.12c14.64-8.76 34.92-16 49.44-19.56l5.88-1.44c.36-.12.84-.12 1.2-.24 1.68-.36 3.36-.72 5.16-1.08.24 0 .6-.12.84-.12C250.94 20.94 319.34 40.14 367 85.61a171.5 171.5 0 0 1 26.88 32.76c30.36 49.2 27.48 111.11 3.84 147.59-34.44 53-111.35 71.27-159 24.84a84.2 84.2 0 0 1-25.56-59 74.05 74.05 0 0 1 6.24-31c1.68-3.84 13.08-25.67 18.24-24.59-13.08-2.76-37.55 2.64-54.71 28.19-15.36 22.92-14.52 58.2-5 83.28a132.9 132.9 0 0 1-12.12-39.24c-12.24-82.55 43.31-153 94.31-170.51-27.48-24-96.47-22.31-147.71 15.36-29.88 22-51.23 53.16-62.51 90.36 1.68-20.88 9.6-52.08 25.8-83.88-17.16 8.88-39 37-49.8 62.88-15.6 37.43-21 82.19-16.08 124.79.36 3.24.72 6.36 1.08 9.6 19.92 117.11 122 206.38 244.78 206.38C392.77 503.42 504 392.19 504 255c-.12-4.52-.24-9.08-.48-13.52"/></svg></span> Firefox</td>
+<td style="text-align: right;">53+</td>
+<td style="text-align: right;">04/2017</td>
+<td style="text-align: right;">3.40%</td>
+<td style="text-align: right;">.30%</td>
+<td style="text-align: right;">3.70%</td>
+</tr>
+<tr>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M313.9 32.7c-170.2 0-252.6 223.8-147.5 355.1 36.5 45.4 88.6 75.6 147.5 75.6 36.3 0 70.3-11.1 99.4-30.4-43.8 39.2-101.9 63-165.3 63-3.9 0-8 0-11.9-.3C104.6 489.6 0 381.1 0 248 0 111 111 0 248 0h.8c63.1.3 120.7 24.1 164.4 63.1-29-19.4-63.1-30.4-99.3-30.4m101.8 397.7c-40.9 24.7-90.7 23.6-132-5.8 56.2-20.5 97.7-91.6 97.7-176.6 0-84.7-41.2-155.8-97.4-176.6 41.8-29.2 91.2-30.3 132.9-5 105.9 98.7 105.5 265.7-1.2 364"/></svg></span> Opera</td>
+<td style="text-align: right;">36+</td>
+<td style="text-align: right;">03/2016</td>
+<td style="text-align: right;">1.44%</td>
+<td style="text-align: right;">.01%</td>
+<td style="text-align: right;">1.45%</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>92.67%</strong></td>
+</tr>
+</tbody>
+</table>
+<figcaption>
+<p>Browser support matrix sourced from [caniuse.com].<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</figcaption>
+</figure>
+<ul>
+<li><a href="blogs/basic.md">Basics</a> (20 min) <br/>
+  covers the basics of setting up a blog, including post metadata.</li>
+<li><a href="blogs/navigation.md">Navigation, pagination, multiple authors</a> (30 min)<br/>
+  describes how to make it easier for your readers to find content.</li>
+<li><a href="blogs/engage.md">Engagement and dissemination</a> (30 min)<br/>
+  walks you through ways of increasing engagement with your content.</li>
+</ul>
+<p><a href="https://github.com/mkdocs-material/create-blog"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.75 0A2.75 2.75 0 0 0 3 2.75v1a.75.75 0 0 0 1.5 0v-1c0-.69.56-1.25 1.25-1.25h1a.75.75 0 0 0 0-1.5zm4 0a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zm7.5 0a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0v-3a.75.75 0 0 0-.75-.75zM4.5 6.5a.75.75 0 0 0-1.5 0v3.75a.75.75 0 0 0 1.5 0zm16.5 0a.75.75 0 0 0-1.5 0v3.75a.75.75 0 0 0 1.5 0zM4.5 13.25a.75.75 0 0 0-1.5 0v5.5a3.25 3.25 0 0 0 1.95 2.98.75.75 0 1 0 .6-1.375A1.75 1.75 0 0 1 4.5 18.75V18A1.5 1.5 0 0 1 6 16.5h.75a.75.75 0 0 0 0-1.5H6c-.546 0-1.059.146-1.5.401zm16.5 0a.75.75 0 0 0-1.5 0V15h-2.25a.75.75 0 0 0 0 1.5h2.25v4h-5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 .75-.75zM9.75 15a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5zm-2.353 8.461A.25.25 0 0 1 7 23.26v-5.01a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0z"/></svg></span> Template Repository</a></p>
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="gu">@@ -41,21 +40,10 @@</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w"> </span>  {% endif %}
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w"> </span>  &lt;div class=&quot;md-footer-meta md-typeset&quot;&gt;
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w"> </span>    &lt;div class=&quot;md-footer-meta__inner md-grid&quot;&gt;
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="gd">-      &lt;div class=&quot;md-footer-copyright&quot;&gt;</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="gd">-        {% if config.copyright %}</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="gd">-          &lt;div class=&quot;md-footer-copyright__highlight&quot;&gt;</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="gd">-            {{ config.copyright }}</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="gd">-          &lt;/div&gt;</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="gd">-        {% endif %}</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="gd">-        {% if not config.extra.generator == false %}</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="gd">-          Made with</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="gd">-          &lt;a href=&quot;https://squidfunk.github.io/mkdocs-material/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="gd">-            Material for MkDocs</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="gd">-          &lt;/a&gt;</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="gd">-        {% endif %}</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="gd">-        {{ extracopyright }}</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="gd">-      &lt;/div&gt;</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="gd">-      {% include &quot;partials/social.html&quot; %}</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="gi">+      {% include &quot;partials/copyright.html&quot; %}</span>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="gi">+      {% if config.extra.social %}</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="gi">+        {% include &quot;partials/social.html&quot; %}</span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="gi">+      {% endif %}</span>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a><span class="w"> </span>    &lt;/div&gt;
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="w"> </span>  &lt;/div&gt;
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a><span class="w"> </span>&lt;/footer&gt;
+</span></code></pre></div>
+<div class="grid cards">
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m57.7 193 9.4 16.4c8.3 14.5 21.9 25.2 38 29.8l57.9 16.5c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6 16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5 4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5.3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3-92.8 0-171.5 60.9-198.2 145M464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0 256 256 0 1 1-512 0"/></svg></span> <strong><a href="changing-the-language.md">Language</a></strong> – Choose out of the 60+ supported languages or add a new one</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m0 6v8h4V8z"/></svg></span> <strong><a href="setting-up-navigation.md">Navigation</a></strong> – Create a clear, concise, and comprehensive navigation structure</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m0 2v4h12V4z"/></svg></span> <strong><a href="setting-up-the-header.md">Header</a></strong> – Customize the behavior of the header, add an announcement bar</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m0 14v4h12v-4z"/></svg></span> <strong><a href="setting-up-the-footer.md">Footer</a></strong> – Add links to your social media profiles or websites in the footer</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 11C5 11 3 13 3 15.5c0 .88.25 1.71.69 2.4L.61 21 2 22.39l3.12-3.07c.69.43 1.51.68 2.38.68 2.5 0 4.5-2 4.5-4.5S10 11 7.5 11m0 7a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5M23 5v14c0 1.11-.89 2-2 2H10.95c.81-.5 1.5-1.19 2.02-2H21V9h-8V5H3v5.82C1.77 12 1 13.66 1 15.5V5c0-1.1.9-2 2-2h18a2 2 0 0 1 2 2"/></svg></span> <strong><a href="setting-up-site-search.md">Search</a></strong> – Set up and configure search, running entirely in the user's browser</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 5A1.5 1.5 0 1 0 8 6.5 1.5 1.5 0 0 0 6.5 5m0 0A1.5 1.5 0 1 0 8 6.5 1.5 1.5 0 0 0 6.5 5m14.91 6.58-9-9A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 .59 1.42l.41.4a5.6 5.6 0 0 1 2.08-.74L4 11V4h7l9 9-7 7-1.08-1.08a5.6 5.6 0 0 1-.74 2.08l.41.41A2 2 0 0 0 13 22a2 2 0 0 0 1.41-.59l7-7A2 2 0 0 0 22 13a2 2 0 0 0-.59-1.42M6.5 5A1.5 1.5 0 1 0 8 6.5 1.5 1.5 0 0 0 6.5 5M10 19H7v3H5v-3H2v-2h3v-3h2v3h3Z"/></svg></span> <strong><a href="setting-up-tags.md">Tags</a></strong> – Categorize your pages with tags and group related pages</li>
+</ul>
+</div>
+<div class="mdx-switch">
+  <button data-md-color-scheme="default"><code>default</code></button>
+  <button data-md-color-scheme="slate"><code>slate</code></button>
+</div>
+
+<p>Use this button to turn on the waifu2x extension.</p>
+<script>
+  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      document.body.setAttribute("data-md-color-switching", "")
+      var attr = this.getAttribute("data-md-color-scheme")
+      document.body.setAttribute("data-md-color-scheme", attr)
+      var name = document.querySelector("#__code_0 code span.l")
+      name.textContent = attr
+      setTimeout(function() {
+        document.body.removeAttribute("data-md-color-switching")
+      })
+    })
+  })
+</script>
+
+<h2 id="references">References<a class="headerlink" href="#references" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ul>
+<li><a href="https://www.mkdocs.org/getting-started/">mkdocs</a></li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/getting-started/">mkdocs-material</a></li>
+<li>https://github.com/mkdocs/catalog</li>
+<li>https://github.com/pawamoy/markdown-exec</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>In 2016, Material for MkDocs started out as a simple theme for MkDocs, but
+over the course of several years, it's now much more than that – with the
+many built-in plugins, settings, and countless customization abilities,
+Material for MkDocs is now one of the simplest and most powerful frameworks
+for creating documentation for your project.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Note that improvements of existing features are sometimes released as
+patch releases, like for example improved rendering of content tabs, as
+they're not considered to be new features.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Ateliar Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Ateliar Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../about-me/" class="md-footer__link md-footer__link--next" aria-label="Next: About Me">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                About Me
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Amethystia Group, 2022-2024
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.path", "navigation.prune", "navigation.indexes", "content.code.copy", "content.code.annotate", "content.code.select", "content.action.edit", "content.action.view", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="../../javascripts/shortcuts.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
