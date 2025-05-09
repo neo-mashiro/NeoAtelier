@@ -20,8 +20,6 @@ extra:
   social:
     - icon: simple/youtube
       link: https://youtube.com
-    - icon: simple/linkedin
-      link: https://linkedin.com
 
 nav:
   - Home:
