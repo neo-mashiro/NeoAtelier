@@ -16,6 +16,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1  # Only fetch the latest commit
+          sparse-checkout: |
+            docs
+            includes
 
       - name: Verify current working directory and branch
         run: |

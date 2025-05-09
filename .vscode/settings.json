@@ -41,8 +41,8 @@
     "editor.minimap.renderCharacters": false,
     "editor.bracketPairColorization.enabled": true,
     "editor.semanticHighlighting.enabled": true,
-    "editor.unicodeHighlight.nonBasicASCII": false,
-    "editor.unicodeHighlight.includeComments": false,
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "editor.unicodeHighlight.includeComments": true,
     "editor.unicodeHighlight.allowedLocales": {
         "zh-hans": true,
         "zh-hant": true,
@@ -259,6 +259,7 @@
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.enhancedColorization": "enabled",
+    "C_Cpp.errorSquiggles": "disabled",
 
     "editor.semanticTokenColorCustomizations": {
         "rules": {
@@ -361,7 +362,8 @@
         "!relative scalar",
         "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
         "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
-        "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+        "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
+        "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
     ],
 
     ///////////////////////////////////////////////////////////////////////////

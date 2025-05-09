@@ -19,6 +19,9 @@ export ATELIER_DOCS_ROOT="${ATELIER_ROOT}/docs"
 export ATELIER_BIN_ROOT="${ATELIER_ROOT}/bin"
 export PATH="${ATELIER_BIN_ROOT}:$PATH"
 
+# make sure pip will not install packages outside a virtual environment
+export PIP_REQUIRE_VIRTUALENV=true
+
 function activate_venv
 {
     cd ${ATELIER_ROOT}
@@ -45,6 +48,9 @@ if [ ! -d "${ATELIER_ROOT}/.venv" ]; then
     print_info "Installing packages to $VIRTUAL_ENV"
     print_info "Installing mkdocs-material..."
     pip install mkdocs-material
+
+    mkdocs --version
+    pip show mkdocs-material
 
     echo ""
     print_info "Setup Done!"

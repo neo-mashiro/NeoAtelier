@@ -2,68 +2,10 @@ site_name: Atelier Mana Oasis
 site_url: https://atelier.mana-oasis.org/
 site_author: neo-mashiro
 site_description: Welcome to Atelier Mana Oasis!
-
 repo_url: https://github.com/neo-mashiro/NeoAtelier
 remote_branch: gh-pages
 remote_name: origin
-
-nav:
-  - Docs Template: index.md
-  - Bookmarks: bookmarks.md
-  - ___________: dividor.md
-  - Apple:
-    - Apple 1: Apple/Apple1.md
-    - Apple 2: Apple/Apple2.md
-  - Banana:
-    - Banana 1: Banana/Banana1.md
-    - Banana 2: Banana/Banana2.md
-  - Cider:
-    - Cider 1: Cider/Cider1.md
-    - Cider 2: Cider/Cider2.md
-  - Donut:
-    - Donut 1: Donut/Donut1.md
-    - Donut 2: Donut/Donut2.md
-
-theme:
-  name: material
-  logo: assets/logo.png
-  favicon: assets/favicon.ico
-  font:
-    text: Merriweather Sans
-    code: Red Hat Mono
-  palette:
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Dark mode
-      primary: green
-      accent: deep purple
-
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Light mode
-      primary: blue
-      accent: deep orange
-  features:
-    - navigation.footer
-
-extra_css:
-  - extra.css
-
-# extra_javascript:
-#   - path: https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
-#     defer: true
-#     async: true
-
-extra:
-  social:
-    - icon: simple/youtube
-      link: https://youtube.com
-    - icon: simple/linkedin
-      link: https://linkedin.com
-
-copyright: Copyright &copy; 2024 neo-mashiro
+copyright: Copyright &copy; Amethystia Group, 2022-2024
 
 use_directory_urls: true
 
@@ -73,30 +15,190 @@ validation:
   unrecognized_links: warn
   anchors: warn
 
+extra:
+  generator: false
+  social:
+    - icon: simple/youtube
+      link: https://youtube.com
+    - icon: simple/linkedin
+      link: https://linkedin.com
+
+nav:
+  - Home:
+    - index.md
+    - Docs Template: home/docs-template.md
+    - About Me: home/about-me.md
+    - Life on A4: home/life-a4.md
+    - Mana Oasis: home/mana-oasis.md
+  - Resources:
+    - Academic: resources/academic.md
+    - Bit Foundry:
+      - resources/bit-foundry/index.md
+      - C/C++ Notes: resources/bit-foundry/cpp-notes.md
+      - Python Notes: resources/bit-foundry/py-notes.md
+      - Swift Notes: resources/bit-foundry/swift-notes.md
+    - Pixel Palette:
+      - resources/pixel-palette/index.md
+      - Sampling: resources/pixel-palette/sampling.md
+    - Unreal Engine: resources/unreal-engine.md
+    - CG Art: resources/cg-art.md
+    - Utility Vault: resources/utility-vault.md
+  - Workspace:
+    - workspace/index.md
+    - Toolchain: workspace/toolchain.md
+    - Watchdog: workspace/watchdog.md
+  - UI/UX:
+    - Qt: uiux/qt.md
+    - Graph Editor: uiux/graph-editor.md
+  - OpenSDK:
+    - OpenUSD:
+      - opensdk/openusd/index.md
+      - USD Basics in Python: opensdk/openusd/usd-basics.md
+      - USD Assets: opensdk/openusd/usd-assets.md
+      - Notification System: opensdk/openusd/notification-system.md
+      - "Hydra":
+        - opensdk/openusd/hydra/basic.md
+        - opensdk/openusd/hydra/advanced.md
+    - Intel® Render Kit:
+      - opensdk/intel/index.md
+      - Embree: opensdk/intel/embree.md
+      - OpenPGL: opensdk/intel/openpgl.md
+      - OpenVKL: opensdk/intel/openvkl.md
+      - OpenImageDenoise: opensdk/intel/oidn.md
+      - OSPRay Studio: opensdk/intel/ospray.md
+    - "": ""  # this is a hack to add vertical spacing between adjacent pages at the same level
+    - OpenEXR: opensdk/openexr.md
+    - OpenColorIO: opensdk/ocio.md
+    - OpenImageIO: opensdk/oiio.md
+    - OpenPBR: opensdk/openpbr.md
+    - OpenShadingLanguage: opensdk/osl.md
+    - MaterialX: opensdk/materialx.md
+    - OpenVDB: opensdk/openvdb.md
+    - OpenTimelineIO: opensdk/otio.md
+    - OpenXR: opensdk/openxr.md
+    - NVIDIA OptiX: opensdk/optix.md
+  - Chaos:
+    - Career: chaos/career.md
+
+theme:
+  name: material
+  # custom_dir: overrides
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+
+  font:
+    text: Nunito Sans  # change to SN Pro later
+    code: Space Mono
+
+  icon:
+    annotation: material/chevron-right-circle
+    admonition:
+      abstract: material/calendar-export-outline
+      tip: material/fire-circle
+      success: material/check-decagram
+      failure: material/alert-decagram
+      question: material/crosshairs-question
+      warning: material/car-brake-alert
+      danger: material/weather-lightning
+      bug: material/bug-pause-outline
+      example: material/flask-outline
+      quote: material/comment-processing-outline
+
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      primary: black
+      accent: custom
+
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: black
+      accent: custom
+
+  features:
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.sections
+    - navigation.top
+    - navigation.path
+    - navigation.prune
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - content.code.select
+    - content.action.edit
+    - content.action.view
+    - content.tooltips
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/shortcuts.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+# extra_javascript:
+#   - path: https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
+#     defer: true
+#     async: true
+
 markdown_extensions:
+  - abbr
   - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - admonition
+
+  - toc:
+      title: ON THIS PAGE
+      toc_depth: 3
+      permalink: ⚓︎
+      permalink_title: Anchor link to this section for reference
+
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.blocks.caption
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols
+
+  - pymdownx.escapeall:
+      hardbreak: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.highlight:
+      use_pygments: true
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-
+      auto_title: false
+      linenums_style: table
   - pymdownx.tabbed:
       alternate_style: true
-
-  - admonition
-  - pymdownx.details
-
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-  - toc:
-      permalink: ⚓︎
